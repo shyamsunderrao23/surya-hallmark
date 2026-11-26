@@ -61,7 +61,7 @@ export default function HomePage() {
     <div className="space-y-12 sm:space-y-16">
       
       {/* Hero Banner Carousel */}
-      <section className="relative overflow-hidden bg-[#3b1212] text-[#FFFDD0]">
+      <section className="relative overflow-hidden bg-[#3b1212] text-[#F8F1E7]">
         <div className="relative min-h-[480px] sm:min-h-[540px] lg:min-h-[580px] flex items-center">
           
           {/* Background Image with Gradient Overlay */}
@@ -132,7 +132,7 @@ export default function HomePage() {
 
       {/* Live Gold Rate Ribbon Strip */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 -mt-8 sm:-mt-10 relative z-20">
-        <div className="bg-[#FFFDD0] border-2 border-[#D4AF37] rounded-2xl shadow-xl p-4 sm:p-5 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="bg-[#F8F1E7] border-2 border-[#D4AF37] rounded-2xl shadow-xl p-4 sm:p-5 flex flex-col md:flex-row items-center justify-between gap-4">
           
           <div className="flex items-center gap-3">
             <div className="w-12 h-12 rounded-xl bg-[#6B2C2C] text-[#F3C64F] flex items-center justify-center flex-shrink-0 shadow">
@@ -174,7 +174,7 @@ export default function HomePage() {
           {/* Action button */}
           <button
             onClick={() => setIsGoldRateModalOpen(true)}
-            className="bg-[#6B2C2C] hover:bg-[#521f1f] text-[#FFFDD0] text-xs font-bold px-4 py-2.5 rounded-xl shadow transition flex items-center gap-1.5 cursor-pointer whitespace-nowrap"
+            className="bg-[#6B2C2C] hover:bg-[#521f1f] text-[#F8F1E7] text-xs font-bold px-4 py-2.5 rounded-xl shadow transition flex items-center gap-1.5 cursor-pointer whitespace-nowrap"
           >
             <span>Rate Calculator &amp; History</span>
             <ChevronRight className="w-4 h-4 text-[#F3C64F]" />
@@ -355,7 +355,7 @@ export default function HomePage() {
       </section>
 
       {/* The Surya Hallmark 1964 Heritage & BIS Hallmark Story */}
-      <section className="bg-[#FFFDD0] border-y border-[#d8c5aa] py-16 px-4 sm:px-6">
+      <section className="bg-[#F8F1E7] border-y border-[#d8c5aa] py-16 px-4 sm:px-6">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           
           <div className="lg:col-span-6 space-y-4">
@@ -398,7 +398,7 @@ export default function HomePage() {
             <div className="pt-2">
               <Link
                 to="/craftsmanship"
-                className="inline-flex items-center gap-2 bg-[#6B2C2C] hover:bg-[#521f1f] text-[#FFFDD0] text-xs font-bold px-6 py-3 rounded-xl shadow transition"
+                className="inline-flex items-center gap-2 bg-[#6B2C2C] hover:bg-[#521f1f] text-[#F8F1E7] text-xs font-bold px-6 py-3 rounded-xl shadow transition"
               >
                 <span>Read Full Craftsmanship Journey</span>
                 <ArrowRight className="w-4 h-4 text-[#F3C64F]" />

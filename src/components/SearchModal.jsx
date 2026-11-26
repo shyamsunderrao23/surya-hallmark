@@ -32,7 +32,7 @@ export default function SearchModal() {
 
   return (
     <div className="fixed inset-0 z-50 flex items-start justify-center pt-16 px-4 bg-black/60 backdrop-blur-xs animate-fadeIn">
-      <div className="relative w-full max-w-2xl bg-[#FFFDD0] rounded-2xl shadow-2xl border border-[#d8c5aa] overflow-hidden text-[#3d1f1f]">
+      <div className="relative w-full max-w-2xl bg-[#F8F1E7] rounded-2xl shadow-2xl border border-[#d8c5aa] overflow-hidden text-[#3d1f1f]">
         
         {/* Search Input Bar */}
         <div className="bg-[#6B2C2C] p-4 flex items-center gap-3">
@@ -43,7 +43,7 @@ export default function SearchModal() {
             placeholder="Search gold necklaces, diamond rings, silver pooja items, 24K coins..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="flex-1 bg-transparent text-[#FFFDD0] placeholder-[#dcbaba] text-sm focus:outline-none"
+            className="flex-1 bg-transparent text-[#F8F1E7] placeholder-[#dcbaba] text-sm focus:outline-none"
           />
           {searchQuery && (
             <button onClick={() => setSearchQuery('')} className="text-gray-300 hover:text-white">
@@ -52,7 +52,7 @@ export default function SearchModal() {
           )}
           <button
             onClick={() => setIsSearchOpen(false)}
-            className="bg-[#521f1f] text-[#FFFDD0] px-3 py-1 rounded-md text-xs font-semibold hover:bg-[#3d1616]"
+            className="bg-[#521f1f] text-[#F8F1E7] px-3 py-1 rounded-md text-xs font-semibold hover:bg-[#3d1616]"
           >
             Esc
           </button>
@@ -71,7 +71,7 @@ export default function SearchModal() {
                 <button
                   key={cat.id}
                   onClick={() => handleSelectCategory(cat.id)}
-                  className="bg-white hover:bg-[#FFFDD0] text-[#422222] border border-[#d8c5aa] px-3 py-1 rounded-full text-xs font-medium transition"
+                  className="bg-white hover:bg-[#F8F1E7] text-[#422222] border border-[#d8c5aa] px-3 py-1 rounded-full text-xs font-medium transition"
                 >
                   {cat.name}
                 </button>
@@ -95,7 +95,7 @@ export default function SearchModal() {
                   <div
                     key={item.id}
                     onClick={() => handleSelectProduct(item.id)}
-                    className="flex gap-3 bg-white p-2.5 rounded-xl border border-[#FFFDD0] hover:border-[#6B2C2C] shadow-xs cursor-pointer transition group"
+                    className="flex gap-3 bg-white p-2.5 rounded-xl border border-[#F8F1E7] hover:border-[#6B2C2C] shadow-xs cursor-pointer transition group"
                   >
                     <img
                       src={item.image}
@@ -120,7 +120,7 @@ export default function SearchModal() {
         </div>
 
         {/* Footer */}
-        <div className="p-3 bg-[#FFFDD0] border-t border-[#d8c5aa] flex justify-between items-center text-xs">
+        <div className="p-3 bg-[#F8F1E7] border-t border-[#d8c5aa] flex justify-between items-center text-xs">
           <span className="text-gray-600">All prices computed with live daily bullion rates</span>
           <button
             onClick={() => {

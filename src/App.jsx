@@ -34,10 +34,10 @@ export default function App() {
     <ShopProvider>
       <BrowserRouter>
         <ScrollToTop />
-        <div style={{ backgroundColor: '#FFFDD0' }} className="min-h-screen flex flex-col bg-[#FFFDD0] text-[#2D2323]">
+        <div style={{ backgroundColor: '#F8F1E7' }} className="min-h-screen flex flex-col bg-[#F8F1E7] text-[#2D2323]">
           {/* Header adheres strictly to User Specifications: 
               - Logo at center (Image 1) 
-              - Body background: #FFFDD0 (Image 2)
+              - Body background: #F8F1E7 (Image 2)
               - Header background: #6B2C2C (Image 3) 
               - Top/bottom header rows layout (Image 4)
           */}
