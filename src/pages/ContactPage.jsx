@@ -55,7 +55,7 @@ export default function ContactPage() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         
         <div className="bg-white p-6 rounded-2xl border border-[#d8c5aa] shadow-xs text-center space-y-3">
-          <div className="w-12 h-12 bg-[#F8F1E7] text-[#6B2C2C] rounded-2xl flex items-center justify-center mx-auto">
+          <div className="w-12 h-12 bg-[#FAF9F6] text-[#6B2C2C] rounded-2xl flex items-center justify-center mx-auto">
             <Phone className="w-6 h-6" />
           </div>
           <h3 className="font-bold text-sm text-[#381c1c]">Phone &amp; Toll-Free</h3>
@@ -67,7 +67,7 @@ export default function ContactPage() {
         </div>
 
         <div className="bg-white p-6 rounded-2xl border border-[#d8c5aa] shadow-xs text-center space-y-3">
-          <div className="w-12 h-12 bg-[#F8F1E7] text-[#1b7340] rounded-2xl flex items-center justify-center mx-auto">
+          <div className="w-12 h-12 bg-[#FAF9F6] text-[#1b7340] rounded-2xl flex items-center justify-center mx-auto">
             <MessageSquare className="w-6 h-6" />
           </div>
           <h3 className="font-bold text-sm text-[#381c1c]">WhatsApp Concierge</h3>
@@ -85,7 +85,7 @@ export default function ContactPage() {
         </div>
 
         <div className="bg-white p-6 rounded-2xl border border-[#d8c5aa] shadow-xs text-center space-y-3">
-          <div className="w-12 h-12 bg-[#F8F1E7] text-[#6B2C2C] rounded-2xl flex items-center justify-center mx-auto">
+          <div className="w-12 h-12 bg-[#FAF9F6] text-[#6B2C2C] rounded-2xl flex items-center justify-center mx-auto">
             <Mail className="w-6 h-6" />
           </div>
           <h3 className="font-bold text-sm text-[#381c1c]">Email Inquiries</h3>
@@ -108,7 +108,7 @@ export default function ContactPage() {
           </h2>
 
           {submitted ? (
-            <div className="bg-[#F8F1E7] p-6 rounded-2xl border border-emerald-300 text-center space-y-3">
+            <div className="bg-[#FAF9F6] p-6 rounded-2xl border border-emerald-300 text-center space-y-3">
               <div className="w-12 h-12 bg-emerald-100 text-emerald-700 rounded-full flex items-center justify-center mx-auto">
                 <Check className="w-6 h-6" />
               </div>
@@ -132,7 +132,7 @@ export default function ContactPage() {
                     type="text"
                     required
                     placeholder="e.g. Ramesh Krishnan"
-                    className="w-full bg-[#F8F1E7] border border-[#d8c5aa] rounded-xl px-3 py-2 text-xs"
+                    className="w-full bg-[#FAF9F6] border border-[#d8c5aa] rounded-xl px-3 py-2 text-xs"
                   />
                 </div>
                 <div>
@@ -141,7 +141,7 @@ export default function ContactPage() {
                     type="tel"
                     required
                     placeholder="+91 98401 23456"
-                    className="w-full bg-[#F8F1E7] border border-[#d8c5aa] rounded-xl px-3 py-2 text-xs"
+                    className="w-full bg-[#FAF9F6] border border-[#d8c5aa] rounded-xl px-3 py-2 text-xs"
                   />
                 </div>
               </div>
@@ -152,13 +152,13 @@ export default function ContactPage() {
                   type="email"
                   required
                   placeholder="ramesh@example.com"
-                  className="w-full bg-[#F8F1E7] border border-[#d8c5aa] rounded-xl px-3 py-2 text-xs"
+                  className="w-full bg-[#FAF9F6] border border-[#d8c5aa] rounded-xl px-3 py-2 text-xs"
                 />
               </div>
 
               <div>
                 <label className="font-bold text-gray-700 block mb-1">Subject / Inquiry Type</label>
-                <select className="w-full bg-[#F8F1E7] border border-[#d8c5aa] rounded-xl px-3 py-2 text-xs font-semibold">
+                <select className="w-full bg-[#FAF9F6] border border-[#d8c5aa] rounded-xl px-3 py-2 text-xs font-semibold">
                   <option>Bridal Custom Design Consultation</option>
                   <option>Old Gold Exchange &amp; Karatmeter Appraisal</option>
                   <option>Swarna Nidhi Savings Scheme Inquiry</option>
@@ -173,13 +173,13 @@ export default function ContactPage() {
                   rows="4"
                   required
                   placeholder="Tell us about the jewellery design, budget, or milestone you are planning..."
-                  className="w-full bg-[#F8F1E7] border border-[#d8c5aa] rounded-xl p-3 text-xs"
+                  className="w-full bg-[#FAF9F6] border border-[#d8c5aa] rounded-xl p-3 text-xs"
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full bg-[#6B2C2C] hover:bg-[#521f1f] text-[#F8F1E7] py-3 rounded-xl font-bold uppercase tracking-wider transition shadow-md"
+                className="w-full bg-[#6B2C2C] hover:bg-[#521f1f] text-[#FAF9F6] py-3 rounded-xl font-bold uppercase tracking-wider transition shadow-md"
               >
                 Submit Inquiry
               </button>

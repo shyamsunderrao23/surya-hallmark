@@ -53,7 +53,7 @@ export default function GoldRatePage() {
         <div className="bg-white p-5 rounded-2xl border-2 border-[#D4AF37] shadow-md relative overflow-hidden space-y-3">
           <div className="flex justify-between items-start">
             <div>
-              <span className="text-[10px] font-bold text-[#6B2C2C] bg-[#F8F1E7] px-2 py-0.5 rounded uppercase">
+              <span className="text-[10px] font-bold text-[#6B2C2C] bg-[#FAF9F6] px-2 py-0.5 rounded uppercase">
                 Bridal Standard
               </span>
               <h3 className="text-base font-bold text-[#381c1c] mt-1 font-serif-luxury">22K Gold (916)</h3>
@@ -177,7 +177,7 @@ export default function GoldRatePage() {
               <select
                 value={selectedKarat}
                 onChange={(e) => setSelectedKarat(e.target.value)}
-                className="w-full bg-[#F8F1E7] border border-[#d8c5aa] rounded-xl px-3 py-2 text-xs font-bold"
+                className="w-full bg-[#FAF9F6] border border-[#d8c5aa] rounded-xl px-3 py-2 text-xs font-bold"
               >
                 <option value="22">22K Gold (916 BIS Hallmark)</option>
                 <option value="24">24K Pure Bullion (999)</option>
@@ -192,13 +192,13 @@ export default function GoldRatePage() {
                 step="0.5"
                 value={weight}
                 onChange={(e) => setWeight(Math.max(0.1, Number(e.target.value)))}
-                className="w-full bg-[#F8F1E7] border border-[#d8c5aa] rounded-xl px-3 py-2 text-xs font-bold"
+                className="w-full bg-[#FAF9F6] border border-[#d8c5aa] rounded-xl px-3 py-2 text-xs font-bold"
               />
             </div>
           </div>
 
           {/* Result Box */}
-          <div className="bg-[#F8F1E7] p-4 rounded-xl border border-[#d8c5aa] space-y-2 text-xs">
+          <div className="bg-[#FAF9F6] p-4 rounded-xl border border-[#d8c5aa] space-y-2 text-xs">
             <div className="flex justify-between">
               <span>Pure Gold Cost ({weight}g × ₹{ratePerGram}):</span>
               <span className="font-mono font-semibold">₹{calculatedGoldVal.toLocaleString('en-IN')}</span>
@@ -237,11 +237,11 @@ export default function GoldRatePage() {
               step="5000"
               value={budget}
               onChange={(e) => setBudget(Math.max(1000, Number(e.target.value)))}
-              className="w-full bg-[#F8F1E7] border border-[#d8c5aa] rounded-xl px-3 py-2 text-xs font-bold"
+              className="w-full bg-[#FAF9F6] border border-[#d8c5aa] rounded-xl px-3 py-2 text-xs font-bold"
             />
           </div>
 
-          <div className="bg-[#F8F1E7] p-5 rounded-xl border border-[#d8c5aa] text-center space-y-2">
+          <div className="bg-[#FAF9F6] p-5 rounded-xl border border-[#d8c5aa] text-center space-y-2">
             <div className="text-xs text-gray-600">With a budget of ₹{budget.toLocaleString('en-IN')}, you can acquire approximately:</div>
             <div className="text-3xl font-extrabold text-[#6B2C2C] font-mono">
               {gramsForBudget} Grams

@@ -27,7 +27,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-[#461919] text-[#F8F1E7] border-t-4 border-[#D4AF37] mt-16">
+    <footer className="bg-[#461919] text-[#FAF9F6] border-t-4 border-[#D4AF37] mt-16">
       
       {/* 4 Pillars of Trust Bar */}
       <div className="bg-[#562020] border-b border-[#6f2c2c] py-6 px-4 sm:px-6">

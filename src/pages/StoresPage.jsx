@@ -44,7 +44,7 @@ export default function StoresPage() {
           >
             <div className="flex justify-between items-start">
               <div>
-                <span className="text-[10px] font-bold text-[#6B2C2C] bg-[#F8F1E7] px-2 py-0.5 rounded uppercase">
+                <span className="text-[10px] font-bold text-[#6B2C2C] bg-[#FAF9F6] px-2 py-0.5 rounded uppercase">
                   Flagship Store
                 </span>
                 <h3 className="text-base font-bold font-serif-luxury text-[#2b1717] mt-1">
@@ -91,7 +91,7 @@ export default function StoresPage() {
                 href={st.mapUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="bg-[#F8F1E7] text-[#4a2626] hover:bg-[#e0d0be] px-3 py-1.5 rounded-lg text-xs font-semibold"
+                className="bg-[#FAF9F6] text-[#4a2626] hover:bg-[#e0d0be] px-3 py-1.5 rounded-lg text-xs font-semibold"
               >
                 Get Directions
               </a>
@@ -101,7 +101,7 @@ export default function StoresPage() {
       </div>
 
       {/* VIP Booking Form */}
-      <div className="bg-[#F8F1E7] rounded-3xl p-6 sm:p-10 border border-[#d8c5aa]">
+      <div className="bg-[#FAF9F6] rounded-3xl p-6 sm:p-10 border border-[#d8c5aa]">
         <div className="max-w-2xl mx-auto space-y-6">
           <div className="text-center space-y-2">
             <h2 className="text-2xl font-bold font-serif-luxury text-[#381c1c]">
@@ -181,7 +181,7 @@ export default function StoresPage() {
               <div className="sm:col-span-2 pt-2">
                 <button
                   type="submit"
-                  className="w-full bg-[#6B2C2C] hover:bg-[#521f1f] text-[#F8F1E7] py-3 rounded-xl font-bold uppercase tracking-wider transition shadow-md"
+                  className="w-full bg-[#6B2C2C] hover:bg-[#521f1f] text-[#FAF9F6] py-3 rounded-xl font-bold uppercase tracking-wider transition shadow-md"
                 >
                   Confirm VIP Showroom Appointment
                 </button>

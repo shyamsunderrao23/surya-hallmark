@@ -147,7 +147,7 @@ export default function ProductDetailPage() {
           </div>
 
           {/* Price Tag */}
-          <div className="bg-[#F8F1E7] p-4 rounded-2xl border border-[#d8c5aa] space-y-2">
+          <div className="bg-[#FAF9F6] p-4 rounded-2xl border border-[#d8c5aa] space-y-2">
             <div className="flex items-baseline gap-3">
               <span className="text-3xl font-extrabold text-[#6B2C2C] font-mono">
                 ₹{product.price.toLocaleString('en-IN')}
@@ -208,7 +208,7 @@ export default function ProductDetailPage() {
                   className={`py-2 px-3 text-xs font-semibold rounded-xl border transition ${
                     selectedSize === s
                       ? 'bg-[#6B2C2C] text-white border-[#6B2C2C]'
-                      : 'bg-white text-gray-700 border-[#d8c5aa] hover:bg-[#F8F1E7]'
+                      : 'bg-white text-gray-700 border-[#d8c5aa] hover:bg-[#FAF9F6]'
                   }`}
                 >
                   {s}
@@ -222,7 +222,7 @@ export default function ProductDetailPage() {
             <div className="flex gap-3">
               <button
                 onClick={handleAddToCart}
-                className="flex-1 bg-[#6B2C2C] hover:bg-[#521f1f] text-[#F8F1E7] py-3.5 px-6 rounded-xl font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg shadow-[#6B2C2C]/20 transition cursor-pointer"
+                className="flex-1 bg-[#6B2C2C] hover:bg-[#521f1f] text-[#FAF9F6] py-3.5 px-6 rounded-xl font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg shadow-[#6B2C2C]/20 transition cursor-pointer"
               >
                 <ShoppingBag className="w-4 h-4 text-[#F3C64F]" />
                 <span>{addedAlert ? 'Added to Bag!' : 'Add to Bag'}</span>

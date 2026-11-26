@@ -94,7 +94,7 @@ export default function ProductCard({ product }) {
 
           <button
             onClick={() => addToCart(product, 1)}
-            className="bg-[#6B2C2C] hover:bg-[#521f1f] text-[#F8F1E7] p-2.5 rounded-xl shadow-sm hover:shadow transition flex items-center justify-center cursor-pointer"
+            className="bg-[#6B2C2C] hover:bg-[#521f1f] text-[#FAF9F6] p-2.5 rounded-xl shadow-sm hover:shadow transition flex items-center justify-center cursor-pointer"
             title="Add to Shopping Bag"
           >
             <ShoppingBag className="w-4 h-4 text-[#F3C64F]" />

@@ -36,7 +36,7 @@ export default function SchemesPage() {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12 space-y-12">
       
       {/* Banner */}
-      <div className="bg-gradient-to-r from-[#501F1F] via-[#6B2C2C] to-[#501F1F] text-[#F8F1E7] rounded-3xl p-6 sm:p-12 border-2 border-[#D4AF37] shadow-xl relative overflow-hidden">
+      <div className="bg-gradient-to-r from-[#501F1F] via-[#6B2C2C] to-[#501F1F] text-[#FAF9F6] rounded-3xl p-6 sm:p-12 border-2 border-[#D4AF37] shadow-xl relative overflow-hidden">
         <div className="max-w-3xl space-y-4">
           <div className="inline-flex items-center gap-2 bg-[#D4AF37]/20 border border-[#D4AF37]/40 text-[#F3C64F] px-3.5 py-1 rounded-full text-xs font-bold tracking-wider uppercase">
             <Sparkles className="w-3.5 h-3.5" />
@@ -62,7 +62,7 @@ export default function SchemesPage() {
             <h2 className="text-lg font-bold font-serif-luxury text-[#381c1c] flex items-center gap-2">
               <Calendar className="w-5 h-5 text-[#6B2C2C]" /> Monthly Installment Calculator
             </h2>
-            <span className="text-xs font-bold text-[#6B2C2C] bg-[#F8F1E7] px-2.5 py-1 rounded-full">
+            <span className="text-xs font-bold text-[#6B2C2C] bg-[#FAF9F6] px-2.5 py-1 rounded-full">
               11 + 1 Month Plan
             </span>
           </div>
@@ -105,7 +105,7 @@ export default function SchemesPage() {
                   className={`text-xs font-bold px-3 py-1.5 rounded-lg border transition ${
                     monthlyAmount === amt
                       ? 'bg-[#6B2C2C] text-white border-[#6B2C2C]'
-                      : 'bg-[#F8F1E7] text-[#422222] border-[#d8c5aa] hover:bg-[#e2d5c2]'
+                      : 'bg-[#FAF9F6] text-[#422222] border-[#d8c5aa] hover:bg-[#e2d5c2]'
                   }`}
                 >
                   ₹{amt.toLocaleString('en-IN')}
@@ -115,7 +115,7 @@ export default function SchemesPage() {
           </div>
 
           {/* Scheme Breakdown Breakdown */}
-          <div className="bg-[#F8F1E7] p-5 rounded-2xl border border-[#d8c5aa] space-y-3 text-xs">
+          <div className="bg-[#FAF9F6] p-5 rounded-2xl border border-[#d8c5aa] space-y-3 text-xs">
             <div className="flex justify-between py-1 border-b border-[#d8c5aa]">
               <span className="text-gray-700">You pay for 11 months:</span>
               <span className="font-mono font-bold text-gray-900">
@@ -155,7 +155,7 @@ export default function SchemesPage() {
           </h2>
 
           {enrolled ? (
-            <div className="bg-[#F8F1E7] p-6 rounded-2xl border border-emerald-300 text-center space-y-3">
+            <div className="bg-[#FAF9F6] p-6 rounded-2xl border border-emerald-300 text-center space-y-3">
               <div className="w-12 h-12 bg-emerald-100 text-emerald-700 rounded-full flex items-center justify-center mx-auto">
                 <Check className="w-6 h-6" />
               </div>
@@ -182,7 +182,7 @@ export default function SchemesPage() {
                   placeholder="e.g. Meenakshi Sundaram"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full bg-[#F8F1E7] border border-[#d8c5aa] rounded-xl px-3 py-2 text-xs focus:ring-1 focus:ring-[#6B2C2C]"
+                  className="w-full bg-[#FAF9F6] border border-[#d8c5aa] rounded-xl px-3 py-2 text-xs focus:ring-1 focus:ring-[#6B2C2C]"
                 />
               </div>
 
@@ -194,7 +194,7 @@ export default function SchemesPage() {
                   placeholder="+91 98400 12345"
                   value={formData.mobile}
                   onChange={(e) => setFormData({ ...formData, mobile: e.target.value })}
-                  className="w-full bg-[#F8F1E7] border border-[#d8c5aa] rounded-xl px-3 py-2 text-xs focus:ring-1 focus:ring-[#6B2C2C]"
+                  className="w-full bg-[#FAF9F6] border border-[#d8c5aa] rounded-xl px-3 py-2 text-xs focus:ring-1 focus:ring-[#6B2C2C]"
                 />
               </div>
 
@@ -203,7 +203,7 @@ export default function SchemesPage() {
                 <select
                   value={formData.branch}
                   onChange={(e) => setFormData({ ...formData, branch: e.target.value })}
-                  className="w-full bg-[#F8F1E7] border border-[#d8c5aa] rounded-xl px-3 py-2 text-xs font-semibold"
+                  className="w-full bg-[#FAF9F6] border border-[#d8c5aa] rounded-xl px-3 py-2 text-xs font-semibold"
                 >
                   <option>T. Nagar, Chennai (Flagship)</option>
                   <option>Mylapore, Chennai</option>
@@ -215,7 +215,7 @@ export default function SchemesPage() {
               <div className="pt-2">
                 <button
                   type="submit"
-                  className="w-full bg-[#6B2C2C] hover:bg-[#521f1f] text-[#F8F1E7] py-3 rounded-xl font-bold uppercase tracking-wider shadow-md transition"
+                  className="w-full bg-[#6B2C2C] hover:bg-[#521f1f] text-[#FAF9F6] py-3 rounded-xl font-bold uppercase tracking-wider shadow-md transition"
                 >
                   Enroll Now &amp; Claim 1 Month Bonus
                 </button>

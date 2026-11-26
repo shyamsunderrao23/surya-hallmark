@@ -19,10 +19,10 @@ export default function GoldRateModal() {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-fadeIn">
-      <div className="relative w-full max-w-2xl bg-[#F8F1E7] rounded-2xl shadow-2xl border border-[#d8c5aa] overflow-hidden text-[#3d1f1f] max-h-[90vh] flex flex-col">
+      <div className="relative w-full max-w-2xl bg-[#FAF9F6] rounded-2xl shadow-2xl border border-[#d8c5aa] overflow-hidden text-[#3d1f1f] max-h-[90vh] flex flex-col">
         
         {/* Header in Maroon (#6B2C2C) */}
-        <div className="bg-[#6B2C2C] text-[#F8F1E7] p-4 sm:p-5 flex items-center justify-between border-b border-[#823939]">
+        <div className="bg-[#6B2C2C] text-[#FAF9F6] p-4 sm:p-5 flex items-center justify-between border-b border-[#823939]">
           <div className="flex items-center gap-3">
             <div className="p-2 bg-[#541f1f] rounded-lg border border-[#823939]">
               <TrendingUp className="w-5 h-5 text-[#F3C64F]" />
@@ -38,7 +38,7 @@ export default function GoldRateModal() {
           </div>
           <button
             onClick={() => setIsGoldRateModalOpen(false)}
-            className="p-1.5 rounded-full hover:bg-[#541f1f] text-[#F8F1E7]/80 hover:text-white transition"
+            className="p-1.5 rounded-full hover:bg-[#541f1f] text-[#FAF9F6]/80 hover:text-white transition"
           >
             <X className="w-5 h-5" />
           </button>
@@ -102,7 +102,7 @@ export default function GoldRateModal() {
           </div>
 
           {/* Quick Value Estimator */}
-          <div className="bg-[#F8F1E7] p-4 rounded-xl border border-[#d8c5aa]">
+          <div className="bg-[#FAF9F6] p-4 rounded-xl border border-[#d8c5aa]">
             <div className="flex items-center gap-2 mb-3">
               <Calculator className="w-4 h-4 text-[#6B2C2C]" />
               <h4 className="text-sm font-bold text-[#422222]">Instant Jewellery Cost Estimator</h4>
@@ -156,7 +156,7 @@ export default function GoldRateModal() {
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
               {cityGoldRates.map((c) => (
-                <div key={c.city} className="bg-white p-2 rounded-lg border border-[#F8F1E7] flex justify-between items-center text-xs">
+                <div key={c.city} className="bg-white p-2 rounded-lg border border-[#FAF9F6] flex justify-between items-center text-xs">
                   <span className="font-semibold text-gray-700">{c.city}</span>
                   <span className="font-bold text-[#6B2C2C] font-mono">₹{c.rate22k}</span>
                 </div>
@@ -175,7 +175,7 @@ export default function GoldRateModal() {
         </div>
 
         {/* Footer */}
-        <div className="p-4 bg-[#F8F1E7] border-t border-[#d8c5aa] flex items-center justify-between">
+        <div className="p-4 bg-[#FAF9F6] border-t border-[#d8c5aa] flex items-center justify-between">
           <Link
             to="/gold-rate"
             onClick={() => setIsGoldRateModalOpen(false)}
@@ -186,7 +186,7 @@ export default function GoldRateModal() {
           </Link>
           <button
             onClick={() => setIsGoldRateModalOpen(false)}
-            className="bg-[#6B2C2C] text-[#F8F1E7] hover:bg-[#521f1f] px-4 py-1.5 rounded-lg text-xs font-semibold shadow transition"
+            className="bg-[#6B2C2C] text-[#FAF9F6] hover:bg-[#521f1f] px-4 py-1.5 rounded-lg text-xs font-semibold shadow transition"
           >
             Close
           </button>
