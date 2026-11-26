@@ -36,13 +36,18 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileSearchOpen, setMobileSearchOpen] = useState(false);
   const [isSearchDropdownOpen, setIsSearchDropdownOpen] = useState(false);
+  const [isGoldRateDropdownOpen, setIsGoldRateDropdownOpen] = useState(false);
   const searchContainerRef = useRef(null);
+  const goldRateContainerRef = useRef(null);
 
-  // Close search dropdown on click outside
+  // Close dropdowns on click outside
   useEffect(() => {
     function handleClickOutside(event) {
       if (searchContainerRef.current && !searchContainerRef.current.contains(event.target)) {
         setIsSearchDropdownOpen(false);
+      }
+      if (goldRateContainerRef.current && !goldRateContainerRef.current.contains(event.target)) {
+        setIsGoldRateDropdownOpen(false);
       }
     }
     document.addEventListener('mousedown', handleClickOutside);
@@ -52,6 +57,7 @@ export default function Header() {
   // Close dropdown on route change
   useEffect(() => {
     setIsSearchDropdownOpen(false);
+    setIsGoldRateDropdownOpen(false);
     setMobileSearchOpen(false);
   }, [location.pathname]);
 
@@ -263,19 +269,126 @@ export default function Header() {
               </div>
             </div>
 
-            {/* Today's Gold Rate Button */}
-            <button
-              type="button"
-              onClick={() => setIsGoldRateModalOpen(true)}
-              className="flex items-center gap-2 bg-[#FAF9F6] hover:bg-[#faebd7] text-[#6B2C2C] px-3.5 h-9 rounded-full text-xs font-semibold shadow-sm hover:shadow transition border border-[#d8b888] cursor-pointer whitespace-nowrap"
-              title="Click to view full live gold & silver rates"
-            >
-              <TrendingUp className="w-3.5 h-3.5 text-[#6B2C2C]" />
-              <span>Today's Gold Rate</span>
-              <span className="bg-[#6B2C2C] text-[#F3C64F] text-[10px] px-1.5 py-0.5 rounded font-mono font-bold">
-                ₹{goldRates.gold22k.perGram}/g
-              </span>
-            </button>
+            {/* Today's Gold Rate with Smooth Dropdown opening directly below */}
+            <div ref={goldRateContainerRef} className="relative">
+              <button
+                type="button"
+                onClick={() => {
+                  setIsGoldRateDropdownOpen(!isGoldRateDropdownOpen);
+                  setIsSearchDropdownOpen(false);
+                }}
+                className="flex items-center gap-2 bg-[#FAF9F6] hover:bg-[#faebd7] text-[#6B2C2C] px-3.5 h-9 rounded-full text-xs font-semibold shadow-sm hover:shadow transition border border-[#d8b888] cursor-pointer whitespace-nowrap"
+                title="Click to view live gold & silver rates"
+              >
+                <TrendingUp className="w-3.5 h-3.5 text-[#6B2C2C]" />
+                <span>Today's Gold Rate</span>
+                <span className="bg-[#6B2C2C] text-[#F3C64F] text-[10px] px-1.5 py-0.5 rounded font-mono font-bold">
+                  ₹{goldRates.gold22k.perGram}/g
+                </span>
+              </button>
+
+              {/* Smooth Dropdown Opening Directly Below Today's Gold Rate */}
+              <div
+                className={`absolute left-0 sm:left-auto sm:right-0 md:left-0 top-full mt-2 w-[310px] sm:w-[360px] bg-[#FAF9F6] rounded-2xl shadow-2xl border border-[#d8c5aa] z-50 overflow-hidden text-[#3d1f1f] transition-all duration-300 ease-out origin-top ${
+                  isGoldRateDropdownOpen
+                    ? 'opacity-100 scale-100 translate-y-0 pointer-events-auto visible'
+                    : 'opacity-0 scale-95 -translate-y-2 pointer-events-none invisible'
+                }`}
+              >
+                {/* Header */}
+                <div className="bg-[#6B2C2C] text-[#FAF9F6] px-4 py-2.5 flex items-center justify-between border-b border-[#823939]">
+                  <div className="flex items-center gap-2">
+                    <TrendingUp className="w-4 h-4 text-[#F3C64F]" />
+                    <div>
+                      <div className="text-xs font-bold font-serif-luxury text-white">Daily Bullion Rates</div>
+                      <div className="text-[10px] text-[#F3C64F]">{goldRates.lastUpdated}</div>
+                    </div>
+                  </div>
+                  <span className="text-[10px] bg-emerald-950 text-emerald-300 border border-emerald-700/50 px-2 py-0.5 rounded-full font-mono flex items-center gap-1 font-semibold">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> LIVE
+                  </span>
+                </div>
+
+                {/* Content */}
+                <div className="p-3.5 space-y-2.5">
+                  {/* 22K & 24K Grid */}
+                  <div className="grid grid-cols-2 gap-2">
+                    <div className="bg-white p-2.5 rounded-xl border-2 border-[#D4AF37] shadow-xs text-center">
+                      <span className="text-[9px] font-bold text-[#6B2C2C] bg-[#ede1d1] px-1.5 py-0.2 rounded uppercase">
+                        22K (916 BIS)
+                      </span>
+                      <div className="text-base font-extrabold text-[#222] font-mono mt-0.5">
+                        ₹{goldRates.gold22k.perGram.toLocaleString('en-IN')}<span className="text-[10px] font-normal text-gray-500">/g</span>
+                      </div>
+                      <div className="text-[10px] text-gray-500">8g: ₹{goldRates.gold22k.per8Gram.toLocaleString('en-IN')}</div>
+                      <div className="text-[10px] font-semibold text-emerald-700 mt-0.5">
+                        +₹{goldRates.gold22k.change} Today
+                      </div>
+                    </div>
+
+                    <div className="bg-white p-2.5 rounded-xl border border-[#d8c5aa] shadow-xs text-center">
+                      <span className="text-[9px] font-bold text-gray-700 bg-gray-100 px-1.5 py-0.2 rounded uppercase">
+                        24K (999 Pure)
+                      </span>
+                      <div className="text-base font-extrabold text-[#222] font-mono mt-0.5">
+                        ₹{goldRates.gold24k.perGram.toLocaleString('en-IN')}<span className="text-[10px] font-normal text-gray-500">/g</span>
+                      </div>
+                      <div className="text-[10px] text-gray-500">8g: ₹{goldRates.gold24k.per8Gram.toLocaleString('en-IN')}</div>
+                      <div className="text-[10px] font-semibold text-emerald-700 mt-0.5">
+                        +₹{goldRates.gold24k.change} Today
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* 18K and Silver Rows */}
+                  <div className="grid grid-cols-2 gap-2 text-xs">
+                    <div className="bg-white p-2 rounded-lg border border-[#e4d4bd] flex justify-between items-center">
+                      <span className="text-gray-600 font-medium text-[11px]">18K (750):</span>
+                      <span className="font-bold font-mono text-gray-900">₹{goldRates.gold18k.perGram}/g</span>
+                    </div>
+                    <div className="bg-white p-2 rounded-lg border border-[#e4d4bd] flex justify-between items-center">
+                      <span className="text-gray-600 font-medium text-[11px]">Silver (999):</span>
+                      <span className="font-bold font-mono text-gray-900">₹{goldRates.silver999.perGram}/g</span>
+                    </div>
+                  </div>
+
+                  {/* City rates snapshot */}
+                  <div className="bg-white p-2.5 rounded-xl border border-[#e4d4bd] space-y-1">
+                    <div className="text-[10px] font-bold text-[#6B2C2C] uppercase tracking-wider flex items-center justify-between">
+                      <span>Live City Rates (22K 1g)</span>
+                      <span className="text-gray-400 font-normal">Direct Showroom</span>
+                    </div>
+                    <div className="grid grid-cols-3 gap-1 text-[11px]">
+                      <div className="flex justify-between bg-[#FAF9F6] p-1 rounded">
+                        <span className="text-gray-600">Chennai</span>
+                        <span className="font-bold font-mono text-[#6B2C2C]">₹7380</span>
+                      </div>
+                      <div className="flex justify-between bg-[#FAF9F6] p-1 rounded">
+                        <span className="text-gray-600">Coimbatore</span>
+                        <span className="font-bold font-mono text-[#6B2C2C]">₹7380</span>
+                      </div>
+                      <div className="flex justify-between bg-[#FAF9F6] p-1 rounded">
+                        <span className="text-gray-600">Bengaluru</span>
+                        <span className="font-bold font-mono text-[#6B2C2C]">₹7375</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Footer link to full gold rate page */}
+                <div className="p-2.5 bg-[#ede1d1] border-t border-[#d8c5aa] flex justify-between items-center text-xs">
+                  <span className="text-[11px] text-gray-600">100% BIS 916 Assured</span>
+                  <Link
+                    to="/gold-rate"
+                    onClick={() => setIsGoldRateDropdownOpen(false)}
+                    className="text-[#6B2C2C] font-bold flex items-center gap-1 hover:underline text-xs cursor-pointer"
+                  >
+                    <span>Full Calculator &amp; Charts</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </Link>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Center Section: Surya Hallmark Logo (Centered, Image 1 & 4 reference) */}
@@ -429,9 +542,9 @@ export default function Header() {
             <button
               onClick={() => {
                 setMobileMenuOpen(false);
-                setIsGoldRateModalOpen(true);
+                navigate('/gold-rate');
               }}
-              className="bg-[#F3C64F] text-[#6B2C2C] text-xs font-bold px-2.5 py-1 rounded shadow"
+              className="bg-[#F3C64F] text-[#6B2C2C] text-xs font-bold px-2.5 py-1 rounded shadow cursor-pointer"
             >
               View More
             </button>

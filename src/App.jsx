@@ -5,7 +5,6 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import CartDrawer from './components/CartDrawer';
 import WishlistDrawer from './components/WishlistDrawer';
-import GoldRateModal from './components/GoldRateModal';
 import QuickViewModal from './components/QuickViewModal';
 
 // Pages
@@ -62,7 +61,6 @@ export default function App() {
           {/* Interactive Drawers & Overlays */}
           <CartDrawer />
           <WishlistDrawer />
-          <GoldRateModal />
           <QuickViewModal />
 
           {/* Footer */}
