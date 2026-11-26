@@ -378,50 +378,41 @@ export default function Header() {
         </div>
       )}
 
-      {/* Bottom Header Row (Navigation Bar from Image 4): Light Cream / Soft Amber (#FAF9F6 / #FAF9F6) */}
-      <nav className="hidden lg:block bg-[#FAF9F6] border-b border-[#d8c5aa] text-[#422222] shadow-inner">
-        <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-          <div className="flex items-center space-x-1 xl:space-x-4 py-2">
+      {/* Bottom Header Row: Centered Navigation Menu with Maroon Underline on Active Item */}
+      <nav className="hidden lg:block bg-[#FAF9F6] border-b border-[#d8c5aa] text-[#422222] shadow-xs">
+        <div className="max-w-7xl mx-auto px-6 flex items-center justify-center">
+          <div className="flex items-center justify-center space-x-2 xl:space-x-5 py-1.5 flex-nowrap">
             
             {/* Home Icon */}
             <Link
               to="/"
-              className={`p-2 rounded-md hover:text-[#6B2C2C] hover:bg-[#FAF9F6] transition ${
-                location.pathname === '/' ? 'text-[#6B2C2C] font-bold bg-[#FAF9F6]' : 'text-[#5c3737]'
+              className={`p-2 transition relative flex items-center justify-center whitespace-nowrap ${
+                location.pathname === '/' 
+                  ? 'text-[#6B2C2C] font-bold border-b-2 border-[#6B2C2C] -mb-[1px]' 
+                  : 'text-[#5c3737] hover:text-[#6B2C2C] hover:border-b-2 hover:border-[#6B2C2C]/30 -mb-[1px]'
               }`}
               title="Home"
             >
               <Home className="w-4 h-4" />
             </Link>
 
-            {/* Category Links matching Image 4 */}
+            {/* Category Links: Centered with Maroon Active Underline */}
             {navLinks.map((item) => {
               const isActive = location.pathname === item.path;
               return (
                 <Link
                   key={item.label}
                   to={item.path}
-                  className={`text-xs xl:text-sm font-semibold tracking-wide px-3 py-1.5 rounded transition ${
+                  className={`text-xs xl:text-sm font-semibold tracking-wide px-3 py-2 transition whitespace-nowrap ${
                     isActive 
-                      ? 'text-[#6B2C2C] bg-[#FAF9F6] border-b-2 border-[#6B2C2C]' 
-                      : 'text-[#4a2626] hover:text-[#6B2C2C] hover:bg-[#e8d8c2]'
+                      ? 'text-[#6B2C2C] font-bold border-b-2 border-[#6B2C2C] -mb-[1px]' 
+                      : 'text-[#4a2626] hover:text-[#6B2C2C] hover:border-b-2 hover:border-[#6B2C2C]/30 -mb-[1px]'
                   }`}
                 >
                   {item.label}
                 </Link>
               );
             })}
-          </div>
-
-          {/* Right Highlighted Badge button: Craftsmanship (Image 4 reference) */}
-          <div className="py-1.5">
-            <Link
-              to="/craftsmanship"
-              className="inline-flex items-center gap-1.5 bg-[#0e1d3b] hover:bg-[#152a55] text-white px-4 py-1.5 rounded-full text-xs font-bold tracking-wide shadow-sm hover:shadow transition border border-[#233f75]"
-            >
-              <Sparkles className="w-3.5 h-3.5 text-[#F3C64F]" />
-              <span>Craftsmanship</span>
-            </Link>
           </div>
         </div>
       </nav>
@@ -465,16 +456,23 @@ export default function Header() {
 
           <div className="border-t border-[#d8c5aa] pt-2 space-y-1">
             <div className="text-[11px] font-bold text-[#754d4d] uppercase tracking-wider px-2 pt-1">Collections</div>
-            {navLinks.map((item) => (
-              <Link
-                key={item.label}
-                to={item.path}
-                onClick={() => setMobileMenuOpen(false)}
-                className="block px-3 py-2 text-sm font-semibold text-[#422222] hover:bg-[#FAF9F6] rounded transition"
-              >
-                {item.label}
-              </Link>
-            ))}
+            {navLinks.map((item) => {
+              const isActive = location.pathname === item.path;
+              return (
+                <Link
+                  key={item.label}
+                  to={item.path}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={`block px-3 py-2 text-sm font-semibold rounded transition ${
+                    isActive 
+                      ? 'text-[#6B2C2C] bg-[#ebdccb] border-l-4 border-[#6B2C2C] font-bold' 
+                      : 'text-[#422222] hover:bg-[#ede1d1]'
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
           </div>
 
           <div className="border-t border-[#d8c5aa] pt-2 space-y-1 text-xs">
