@@ -393,11 +393,11 @@ export default function Header() {
 
           {/* Center Section: Surya Hallmark Logo (Centered, Image 1 & 4 reference) */}
           <div className="flex-shrink-0 flex items-center justify-center text-center px-2">
-            <Link to="/" className="group inline-flex flex-col items-center">
+            <Link to="/" className="inline-flex flex-col items-center">
               <img
                 src="/logo.png"
                 alt="Surya Hallmark Jewellers - Golden Relations, Trusted Since 1964"
-                className="h-14 sm:h-16 md:h-20 w-auto object-contain filter drop-shadow-[0_2px_4px_rgba(0,0,0,0.35)] group-hover:scale-102 transition duration-200"
+                className="h-14 sm:h-16 md:h-20 w-auto object-contain filter drop-shadow-[0_2px_4px_rgba(0,0,0,0.35)]"
               />
             </Link>
           </div>
@@ -493,16 +493,16 @@ export default function Header() {
 
       {/* Bottom Header Row: Centered Navigation Menu with Maroon Underline on Active Item */}
       <nav className="hidden lg:block bg-[#FAF9F6] border-b border-[#d8c5aa] text-[#422222] shadow-xs">
-        <div className="max-w-7xl mx-auto px-6 flex items-center justify-center">
-          <div className="flex items-center justify-center space-x-2 xl:space-x-5 py-1.5 flex-nowrap">
+        <div className="max-w-7xl mx-auto px-6 h-11 flex items-center justify-center">
+          <div className="flex items-center justify-center space-x-2 xl:space-x-5 h-full flex-nowrap">
             
             {/* Home Icon */}
             <Link
               to="/"
-              className={`p-2 transition relative flex items-center justify-center whitespace-nowrap ${
+              className={`h-full px-3 flex items-center justify-center whitespace-nowrap border-b-2 transition-colors duration-150 ${
                 location.pathname === '/' 
-                  ? 'text-[#6B2C2C] font-bold border-b-2 border-[#6B2C2C] -mb-[1px]' 
-                  : 'text-[#5c3737] hover:text-[#6B2C2C] hover:border-b-2 hover:border-[#6B2C2C]/30 -mb-[1px]'
+                  ? 'text-[#6B2C2C] font-bold border-[#6B2C2C]' 
+                  : 'text-[#5c3737] border-transparent hover:text-[#6B2C2C] hover:border-[#6B2C2C]/30'
               }`}
               title="Home"
             >
@@ -516,10 +516,10 @@ export default function Header() {
                 <Link
                   key={item.label}
                   to={item.path}
-                  className={`text-xs xl:text-sm font-semibold tracking-wide px-3 py-2 transition whitespace-nowrap ${
+                  className={`h-full px-3 flex items-center text-xs xl:text-sm font-semibold tracking-wide whitespace-nowrap border-b-2 transition-colors duration-150 ${
                     isActive 
-                      ? 'text-[#6B2C2C] font-bold border-b-2 border-[#6B2C2C] -mb-[1px]' 
-                      : 'text-[#4a2626] hover:text-[#6B2C2C] hover:border-b-2 hover:border-[#6B2C2C]/30 -mb-[1px]'
+                      ? 'text-[#6B2C2C] font-bold border-[#6B2C2C]' 
+                      : 'text-[#4a2626] border-transparent hover:text-[#6B2C2C] hover:border-[#6B2C2C]/30'
                   }`}
                 >
                   {item.label}
