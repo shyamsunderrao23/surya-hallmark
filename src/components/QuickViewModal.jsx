@@ -78,7 +78,7 @@ export default function QuickViewModal() {
             </div>
 
             {/* Specs Mini Table */}
-            <div className="bg-[#ede3d4] p-3 rounded-xl border border-[#d8c5aa] text-xs space-y-1">
+            <div className="bg-[#FFFDD0] p-3 rounded-xl border border-[#d8c5aa] text-xs space-y-1">
               <div className="flex justify-between">
                 <span className="text-gray-600">Gross Weight:</span>
                 <span className="font-semibold text-gray-900">{item.grossWeight} grams</span>

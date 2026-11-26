@@ -80,7 +80,7 @@ export default function CatalogPage() {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-10 space-y-8">
       
       {/* Category Hero / Title Banner */}
-      <div className="bg-[#ede3d4] border border-[#d8c5aa] rounded-2xl p-6 sm:p-8 relative overflow-hidden">
+      <div className="bg-[#FFFDD0] border border-[#d8c5aa] rounded-2xl p-6 sm:p-8 relative overflow-hidden">
         <div className="max-w-2xl space-y-2">
           <div className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#8b4747]">
             <Sparkles className="w-3.5 h-3.5 text-[#D4AF37]" />
@@ -127,7 +127,7 @@ export default function CatalogPage() {
                   className={`w-full text-left px-3 py-1.5 rounded-lg text-xs font-medium transition ${
                     selectedCategory === 'all'
                       ? 'bg-[#6B2C2C] text-white font-bold'
-                      : 'text-gray-700 hover:bg-[#ede3d4]'
+                      : 'text-gray-700 hover:bg-[#FFFDD0]'
                   }`}
                 >
                   All Categories ({products.length})
@@ -139,7 +139,7 @@ export default function CatalogPage() {
                     className={`w-full text-left px-3 py-1.5 rounded-lg text-xs font-medium transition flex justify-between items-center ${
                       selectedCategory === cat.id
                         ? 'bg-[#6B2C2C] text-white font-bold'
-                        : 'text-gray-700 hover:bg-[#ede3d4]'
+                        : 'text-gray-700 hover:bg-[#FFFDD0]'
                     }`}
                   >
                     <span>{cat.name}</span>
@@ -168,7 +168,7 @@ export default function CatalogPage() {
                     onClick={() => setSelectedMetal(m.val)}
                     className={`w-full text-left px-3 py-1.5 rounded-lg text-xs font-medium transition flex items-center justify-between ${
                       selectedMetal === m.val
-                        ? 'bg-[#ede3d4] text-[#6B2C2C] font-bold border border-[#d8c5aa]'
+                        ? 'bg-[#FFFDD0] text-[#6B2C2C] font-bold border border-[#d8c5aa]'
                         : 'text-gray-600 hover:bg-[#faf6f0]'
                     }`}
                   >
@@ -203,7 +203,7 @@ export default function CatalogPage() {
             </div>
 
             {/* Hallmark Assurance Callout */}
-            <div className="bg-[#ede3d4] p-3 rounded-xl border border-[#d8c5aa] text-[11px] text-[#4a2424] space-y-1">
+            <div className="bg-[#FFFDD0] p-3 rounded-xl border border-[#d8c5aa] text-[11px] text-[#4a2424] space-y-1">
               <div className="font-bold flex items-center gap-1 text-[#6B2C2C]">
                 <ShieldCheck className="w-3.5 h-3.5" /> 100% BIS Hallmarked
               </div>
@@ -227,7 +227,7 @@ export default function CatalogPage() {
               {/* Mobile Filter Trigger Button */}
               <button
                 onClick={() => setMobileFilterOpen(true)}
-                className="lg:hidden flex items-center gap-1.5 bg-[#ede3d4] text-[#6B2C2C] px-3 py-1.5 rounded-lg text-xs font-semibold"
+                className="lg:hidden flex items-center gap-1.5 bg-[#FFFDD0] text-[#6B2C2C] px-3 py-1.5 rounded-lg text-xs font-semibold"
               >
                 <Filter className="w-3.5 h-3.5" /> Filters
               </button>
@@ -238,7 +238,7 @@ export default function CatalogPage() {
                 <select
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value)}
-                  className="bg-[#ede3d4] border border-[#d8c5aa] text-[#3d1f1f] text-xs font-semibold rounded-lg px-2.5 py-1.5 focus:ring-1 focus:ring-[#6B2C2C]"
+                  className="bg-[#FFFDD0] border border-[#d8c5aa] text-[#3d1f1f] text-xs font-semibold rounded-lg px-2.5 py-1.5 focus:ring-1 focus:ring-[#6B2C2C]"
                 >
                   <option value="featured">Featured Heirlooms</option>
                   <option value="price-low">Price: Low to High</option>
@@ -278,7 +278,7 @@ export default function CatalogPage() {
           {/* Products Grid */}
           {filteredProducts.length === 0 ? (
             <div className="bg-white rounded-2xl border border-[#d8c5aa] p-12 text-center space-y-4">
-              <div className="w-16 h-16 bg-[#ede3d4] text-[#6B2C2C] rounded-full flex items-center justify-center mx-auto">
+              <div className="w-16 h-16 bg-[#FFFDD0] text-[#6B2C2C] rounded-full flex items-center justify-center mx-auto">
                 <Search className="w-8 h-8 opacity-60" />
               </div>
               <h3 className="text-base font-bold text-gray-800">No matching jewellery items</h3>

@@ -102,7 +102,7 @@ export default function GoldRateModal() {
           </div>
 
           {/* Quick Value Estimator */}
-          <div className="bg-[#ede3d4] p-4 rounded-xl border border-[#d8c5aa]">
+          <div className="bg-[#FFFDD0] p-4 rounded-xl border border-[#d8c5aa]">
             <div className="flex items-center gap-2 mb-3">
               <Calculator className="w-4 h-4 text-[#6B2C2C]" />
               <h4 className="text-sm font-bold text-[#422222]">Instant Jewellery Cost Estimator</h4>
@@ -156,7 +156,7 @@ export default function GoldRateModal() {
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
               {cityGoldRates.map((c) => (
-                <div key={c.city} className="bg-white p-2 rounded-lg border border-[#e4d4bd] flex justify-between items-center text-xs">
+                <div key={c.city} className="bg-white p-2 rounded-lg border border-[#FFFDD0] flex justify-between items-center text-xs">
                   <span className="font-semibold text-gray-700">{c.city}</span>
                   <span className="font-bold text-[#6B2C2C] font-mono">₹{c.rate22k}</span>
                 </div>
@@ -175,7 +175,7 @@ export default function GoldRateModal() {
         </div>
 
         {/* Footer */}
-        <div className="p-4 bg-[#ede3d4] border-t border-[#d8c5aa] flex items-center justify-between">
+        <div className="p-4 bg-[#FFFDD0] border-t border-[#d8c5aa] flex items-center justify-between">
           <Link
             to="/gold-rate"
             onClick={() => setIsGoldRateModalOpen(false)}

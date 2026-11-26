@@ -132,7 +132,7 @@ export default function HomePage() {
 
       {/* Live Gold Rate Ribbon Strip */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 -mt-8 sm:-mt-10 relative z-20">
-        <div className="bg-[#ede3d4] border-2 border-[#D4AF37] rounded-2xl shadow-xl p-4 sm:p-5 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="bg-[#FFFDD0] border-2 border-[#D4AF37] rounded-2xl shadow-xl p-4 sm:p-5 flex flex-col md:flex-row items-center justify-between gap-4">
           
           <div className="flex items-center gap-3">
             <div className="w-12 h-12 rounded-xl bg-[#6B2C2C] text-[#F3C64F] flex items-center justify-center flex-shrink-0 shadow">
@@ -355,7 +355,7 @@ export default function HomePage() {
       </section>
 
       {/* The Surya Hallmark 1964 Heritage & BIS Hallmark Story */}
-      <section className="bg-[#ede3d4] border-y border-[#d8c5aa] py-16 px-4 sm:px-6">
+      <section className="bg-[#FFFDD0] border-y border-[#d8c5aa] py-16 px-4 sm:px-6">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           
           <div className="lg:col-span-6 space-y-4">

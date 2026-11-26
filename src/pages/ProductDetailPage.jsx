@@ -147,7 +147,7 @@ export default function ProductDetailPage() {
           </div>
 
           {/* Price Tag */}
-          <div className="bg-[#ede3d4] p-4 rounded-2xl border border-[#d8c5aa] space-y-2">
+          <div className="bg-[#FFFDD0] p-4 rounded-2xl border border-[#d8c5aa] space-y-2">
             <div className="flex items-baseline gap-3">
               <span className="text-3xl font-extrabold text-[#6B2C2C] font-mono">
                 ₹{product.price.toLocaleString('en-IN')}
@@ -208,7 +208,7 @@ export default function ProductDetailPage() {
                   className={`py-2 px-3 text-xs font-semibold rounded-xl border transition ${
                     selectedSize === s
                       ? 'bg-[#6B2C2C] text-white border-[#6B2C2C]'
-                      : 'bg-white text-gray-700 border-[#d8c5aa] hover:bg-[#ede3d4]'
+                      : 'bg-white text-gray-700 border-[#d8c5aa] hover:bg-[#FFFDD0]'
                   }`}
                 >
                   {s}

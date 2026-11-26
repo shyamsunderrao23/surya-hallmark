@@ -214,16 +214,16 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Bottom Header Row (Navigation Bar from Image 4): Light Cream / Soft Amber (#FFFDD0 / #F0E3D0) */}
-      <nav className="hidden lg:block bg-[#F0E3D0] border-b border-[#d8c5aa] text-[#422222] shadow-inner">
+      {/* Bottom Header Row (Navigation Bar from Image 4): Light Cream / Soft Amber (#FFFDD0 / #FFFDD0) */}
+      <nav className="hidden lg:block bg-[#FFFDD0] border-b border-[#d8c5aa] text-[#422222] shadow-inner">
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
           <div className="flex items-center space-x-1 xl:space-x-4 py-2">
             
             {/* Home Icon */}
             <Link
               to="/"
-              className={`p-2 rounded-md hover:text-[#6B2C2C] hover:bg-[#e4d4bd] transition ${
-                location.pathname === '/' ? 'text-[#6B2C2C] font-bold bg-[#e4d4bd]' : 'text-[#5c3737]'
+              className={`p-2 rounded-md hover:text-[#6B2C2C] hover:bg-[#FFFDD0] transition ${
+                location.pathname === '/' ? 'text-[#6B2C2C] font-bold bg-[#FFFDD0]' : 'text-[#5c3737]'
               }`}
               title="Home"
             >
@@ -239,7 +239,7 @@ export default function Header() {
                   to={item.path}
                   className={`text-xs xl:text-sm font-semibold tracking-wide px-3 py-1.5 rounded transition ${
                     isActive 
-                      ? 'text-[#6B2C2C] bg-[#e4d4bd] border-b-2 border-[#6B2C2C]' 
+                      ? 'text-[#6B2C2C] bg-[#FFFDD0] border-b-2 border-[#6B2C2C]' 
                       : 'text-[#4a2626] hover:text-[#6B2C2C] hover:bg-[#e8d8c2]'
                   }`}
                 >
@@ -264,7 +264,7 @@ export default function Header() {
 
       {/* Mobile Drawer Navigation */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-[#F0E3D0] border-b border-[#d4be9f] text-[#3d1f1f] px-4 py-3 space-y-2 shadow-xl animate-fadeIn">
+        <div className="lg:hidden bg-[#FFFDD0] border-b border-[#d4be9f] text-[#3d1f1f] px-4 py-3 space-y-2 shadow-xl animate-fadeIn">
           {/* Quick Gold Rate on Mobile */}
           <div className="bg-[#6B2C2C] text-[#FFFDD0] p-3 rounded-lg flex items-center justify-between">
             <div>
@@ -286,7 +286,7 @@ export default function Header() {
             <Link
               to="/"
               onClick={() => setMobileMenuOpen(false)}
-              className="flex items-center gap-2 p-2.5 bg-[#e4d4bd] rounded-lg text-xs font-bold text-[#6B2C2C]"
+              className="flex items-center gap-2 p-2.5 bg-[#FFFDD0] rounded-lg text-xs font-bold text-[#6B2C2C]"
             >
               <Home className="w-4 h-4" /> Home
             </Link>
@@ -306,7 +306,7 @@ export default function Header() {
                 key={item.label}
                 to={item.path}
                 onClick={() => setMobileMenuOpen(false)}
-                className="block px-3 py-2 text-sm font-semibold text-[#422222] hover:bg-[#e4d4bd] rounded transition"
+                className="block px-3 py-2 text-sm font-semibold text-[#422222] hover:bg-[#FFFDD0] rounded transition"
               >
                 {item.label}
               </Link>
@@ -317,21 +317,21 @@ export default function Header() {
             <Link
               to="/stores"
               onClick={() => setMobileMenuOpen(false)}
-              className="flex items-center gap-2 px-3 py-2 hover:bg-[#e4d4bd] rounded font-medium"
+              className="flex items-center gap-2 px-3 py-2 hover:bg-[#FFFDD0] rounded font-medium"
             >
               <MapPin className="w-4 h-4 text-[#6B2C2C]" /> Our Showrooms
             </Link>
             <Link
               to="/schemes"
               onClick={() => setMobileMenuOpen(false)}
-              className="flex items-center gap-2 px-3 py-2 hover:bg-[#e4d4bd] rounded font-medium"
+              className="flex items-center gap-2 px-3 py-2 hover:bg-[#FFFDD0] rounded font-medium"
             >
               <Calendar className="w-4 h-4 text-[#6B2C2C]" /> Swarna Nidhi Savings Scheme
             </Link>
             <Link
               to="/contact"
               onClick={() => setMobileMenuOpen(false)}
-              className="flex items-center gap-2 px-3 py-2 hover:bg-[#e4d4bd] rounded font-medium"
+              className="flex items-center gap-2 px-3 py-2 hover:bg-[#FFFDD0] rounded font-medium"
             >
               <Mail className="w-4 h-4 text-[#6B2C2C]" /> Contact &amp; Support
             </Link>

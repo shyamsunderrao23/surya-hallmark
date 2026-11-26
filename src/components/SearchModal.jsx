@@ -71,7 +71,7 @@ export default function SearchModal() {
                 <button
                   key={cat.id}
                   onClick={() => handleSelectCategory(cat.id)}
-                  className="bg-white hover:bg-[#ede3d4] text-[#422222] border border-[#d8c5aa] px-3 py-1 rounded-full text-xs font-medium transition"
+                  className="bg-white hover:bg-[#FFFDD0] text-[#422222] border border-[#d8c5aa] px-3 py-1 rounded-full text-xs font-medium transition"
                 >
                   {cat.name}
                 </button>
@@ -95,7 +95,7 @@ export default function SearchModal() {
                   <div
                     key={item.id}
                     onClick={() => handleSelectProduct(item.id)}
-                    className="flex gap-3 bg-white p-2.5 rounded-xl border border-[#e4d4bd] hover:border-[#6B2C2C] shadow-xs cursor-pointer transition group"
+                    className="flex gap-3 bg-white p-2.5 rounded-xl border border-[#FFFDD0] hover:border-[#6B2C2C] shadow-xs cursor-pointer transition group"
                   >
                     <img
                       src={item.image}
@@ -120,7 +120,7 @@ export default function SearchModal() {
         </div>
 
         {/* Footer */}
-        <div className="p-3 bg-[#ede3d4] border-t border-[#d8c5aa] flex justify-between items-center text-xs">
+        <div className="p-3 bg-[#FFFDD0] border-t border-[#d8c5aa] flex justify-between items-center text-xs">
           <span className="text-gray-600">All prices computed with live daily bullion rates</span>
           <button
             onClick={() => {

@@ -41,7 +41,7 @@ export default function WishlistDrawer() {
           <div className="flex-1 overflow-y-auto p-4 space-y-3">
             {wishlistProducts.length === 0 ? (
               <div className="text-center py-16 space-y-3">
-                <div className="w-16 h-16 bg-[#ede3d4] text-[#6B2C2C] rounded-full flex items-center justify-center mx-auto">
+                <div className="w-16 h-16 bg-[#FFFDD0] text-[#6B2C2C] rounded-full flex items-center justify-center mx-auto">
                   <Heart className="w-8 h-8 opacity-60" />
                 </div>
                 <p className="text-sm font-semibold text-gray-700">Your wishlist is empty</p>
@@ -103,7 +103,7 @@ export default function WishlistDrawer() {
 
           {/* Footer */}
           {wishlistProducts.length > 0 && (
-            <div className="p-4 bg-[#ede3d4] border-t border-[#d8c5aa]">
+            <div className="p-4 bg-[#FFFDD0] border-t border-[#d8c5aa]">
               <button
                 onClick={() => {
                   wishlistProducts.forEach((item) => addToCart(item, 1));

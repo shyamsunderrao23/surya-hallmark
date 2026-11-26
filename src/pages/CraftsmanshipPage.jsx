@@ -58,7 +58,7 @@ export default function CraftsmanshipPage() {
       {/* Visual Heritage Grid */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div className="bg-white rounded-2xl border border-[#d8c5aa] p-6 text-center space-y-3 shadow-xs">
-          <div className="w-14 h-14 bg-[#ede3d4] text-[#6B2C2C] rounded-2xl flex items-center justify-center mx-auto">
+          <div className="w-14 h-14 bg-[#FFFDD0] text-[#6B2C2C] rounded-2xl flex items-center justify-center mx-auto">
             <Hammer className="w-7 h-7" />
           </div>
           <h3 className="font-serif-luxury font-bold text-base text-[#381c1c]">Temple Nakshi Work</h3>
@@ -68,7 +68,7 @@ export default function CraftsmanshipPage() {
         </div>
 
         <div className="bg-white rounded-2xl border border-[#d8c5aa] p-6 text-center space-y-3 shadow-xs">
-          <div className="w-14 h-14 bg-[#ede3d4] text-[#6B2C2C] rounded-2xl flex items-center justify-center mx-auto">
+          <div className="w-14 h-14 bg-[#FFFDD0] text-[#6B2C2C] rounded-2xl flex items-center justify-center mx-auto">
             <Gem className="w-7 h-7" />
           </div>
           <h3 className="font-serif-luxury font-bold text-base text-[#381c1c]">Uncut Polki &amp; Kundan</h3>
@@ -78,7 +78,7 @@ export default function CraftsmanshipPage() {
         </div>
 
         <div className="bg-white rounded-2xl border border-[#d8c5aa] p-6 text-center space-y-3 shadow-xs">
-          <div className="w-14 h-14 bg-[#ede3d4] text-[#6B2C2C] rounded-2xl flex items-center justify-center mx-auto">
+          <div className="w-14 h-14 bg-[#FFFDD0] text-[#6B2C2C] rounded-2xl flex items-center justify-center mx-auto">
             <ShieldCheck className="w-7 h-7" />
           </div>
           <h3 className="font-serif-luxury font-bold text-base text-[#381c1c]">100% BIS 916 HUID</h3>
@@ -89,7 +89,7 @@ export default function CraftsmanshipPage() {
       </div>
 
       {/* 4-Step Hallmarking Process */}
-      <div className="bg-[#ede3d4] rounded-3xl p-6 sm:p-10 border border-[#d8c5aa] space-y-8">
+      <div className="bg-[#FFFDD0] rounded-3xl p-6 sm:p-10 border border-[#d8c5aa] space-y-8">
         <div className="text-center max-w-2xl mx-auto space-y-2">
           <h2 className="text-2xl sm:text-3xl font-bold font-serif-luxury text-[#381c1c]">
             The 4-Stage Hallmarking &amp; Quality Rigor

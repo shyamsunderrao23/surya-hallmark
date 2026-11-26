@@ -70,7 +70,7 @@ export default function CartDrawer() {
           </div>
 
           {/* Insured Delivery Banner */}
-          <div className="bg-[#ede3d4] px-4 py-2 border-b border-[#d8c5aa] flex items-center gap-2 text-xs text-[#522929]">
+          <div className="bg-[#FFFDD0] px-4 py-2 border-b border-[#d8c5aa] flex items-center gap-2 text-xs text-[#522929]">
             <ShieldCheck className="w-4 h-4 text-emerald-700 flex-shrink-0" />
             <span>100% Insured Transit by Sequel Logistics with Doorstep ID Verification</span>
           </div>
@@ -88,7 +88,7 @@ export default function CartDrawer() {
                 <p className="text-xs text-gray-600 max-w-xs mx-auto">
                   Thank you for placing your trust in Surya Hallmark Jewellers since 1964. Your certified hallmark package is being prepared with tamper-proof security seals.
                 </p>
-                <div className="bg-white p-3 rounded-lg border border-[#e4d4bd] text-xs font-mono text-left max-w-xs mx-auto space-y-1">
+                <div className="bg-white p-3 rounded-lg border border-[#FFFDD0] text-xs font-mono text-left max-w-xs mx-auto space-y-1">
                   <div>Order ID: <span className="font-bold text-[#6B2C2C]">SH-2026-98124</span></div>
                   <div>Insured Value: <span className="font-bold">₹{finalPayable.toLocaleString('en-IN')}</span></div>
                   <div>Estimated Delivery: <span className="font-bold text-emerald-700">Within 48 Hours</span></div>
@@ -105,7 +105,7 @@ export default function CartDrawer() {
               </div>
             ) : cart.length === 0 ? (
               <div className="text-center py-16 space-y-3">
-                <div className="w-16 h-16 bg-[#ede3d4] text-[#6B2C2C] rounded-full flex items-center justify-center mx-auto">
+                <div className="w-16 h-16 bg-[#FFFDD0] text-[#6B2C2C] rounded-full flex items-center justify-center mx-auto">
                   <ShoppingBag className="w-8 h-8 opacity-60" />
                 </div>
                 <p className="text-sm font-semibold text-gray-700">Your bag is currently empty</p>
@@ -203,7 +203,7 @@ export default function CartDrawer() {
 
           {/* Footer Billing Details */}
           {!orderPlaced && cart.length > 0 && (
-            <div className="p-4 bg-[#ede3d4] border-t border-[#d8c5aa] space-y-3">
+            <div className="p-4 bg-[#FFFDD0] border-t border-[#d8c5aa] space-y-3">
               <div className="space-y-1.5 text-xs text-gray-700">
                 <div className="flex justify-between">
                   <span>Gross Jewellery Subtotal</span>
