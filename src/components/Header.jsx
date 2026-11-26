@@ -96,19 +96,22 @@ export default function Header() {
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
 
-            {/* Search Input Box */}
-            <form onSubmit={handleSearchSubmit} className="relative flex-1 hidden sm:flex items-center">
+            {/* Search Input Box with rounded border radius */}
+            <form 
+              onSubmit={handleSearchSubmit} 
+              className="relative flex-1 hidden sm:flex items-center bg-[#562222] border border-[#8f4444] rounded-full overflow-hidden focus-within:ring-1 focus-within:ring-[#F3C64F] focus-within:border-[#F3C64F] transition shadow-inner h-9"
+            >
               <input
                 type="text"
                 placeholder="Type to search.."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 onFocus={() => setIsSearchOpen(true)}
-                className="w-full bg-[#562222] border border-[#8f4444] text-[#F8F1E7] placeholder-[#e8cece]/70 text-xs sm:text-sm rounded-l-md px-3.5 py-2 focus:outline-none focus:ring-1 focus:ring-[#F3C64F] focus:border-[#F3C64F] transition"
+                className="w-full bg-transparent text-[#F8F1E7] placeholder-[#e8cece]/70 text-xs sm:text-sm pl-4 pr-2 py-1.5 focus:outline-none"
               />
               <button
                 type="submit"
-                className="bg-[#3d1616] hover:bg-[#2e1010] text-[#F8F1E7] px-3.5 py-2 rounded-r-md border-y border-r border-[#8f4444] transition flex items-center justify-center cursor-pointer"
+                className="bg-[#3d1616] hover:bg-[#2e1010] text-[#F8F1E7] px-3.5 h-full transition flex items-center justify-center cursor-pointer border-l border-[#8f4444]"
                 aria-label="Search"
               >
                 <Search className="w-4 h-4 text-[#F3C64F]" />
@@ -119,7 +122,7 @@ export default function Header() {
             <button
               type="button"
               onClick={() => setIsGoldRateModalOpen(true)}
-              className="flex items-center gap-2 bg-[#F8F1E7] hover:bg-[#faebd7] text-[#6B2C2C] px-3 py-1.5 rounded-full text-xs font-semibold shadow-sm hover:shadow transition border border-[#d8b888] cursor-pointer whitespace-nowrap"
+              className="flex items-center gap-2 bg-[#F8F1E7] hover:bg-[#faebd7] text-[#6B2C2C] px-3.5 h-9 rounded-full text-xs font-semibold shadow-sm hover:shadow transition border border-[#d8b888] cursor-pointer whitespace-nowrap"
               title="Click to view full live gold & silver rates"
             >
               <TrendingUp className="w-3.5 h-3.5 text-[#6B2C2C]" />
