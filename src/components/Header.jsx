@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { 
   Search, 
@@ -14,10 +14,10 @@ import {
   Sparkles, 
   ChevronDown,
   Award,
-  PhoneCall,
-  Clock
+  ArrowRight
 } from 'lucide-react';
 import { useShop } from '../context/ShopContext';
+import { products, categories } from '../data/products';
 
 export default function Header() {
   const navigate = useNavigate();
@@ -28,23 +28,62 @@ export default function Header() {
     setIsCartOpen, 
     setIsWishlistOpen, 
     setIsGoldRateModalOpen, 
-    setIsSearchOpen,
     searchQuery,
     setSearchQuery,
     goldRates
   } = useShop();
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState(null);
+  const [mobileSearchOpen, setMobileSearchOpen] = useState(false);
+  const [isSearchDropdownOpen, setIsSearchDropdownOpen] = useState(false);
+  const searchContainerRef = useRef(null);
+
+  // Close search dropdown on click outside
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (searchContainerRef.current && !searchContainerRef.current.contains(event.target)) {
+        setIsSearchDropdownOpen(false);
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  // Close dropdown on route change
+  useEffect(() => {
+    setIsSearchDropdownOpen(false);
+    setMobileSearchOpen(false);
+  }, [location.pathname]);
 
   const handleSearchSubmit = (e) => {
     e.preventDefault();
     if (searchQuery.trim()) {
+      setIsSearchDropdownOpen(false);
       navigate(`/collections?search=${encodeURIComponent(searchQuery.trim())}`);
-    } else {
-      setIsSearchOpen(true);
     }
   };
+
+  const handleSelectProduct = (productId) => {
+    setIsSearchDropdownOpen(false);
+    navigate(`/product/${productId}`);
+  };
+
+  const handleSelectCategory = (categoryId) => {
+    setIsSearchDropdownOpen(false);
+    navigate(`/category/${categoryId}`);
+  };
+
+  const matchingProducts = searchQuery.trim()
+    ? products.filter(
+        (p) =>
+          p.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          p.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          p.subcategory?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          p.metal.toLowerCase().includes(searchQuery.toLowerCase())
+      ).slice(0, 4)
+    : products.slice(0, 3);
+
+  const trendingKeywords = ['Antique Haram', 'Temple Choker', '24K Gold Coin', 'Solitaire Ring', 'Silver Pooja Thali'];
 
   const navLinks = [
     { label: 'Gold', path: '/category/gold' },
@@ -76,27 +115,153 @@ export default function Header() {
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
 
-            {/* Search Input Box with rounded border radius */}
-            <form 
-              onSubmit={handleSearchSubmit} 
-              className="relative flex-1 hidden sm:flex items-center bg-[#562222] border border-[#8f4444] rounded-full overflow-hidden focus-within:ring-1 focus-within:ring-[#F3C64F] focus-within:border-[#F3C64F] transition shadow-inner h-9"
-            >
-              <input
-                type="text"
-                placeholder="Type to search.."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                onFocus={() => setIsSearchOpen(true)}
-                className="w-full bg-transparent text-[#FAF9F6] placeholder-[#e8cece]/70 text-xs sm:text-sm pl-4 pr-2 py-1.5 focus:outline-none"
-              />
-              <button
-                type="submit"
-                className="bg-[#3d1616] hover:bg-[#2e1010] text-[#FAF9F6] px-3.5 h-full transition flex items-center justify-center cursor-pointer border-l border-[#8f4444]"
-                aria-label="Search"
+            {/* Search Container with Smooth Dropdown anchored directly below */}
+            <div ref={searchContainerRef} className="relative flex-1 hidden sm:block">
+              <form 
+                onSubmit={handleSearchSubmit} 
+                className="relative flex items-center bg-[#562222] border border-[#8f4444] rounded-full overflow-hidden focus-within:ring-1 focus-within:ring-[#F3C64F] focus-within:border-[#F3C64F] transition shadow-inner h-9"
               >
-                <Search className="w-4 h-4 text-[#F3C64F]" />
-              </button>
-            </form>
+                <input
+                  type="text"
+                  placeholder="Type to search.."
+                  value={searchQuery}
+                  onChange={(e) => {
+                    setSearchQuery(e.target.value);
+                    if (!isSearchDropdownOpen) setIsSearchDropdownOpen(true);
+                  }}
+                  onFocus={() => setIsSearchDropdownOpen(true)}
+                  onClick={() => setIsSearchDropdownOpen(true)}
+                  className="w-full bg-transparent text-[#FAF9F6] placeholder-[#e8cece]/70 text-xs sm:text-sm pl-4 pr-2 py-1.5 focus:outline-none"
+                />
+                {searchQuery && (
+                  <button
+                    type="button"
+                    onClick={() => setSearchQuery('')}
+                    className="text-[#e8cece] hover:text-white px-1 text-xs"
+                    title="Clear"
+                  >
+                    <X className="w-3.5 h-3.5" />
+                  </button>
+                )}
+                <button
+                  type="submit"
+                  className="bg-[#3d1616] hover:bg-[#2e1010] text-[#FAF9F6] px-3.5 h-full transition flex items-center justify-center cursor-pointer border-l border-[#8f4444]"
+                  aria-label="Search"
+                >
+                  <Search className="w-4 h-4 text-[#F3C64F]" />
+                </button>
+              </form>
+
+              {/* Smooth Dropdown Opening Directly Below the Search Bar */}
+              <div
+                className={`absolute left-0 top-full mt-2 w-[340px] sm:w-[420px] md:w-[460px] bg-[#FAF9F6] rounded-2xl shadow-2xl border border-[#d8c5aa] z-50 overflow-hidden text-[#3d1f1f] transition-all duration-300 ease-out origin-top ${
+                  isSearchDropdownOpen
+                    ? 'opacity-100 scale-100 translate-y-0 pointer-events-auto visible'
+                    : 'opacity-0 scale-95 -translate-y-2 pointer-events-none invisible'
+                }`}
+              >
+                <div className="p-4 max-h-[70vh] overflow-y-auto space-y-3.5">
+                  
+                  {/* Department shortcuts */}
+                  <div>
+                    <div className="text-[10px] font-bold uppercase tracking-wider text-[#734b4b] mb-1.5 flex items-center gap-1">
+                      <Sparkles className="w-3 h-3 text-[#D4AF37]" /> Popular Departments
+                    </div>
+                    <div className="flex flex-wrap gap-1">
+                      {categories.slice(0, 6).map((cat) => (
+                        <button
+                          key={cat.id}
+                          type="button"
+                          onClick={() => handleSelectCategory(cat.id)}
+                          className="bg-white hover:bg-[#ebdcc9] text-[#422222] border border-[#d8c5aa] px-2.5 py-0.5 rounded-full text-[11px] font-medium transition cursor-pointer"
+                        >
+                          {cat.name}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Trending Keywords (if search is empty) */}
+                  {!searchQuery.trim() && (
+                    <div className="pt-1">
+                      <div className="text-[10px] font-bold uppercase tracking-wider text-[#734b4b] mb-1.5">
+                        Trending Searches
+                      </div>
+                      <div className="flex flex-wrap gap-1.5">
+                        {trendingKeywords.map((kw) => (
+                          <button
+                            key={kw}
+                            type="button"
+                            onClick={() => {
+                              setSearchQuery(kw);
+                            }}
+                            className="text-xs text-gray-700 bg-white hover:text-[#6B2C2C] hover:bg-[#f0e4d2] px-2.5 py-1 rounded-lg border border-[#e2d5c2] transition"
+                          >
+                            {kw}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Live matching results */}
+                  <div className="pt-1">
+                    <div className="text-[10px] font-bold uppercase tracking-wider text-[#734b4b] mb-2 flex justify-between">
+                      <span>{searchQuery.trim() ? `Matching Creations (${matchingProducts.length})` : 'Curated Heirlooms'}</span>
+                    </div>
+
+                    {matchingProducts.length === 0 ? (
+                      <div className="text-center py-4 text-xs text-gray-500">
+                        No creations found for "{searchQuery}". Try "haram", "gold", "choker" or "coin".
+                      </div>
+                    ) : (
+                      <div className="space-y-1.5">
+                        {matchingProducts.map((item) => (
+                          <div
+                            key={item.id}
+                            onClick={() => handleSelectProduct(item.id)}
+                            className="flex items-center gap-2.5 p-2 rounded-xl bg-white hover:bg-[#f5ecdf] border border-[#e8dccb] hover:border-[#6B2C2C] cursor-pointer transition group"
+                          >
+                            <img
+                              src={item.image}
+                              alt={item.name}
+                              className="w-12 h-12 object-contain rounded-lg bg-[#FAF9F6] p-1 border border-gray-100 group-hover:scale-105 transition"
+                            />
+                            <div className="flex-1 min-w-0">
+                              <h4 className="text-xs font-bold text-[#2a1717] truncate group-hover:text-[#6B2C2C]">
+                                {item.name}
+                              </h4>
+                              <div className="text-[10px] text-gray-500">{item.metal} • {item.grossWeight}g</div>
+                              <div className="text-xs font-bold text-[#6B2C2C] font-mono">
+                                ₹{item.price.toLocaleString('en-IN')}
+                              </div>
+                            </div>
+                            <ArrowRight className="w-4 h-4 text-gray-400 group-hover:text-[#6B2C2C] group-hover:translate-x-0.5 transition" />
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+
+                </div>
+
+                {/* Footer link to view all */}
+                <div className="p-2.5 bg-[#ede1d1] border-t border-[#d8c5aa] flex justify-between items-center text-xs">
+                  <span className="text-[11px] text-gray-600">Press Enter to explore all</span>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setIsSearchDropdownOpen(false);
+                      navigate(`/collections?search=${encodeURIComponent(searchQuery)}`);
+                    }}
+                    className="text-[#6B2C2C] font-bold flex items-center gap-1 hover:underline text-xs cursor-pointer"
+                  >
+                    <span>View All</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </button>
+                </div>
+              </div>
+            </div>
 
             {/* Today's Gold Rate Button */}
             <button
@@ -150,11 +315,11 @@ export default function Header() {
             {/* Mobile search trigger */}
             <button
               type="button"
-              onClick={() => setIsSearchOpen(true)}
+              onClick={() => setMobileSearchOpen(!mobileSearchOpen)}
               className="sm:hidden p-2 text-[#FAF9F6] hover:text-[#F3C64F]"
               aria-label="Search"
             >
-              <Search className="w-5 h-5" />
+              {mobileSearchOpen ? <X className="w-5 h-5" /> : <Search className="w-5 h-5" />}
             </button>
 
             {/* Wishlist Button */}
@@ -193,6 +358,25 @@ export default function Header() {
 
         </div>
       </div>
+
+      {/* Mobile search bar if toggled */}
+      {mobileSearchOpen && (
+        <div className="sm:hidden bg-[#521f1f] p-3 border-b border-[#823939] animate-fadeIn">
+          <form onSubmit={handleSearchSubmit} className="flex items-center bg-[#3d1616] border border-[#8f4444] rounded-full overflow-hidden h-9 px-3">
+            <input
+              type="text"
+              autoFocus
+              placeholder="Search jewellery..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="flex-1 bg-transparent text-white text-xs placeholder-[#d8bebe] focus:outline-none"
+            />
+            <button type="submit" className="text-[#F3C64F] pl-2 cursor-pointer">
+              <Search className="w-4 h-4" />
+            </button>
+          </form>
+        </div>
+      )}
 
       {/* Bottom Header Row (Navigation Bar from Image 4): Light Cream / Soft Amber (#FAF9F6 / #FAF9F6) */}
       <nav className="hidden lg:block bg-[#FAF9F6] border-b border-[#d8c5aa] text-[#422222] shadow-inner">

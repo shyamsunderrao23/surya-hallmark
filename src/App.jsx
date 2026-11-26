@@ -6,7 +6,6 @@ import Footer from './components/Footer';
 import CartDrawer from './components/CartDrawer';
 import WishlistDrawer from './components/WishlistDrawer';
 import GoldRateModal from './components/GoldRateModal';
-import SearchModal from './components/SearchModal';
 import QuickViewModal from './components/QuickViewModal';
 
 // Pages
@@ -64,7 +63,6 @@ export default function App() {
           <CartDrawer />
           <WishlistDrawer />
           <GoldRateModal />
-          <SearchModal />
           <QuickViewModal />
 
           {/* Footer */}
