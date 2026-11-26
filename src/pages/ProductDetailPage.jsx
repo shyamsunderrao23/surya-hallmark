@@ -222,7 +222,7 @@ export default function ProductDetailPage() {
             <div className="flex gap-3">
               <button
                 onClick={handleAddToCart}
-                className="flex-1 bg-[#6B2C2C] hover:bg-[#521f1f] text-[#F8F1E7] py-3.5 px-6 rounded-xl font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg shadow-[#6B2C2C]/20 transition cursor-pointer"
+                className="flex-1 bg-[#6B2C2C] hover:bg-[#521f1f] text-[#FFFDD0] py-3.5 px-6 rounded-xl font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg shadow-[#6B2C2C]/20 transition cursor-pointer"
               >
                 <ShoppingBag className="w-4 h-4 text-[#F3C64F]" />
                 <span>{addedAlert ? 'Added to Bag!' : 'Add to Bag'}</span>

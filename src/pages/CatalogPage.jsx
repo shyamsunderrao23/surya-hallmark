@@ -287,7 +287,7 @@ export default function CatalogPage() {
               </p>
               <button
                 onClick={clearAllFilters}
-                className="bg-[#6B2C2C] text-[#F8F1E7] text-xs font-bold px-5 py-2.5 rounded-xl shadow"
+                className="bg-[#6B2C2C] text-[#FFFDD0] text-xs font-bold px-5 py-2.5 rounded-xl shadow"
               >
                 Clear All Filters
               </button>
@@ -307,7 +307,7 @@ export default function CatalogPage() {
       {/* Mobile Filter Modal */}
       {mobileFilterOpen && (
         <div className="fixed inset-0 z-50 flex lg:hidden bg-black/60 backdrop-blur-xs">
-          <div className="w-4/5 max-w-xs bg-[#F8F1E7] h-full p-5 flex flex-col justify-between overflow-y-auto">
+          <div className="w-4/5 max-w-xs bg-[#FFFDD0] h-full p-5 flex flex-col justify-between overflow-y-auto">
             <div className="space-y-4">
               <div className="flex justify-between items-center border-b border-[#d8c5aa] pb-3">
                 <h3 className="font-bold text-sm text-[#381c1c]">Filters</h3>

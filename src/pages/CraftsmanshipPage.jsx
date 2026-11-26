@@ -117,7 +117,7 @@ export default function CraftsmanshipPage() {
       </div>
 
       {/* Call to Action */}
-      <div className="bg-[#6B2C2C] text-[#F8F1E7] rounded-3xl p-8 sm:p-12 text-center space-y-4 shadow-xl">
+      <div className="bg-[#6B2C2C] text-[#FFFDD0] rounded-3xl p-8 sm:p-12 text-center space-y-4 shadow-xl">
         <h2 className="text-2xl sm:text-4xl font-extrabold font-serif-luxury text-white">
           Experience the Hallmarked Difference in Person
         </h2>

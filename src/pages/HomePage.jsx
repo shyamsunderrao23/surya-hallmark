@@ -61,7 +61,7 @@ export default function HomePage() {
     <div className="space-y-12 sm:space-y-16">
       
       {/* Hero Banner Carousel */}
-      <section className="relative overflow-hidden bg-[#3b1212] text-[#F8F1E7]">
+      <section className="relative overflow-hidden bg-[#3b1212] text-[#FFFDD0]">
         <div className="relative min-h-[480px] sm:min-h-[540px] lg:min-h-[580px] flex items-center">
           
           {/* Background Image with Gradient Overlay */}
@@ -174,7 +174,7 @@ export default function HomePage() {
           {/* Action button */}
           <button
             onClick={() => setIsGoldRateModalOpen(true)}
-            className="bg-[#6B2C2C] hover:bg-[#521f1f] text-[#F8F1E7] text-xs font-bold px-4 py-2.5 rounded-xl shadow transition flex items-center gap-1.5 cursor-pointer whitespace-nowrap"
+            className="bg-[#6B2C2C] hover:bg-[#521f1f] text-[#FFFDD0] text-xs font-bold px-4 py-2.5 rounded-xl shadow transition flex items-center gap-1.5 cursor-pointer whitespace-nowrap"
           >
             <span>Rate Calculator &amp; History</span>
             <ChevronRight className="w-4 h-4 text-[#F3C64F]" />
@@ -398,7 +398,7 @@ export default function HomePage() {
             <div className="pt-2">
               <Link
                 to="/craftsmanship"
-                className="inline-flex items-center gap-2 bg-[#6B2C2C] hover:bg-[#521f1f] text-[#F8F1E7] text-xs font-bold px-6 py-3 rounded-xl shadow transition"
+                className="inline-flex items-center gap-2 bg-[#6B2C2C] hover:bg-[#521f1f] text-[#FFFDD0] text-xs font-bold px-6 py-3 rounded-xl shadow transition"
               >
                 <span>Read Full Craftsmanship Journey</span>
                 <ArrowRight className="w-4 h-4 text-[#F3C64F]" />

@@ -21,7 +21,7 @@ export default function QuickViewModal() {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs animate-fadeIn">
-      <div className="relative w-full max-w-3xl bg-[#F8F1E7] rounded-2xl shadow-2xl border border-[#d8c5aa] overflow-hidden text-[#3d1f1f] flex flex-col md:flex-row max-h-[90vh]">
+      <div className="relative w-full max-w-3xl bg-[#FFFDD0] rounded-2xl shadow-2xl border border-[#d8c5aa] overflow-hidden text-[#3d1f1f] flex flex-col md:flex-row max-h-[90vh]">
         
         {/* Close Button */}
         <button
@@ -104,7 +104,7 @@ export default function QuickViewModal() {
             <div className="flex gap-2">
               <button
                 onClick={handleAddToCart}
-                className="flex-1 bg-[#6B2C2C] hover:bg-[#521f1f] text-[#F8F1E7] py-2.5 px-4 rounded-xl font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-md transition"
+                className="flex-1 bg-[#6B2C2C] hover:bg-[#521f1f] text-[#FFFDD0] py-2.5 px-4 rounded-xl font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-md transition"
               >
                 {addedAnimation ? (
                   <>

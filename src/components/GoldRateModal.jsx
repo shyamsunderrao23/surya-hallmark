@@ -19,10 +19,10 @@ export default function GoldRateModal() {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-fadeIn">
-      <div className="relative w-full max-w-2xl bg-[#F8F1E7] rounded-2xl shadow-2xl border border-[#d8c5aa] overflow-hidden text-[#3d1f1f] max-h-[90vh] flex flex-col">
+      <div className="relative w-full max-w-2xl bg-[#FFFDD0] rounded-2xl shadow-2xl border border-[#d8c5aa] overflow-hidden text-[#3d1f1f] max-h-[90vh] flex flex-col">
         
         {/* Header in Maroon (#6B2C2C) */}
-        <div className="bg-[#6B2C2C] text-[#F8F1E7] p-4 sm:p-5 flex items-center justify-between border-b border-[#823939]">
+        <div className="bg-[#6B2C2C] text-[#FFFDD0] p-4 sm:p-5 flex items-center justify-between border-b border-[#823939]">
           <div className="flex items-center gap-3">
             <div className="p-2 bg-[#541f1f] rounded-lg border border-[#823939]">
               <TrendingUp className="w-5 h-5 text-[#F3C64F]" />
@@ -38,7 +38,7 @@ export default function GoldRateModal() {
           </div>
           <button
             onClick={() => setIsGoldRateModalOpen(false)}
-            className="p-1.5 rounded-full hover:bg-[#541f1f] text-[#F8F1E7]/80 hover:text-white transition"
+            className="p-1.5 rounded-full hover:bg-[#541f1f] text-[#FFFDD0]/80 hover:text-white transition"
           >
             <X className="w-5 h-5" />
           </button>
@@ -186,7 +186,7 @@ export default function GoldRateModal() {
           </Link>
           <button
             onClick={() => setIsGoldRateModalOpen(false)}
-            className="bg-[#6B2C2C] text-[#F8F1E7] hover:bg-[#521f1f] px-4 py-1.5 rounded-lg text-xs font-semibold shadow transition"
+            className="bg-[#6B2C2C] text-[#FFFDD0] hover:bg-[#521f1f] px-4 py-1.5 rounded-lg text-xs font-semibold shadow transition"
           >
             Close
           </button>

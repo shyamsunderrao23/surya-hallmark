@@ -36,7 +36,7 @@ export default function SchemesPage() {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12 space-y-12">
       
       {/* Banner */}
-      <div className="bg-gradient-to-r from-[#501F1F] via-[#6B2C2C] to-[#501F1F] text-[#F8F1E7] rounded-3xl p-6 sm:p-12 border-2 border-[#D4AF37] shadow-xl relative overflow-hidden">
+      <div className="bg-gradient-to-r from-[#501F1F] via-[#6B2C2C] to-[#501F1F] text-[#FFFDD0] rounded-3xl p-6 sm:p-12 border-2 border-[#D4AF37] shadow-xl relative overflow-hidden">
         <div className="max-w-3xl space-y-4">
           <div className="inline-flex items-center gap-2 bg-[#D4AF37]/20 border border-[#D4AF37]/40 text-[#F3C64F] px-3.5 py-1 rounded-full text-xs font-bold tracking-wider uppercase">
             <Sparkles className="w-3.5 h-3.5" />
@@ -215,7 +215,7 @@ export default function SchemesPage() {
               <div className="pt-2">
                 <button
                   type="submit"
-                  className="w-full bg-[#6B2C2C] hover:bg-[#521f1f] text-[#F8F1E7] py-3 rounded-xl font-bold uppercase tracking-wider shadow-md transition"
+                  className="w-full bg-[#6B2C2C] hover:bg-[#521f1f] text-[#FFFDD0] py-3 rounded-xl font-bold uppercase tracking-wider shadow-md transition"
                 >
                   Enroll Now &amp; Claim 1 Month Bonus
                 </button>
