@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { 
   Sparkles, 
@@ -11,6 +11,7 @@ import {
   Star, 
   ShoppingBag,
   Clock,
+  ChevronLeft,
   ChevronRight,
   Gem,
   Flame,
@@ -26,103 +27,95 @@ export default function HomePage() {
 
   const heroSlides = [
     {
-      title: 'Royal Heritage Bridal Collection',
-      subtitle: 'HANDCRAFTED 22K 916 BIS HALLMARKED MASTERPIECES',
-      desc: 'Celebrate your most sacred milestone with heirloom antique gold harams, chokers, and nakshi kadas chiseled by hereditary South Indian karigars.',
-      badge: 'Bridal Heritage 2026',
-      ctaText: 'Explore Bridal Collection',
-      ctaLink: '/category/gold',
-      image: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=1600&q=85'
+      id: 1,
+      title: 'Exquisite Gold Collection',
+      image: '/banners/banner1.jpg',
+      link: '/category/gold'
     },
     {
-      title: 'Surya 24K 999 Pure Bullion Coins',
-      subtitle: 'CERTIFIED TAMPER-PROOF SWISS ASSAY PACKAGING',
-      desc: 'Secure your family wealth with zero-wastage 24 Karat 999 pure gold coins and bars with guaranteed buyback at prevailing market rates.',
-      badge: 'Akshaya Tritiya Advance Booking',
-      ctaText: 'Buy Investment Coins',
-      ctaLink: '/category/coins',
-      image: 'https://images.unsplash.com/photo-1610375461246-83df859d849d?auto=format&fit=crop&w=1600&q=85'
+      id: 2,
+      title: 'Silver Jewellery Collection',
+      image: '/banners/banner2.jpg',
+      link: '/category/silver'
     },
     {
-      title: 'Celestial Solitaires & Rare Diamonds',
-      subtitle: '100% IGI & GIA CERTIFIED NATURAL CONFLICT-FREE DIAMONDS',
-      desc: 'Discover brilliant cut engagement rings, tennis bracelets, and daily diamond pendants set in hallmarked 18K white and rose gold.',
-      badge: 'Diamond Brilliance',
-      ctaText: 'View Diamond Solitaires',
-      ctaLink: '/category/diamond',
-      image: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=1600&q=85'
+      id: 3,
+      title: 'Gold & Silver Jewellery Collection',
+      image: '/banners/banner3.jpg',
+      link: '/collections'
     }
   ];
+
+  // Auto-advance banner every 4.5 seconds
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
+    }, 4500);
+    return () => clearInterval(timer);
+  }, [heroSlides.length]);
 
   const featuredProducts = products.filter((p) => p.isFeatured).slice(0, 4);
   const bestsellers = products.filter((p) => p.isBestseller).slice(0, 4);
 
   return (
-    <div className="space-y-12 sm:space-y-16">
+    <div className="space-y-10 sm:space-y-14">
       
-      {/* Hero Banner Carousel */}
-      <section className="relative overflow-hidden bg-[#3b1212] text-[#FAF9F6]">
-        <div className="relative min-h-[480px] sm:min-h-[540px] lg:min-h-[580px] flex items-center">
-          
-          {/* Background Image with Gradient Overlay */}
-          <div 
-            className="absolute inset-0 bg-cover bg-center transition-all duration-700 filter brightness-65"
-            style={{ backgroundImage: `url(${heroSlides[currentSlide].image})` }}
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#2c0b0b]/95 via-[#4a1616]/75 to-transparent" />
+      {/* Hero Banner Carousel with Custom Banners (1024x341 aspect) */}
+      <section className="relative overflow-hidden bg-[#240808] w-full shadow-md">
+        <div className="relative w-full aspect-[3/1] max-h-[500px] min-h-[170px] sm:min-h-[240px] md:min-h-[320px]">
+          {heroSlides.map((slide, idx) => (
+            <Link
+              key={slide.id}
+              to={slide.link}
+              className={`absolute inset-0 w-full h-full transition-opacity duration-700 ease-in-out block ${
+                currentSlide === idx ? 'opacity-100 z-10 pointer-events-auto' : 'opacity-0 z-0 pointer-events-none'
+              }`}
+            >
+              <img
+                src={slide.image}
+                alt={slide.title}
+                className="w-full h-full object-cover object-center"
+              />
+            </Link>
+          ))}
 
-          {/* Slide Content */}
-          <div className="relative max-w-7xl mx-auto px-6 py-12 lg:py-16 w-full">
-            <div className="max-w-xl space-y-4 sm:space-y-6">
-              
-              <div className="inline-flex items-center gap-2 bg-[#F3C64F]/20 border border-[#F3C64F]/40 text-[#F3C64F] px-3.5 py-1 rounded-full text-xs font-bold tracking-wider uppercase">
-                <Sparkles className="w-3.5 h-3.5" />
-                <span>{heroSlides[currentSlide].badge}</span>
-              </div>
+          {/* Left Arrow */}
+          <button
+            type="button"
+            onClick={(e) => {
+              e.preventDefault();
+              setCurrentSlide((prev) => (prev === 0 ? heroSlides.length - 1 : prev - 1));
+            }}
+            className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-20 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-black/40 hover:bg-black/75 text-white flex items-center justify-center backdrop-blur-xs transition shadow-lg border border-white/25 cursor-pointer"
+            aria-label="Previous Banner"
+          >
+            <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5" />
+          </button>
 
-              <div className="space-y-2">
-                <div className="text-xs sm:text-sm font-semibold tracking-widest text-[#F3C64F] uppercase">
-                  {heroSlides[currentSlide].subtitle}
-                </div>
-                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-serif-luxury text-white tracking-tight leading-tight">
-                  {heroSlides[currentSlide].title}
-                </h1>
-              </div>
+          {/* Right Arrow */}
+          <button
+            type="button"
+            onClick={(e) => {
+              e.preventDefault();
+              setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
+            }}
+            className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-20 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-black/40 hover:bg-black/75 text-white flex items-center justify-center backdrop-blur-xs transition shadow-lg border border-white/25 cursor-pointer"
+            aria-label="Next Banner"
+          >
+            <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
+          </button>
 
-              <p className="text-xs sm:text-sm text-[#ebdcdc] leading-relaxed">
-                {heroSlides[currentSlide].desc}
-              </p>
-
-              <div className="flex flex-wrap items-center gap-3 pt-2">
-                <Link
-                  to={heroSlides[currentSlide].ctaLink}
-                  className="bg-[#D4AF37] hover:bg-[#e0be4d] text-[#461919] font-bold text-xs sm:text-sm px-6 py-3 rounded-xl shadow-lg transition duration-200 uppercase tracking-wider flex items-center gap-2 cursor-pointer"
-                >
-                  <span>{heroSlides[currentSlide].ctaText}</span>
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
-
-                <Link
-                  to="/schemes"
-                  className="bg-black/30 hover:bg-black/50 border border-white/30 text-white font-medium text-xs sm:text-sm px-5 py-3 rounded-xl backdrop-blur-xs transition"
-                >
-                  Swarna Nidhi Scheme
-                </Link>
-              </div>
-
-            </div>
-          </div>
-
-          {/* Slide Indicators */}
-          <div className="absolute bottom-5 left-1/2 -translate-x-1/2 flex items-center gap-2 z-10">
+          {/* Slide Indicator Dots */}
+          <div className="absolute bottom-2.5 sm:bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2 z-20">
             {heroSlides.map((_, i) => (
               <button
                 key={i}
+                type="button"
                 onClick={() => setCurrentSlide(i)}
-                className={`h-2 rounded-full transition-all duration-300 ${
-                  currentSlide === i ? 'w-8 bg-[#F3C64F]' : 'w-2 bg-white/40 hover:bg-white/70'
+                className={`h-2 sm:h-2.5 rounded-full transition-all duration-300 cursor-pointer ${
+                  currentSlide === i ? 'w-6 sm:w-8 bg-[#F3C64F] shadow' : 'w-2 sm:w-2.5 bg-white/50 hover:bg-white/80'
                 }`}
-                aria-label={`Slide ${i + 1}`}
+                aria-label={`Go to Slide ${i + 1}`}
               />
             ))}
           </div>
@@ -131,7 +124,7 @@ export default function HomePage() {
       </section>
 
       {/* Live Gold Rate Ribbon Strip */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 -mt-8 sm:-mt-10 relative z-20">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 relative z-20">
         <div className="bg-[#FAF9F6] border-2 border-[#D4AF37] rounded-2xl shadow-xl p-4 sm:p-5 flex flex-col md:flex-row items-center justify-between gap-4">
           
           <div className="flex items-center gap-3">
