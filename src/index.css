@@ -44,3 +44,11 @@ h1, h2, h3, h4, .font-serif-luxury {
 ::-webkit-scrollbar-thumb:hover {
   background: #5B131B;
 }
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
