@@ -72,17 +72,8 @@ export default function ProductShowcaseSection() {
         </div>
       </section>
 
-      {/* ===================== MIDDLE BANNER (Full-Width Edge-to-Edge) ===================== */}
-      <section className="w-full overflow-hidden shadow-xs my-8 sm:my-14">
-        <img
-          src={middleBanner}
-          alt="Surya Hallmark Jewellers Middle Banner"
-          className="w-full h-auto object-cover object-center block"
-        />
-      </section>
-
       {/* ===================== SECTION 2: FEATURED PRODUCTS ===================== */}
-      <section className="w-full pb-14 px-4 sm:px-8 lg:px-12 max-w-[1880px] mx-auto">
+      <section className="w-full pt-6 pb-6 px-4 sm:px-8 lg:px-12 max-w-[1880px] mx-auto">
         <div className="text-center mb-10">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-[#3B0E14] mb-2">
             Featured Products
@@ -93,12 +84,23 @@ export default function ProductShowcaseSection() {
         </div>
 
         {/* Featured Products Grid (Larger Image Size) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-7 sm:gap-8 lg:gap-10 mb-12 w-full">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-7 sm:gap-8 lg:gap-10 w-full">
           {featuredProducts.map(renderProductCard)}
         </div>
+      </section>
 
-        {/* Trust & Purity Bar */}
-        <div className="mt-8 p-5 rounded-2xl bg-[#5B131B]/5 border border-[#DFCAB4] flex flex-wrap items-center justify-around gap-4 text-center">
+      {/* ===================== MIDDLE BANNER (Full-Width Edge-to-Edge After Featured Products) ===================== */}
+      <section className="w-full overflow-hidden shadow-xs my-8 sm:my-14">
+        <img
+          src={middleBanner}
+          alt="Surya Hallmark Jewellers Special Banner"
+          className="w-full h-auto object-cover object-center block"
+        />
+      </section>
+
+      {/* ===================== TRUST & PURITY BAR ===================== */}
+      <section className="w-full pb-14 px-4 sm:px-8 lg:px-12 max-w-[1880px] mx-auto">
+        <div className="p-5 rounded-2xl bg-[#5B131B]/5 border border-[#DFCAB4] flex flex-wrap items-center justify-around gap-4 text-center">
           <div className="flex items-center gap-2">
             <ShieldCheck size={20} className="text-[#5B131B]" />
             <span className="text-xs sm:text-sm font-bold text-[#3B0E14]">
