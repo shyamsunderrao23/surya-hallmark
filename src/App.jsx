@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { ShopProvider } from './context/ShopContext';
 import Header from './components/Header';
+import CategoryCircleSection from './components/CategoryCircleSection';
 import CartDrawer from './components/CartDrawer';
 import WishlistDrawer from './components/WishlistDrawer';
 import homeBanner from './assets/home-banner.png';
@@ -17,8 +18,9 @@ export default function App() {
           {/* Top Announcement Bar + Main Header + Centered Menu Bar */}
           <Header />
 
-          {/* Home Page Content: Home Banner from assets */}
+          {/* Home Page Content */}
           <main className="flex-1 w-full">
+            {/* Hero Home Banner from assets */}
             <section className="w-full overflow-hidden shadow-xs">
               <img
                 src={homeBanner}
@@ -26,6 +28,9 @@ export default function App() {
                 className="w-full h-auto object-cover object-center block"
               />
             </section>
+
+            {/* Circular Category Shortcuts Section */}
+            <CategoryCircleSection />
           </main>
 
           {/* Drawers for Wishlist & Cart */}
