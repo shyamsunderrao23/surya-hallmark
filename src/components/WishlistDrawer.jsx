@@ -19,10 +19,10 @@ export default function WishlistDrawer() {
       />
 
       <div className="fixed inset-y-0 right-0 max-w-full flex pl-10">
-        <div className="w-screen max-w-md bg-[#FDECD8] shadow-2xl flex flex-col border-l border-[#DFCAB4]">
+        <div className="w-screen max-w-md bg-[#FCEED8] shadow-2xl flex flex-col border-l border-[#DFCAB4]">
           
           {/* Header */}
-          <div className="bg-[#782A38] text-[#FDECD8] p-4 flex items-center justify-between border-b border-[#8C3444]">
+          <div className="bg-[#782A37] text-[#FCEED8] p-4 flex items-center justify-between border-b border-[#8C3444]">
             <div className="flex items-center gap-2">
               <Heart className="w-5 h-5 text-[#F3C64F] fill-[#F3C64F]" />
               <h3 className="font-serif-luxury font-bold text-base tracking-wide">
@@ -31,7 +31,7 @@ export default function WishlistDrawer() {
             </div>
             <button
               onClick={() => setIsWishlistOpen(false)}
-              className="p-1 text-[#FDECD8]/80 hover:text-white rounded-md"
+              className="p-1 text-[#FCEED8]/80 hover:text-white rounded-md"
             >
               <X className="w-5 h-5" />
             </button>
@@ -41,7 +41,7 @@ export default function WishlistDrawer() {
           <div className="flex-1 overflow-y-auto p-4 space-y-3">
             {wishlistProducts.length === 0 ? (
               <div className="text-center py-16 space-y-3">
-                <div className="w-16 h-16 bg-[#FDECD8] text-[#782A38] rounded-full flex items-center justify-center mx-auto">
+                <div className="w-16 h-16 bg-[#FCEED8] text-[#782A37] rounded-full flex items-center justify-center mx-auto">
                   <Heart className="w-8 h-8 opacity-60" />
                 </div>
                 <p className="text-sm font-semibold text-gray-700">Your wishlist is empty</p>
@@ -49,7 +49,7 @@ export default function WishlistDrawer() {
                 <Link
                   to="/collections"
                   onClick={() => setIsWishlistOpen(false)}
-                  className="inline-block mt-2 bg-[#782A38] hover:bg-[#5E1B27] text-[#FDECD8] text-xs font-bold px-5 py-2.5 rounded-lg shadow"
+                  className="inline-block mt-2 bg-[#782A37] hover:bg-[#5E1B27] text-[#FCEED8] text-xs font-bold px-5 py-2.5 rounded-lg shadow"
                 >
                   Browse Designs
                 </Link>
@@ -72,7 +72,7 @@ export default function WishlistDrawer() {
                     <div className="text-[11px] text-gray-500 mt-0.5">
                       {item.metal} • {item.grossWeight}g
                     </div>
-                    <div className="text-xs font-bold text-[#782A38] font-mono mt-1">
+                    <div className="text-xs font-bold text-[#782A37] font-mono mt-1">
                       ₹{item.price.toLocaleString('en-IN')}
                     </div>
 
@@ -82,7 +82,7 @@ export default function WishlistDrawer() {
                           addToCart(item, 1);
                           toggleWishlist(item.id);
                         }}
-                        className="flex-1 bg-[#782A38] hover:bg-[#5E1B27] text-[#FDECD8] py-1 px-2.5 rounded text-[11px] font-semibold flex items-center justify-center gap-1.5 transition"
+                        className="flex-1 bg-[#782A37] hover:bg-[#5E1B27] text-[#FCEED8] py-1 px-2.5 rounded text-[11px] font-semibold flex items-center justify-center gap-1.5 transition"
                       >
                         <ShoppingBag className="w-3 h-3 text-[#F3C64F]" />
                         <span>Move to Bag</span>
@@ -103,13 +103,13 @@ export default function WishlistDrawer() {
 
           {/* Footer */}
           {wishlistProducts.length > 0 && (
-            <div className="p-4 bg-[#FDECD8] border-t border-[#DFCAB4]">
+            <div className="p-4 bg-[#FCEED8] border-t border-[#DFCAB4]">
               <button
                 onClick={() => {
                   wishlistProducts.forEach((item) => addToCart(item, 1));
                   setIsWishlistOpen(false);
                 }}
-                className="w-full bg-[#782A38] hover:bg-[#5E1B27] text-[#FDECD8] py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 shadow"
+                className="w-full bg-[#782A37] hover:bg-[#5E1B27] text-[#FCEED8] py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 shadow"
               >
                 <span>Move All to Bag</span>
                 <ArrowRight className="w-4 h-4" />

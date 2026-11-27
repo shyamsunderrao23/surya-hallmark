@@ -51,10 +51,10 @@ export default function CartDrawer() {
       />
 
       <div className="fixed inset-y-0 right-0 max-w-full flex pl-10">
-        <div className="w-screen max-w-md bg-[#FDECD8] shadow-2xl flex flex-col border-l border-[#DFCAB4]">
+        <div className="w-screen max-w-md bg-[#FCEED8] shadow-2xl flex flex-col border-l border-[#DFCAB4]">
           
-          {/* Header in Maroon (#782A38) */}
-          <div className="bg-[#782A38] text-[#FDECD8] p-4 flex items-center justify-between border-b border-[#8C3444]">
+          {/* Header in Maroon (#782A37) */}
+          <div className="bg-[#782A37] text-[#FCEED8] p-4 flex items-center justify-between border-b border-[#8C3444]">
             <div className="flex items-center gap-2">
               <ShoppingBag className="w-5 h-5 text-[#F3C64F]" />
               <h3 className="font-serif-luxury font-bold text-base tracking-wide">
@@ -63,14 +63,14 @@ export default function CartDrawer() {
             </div>
             <button
               onClick={() => setIsCartOpen(false)}
-              className="p-1 text-[#FDECD8]/80 hover:text-white rounded-md"
+              className="p-1 text-[#FCEED8]/80 hover:text-white rounded-md"
             >
               <X className="w-5 h-5" />
             </button>
           </div>
 
           {/* Insured Delivery Banner */}
-          <div className="bg-[#FDECD8] px-4 py-2 border-b border-[#DFCAB4] flex items-center gap-2 text-xs text-[#522929]">
+          <div className="bg-[#FCEED8] px-4 py-2 border-b border-[#DFCAB4] flex items-center gap-2 text-xs text-[#522929]">
             <ShieldCheck className="w-4 h-4 text-emerald-700 flex-shrink-0" />
             <span>100% Insured Transit by Sequel Logistics with Doorstep ID Verification</span>
           </div>
@@ -82,14 +82,14 @@ export default function CartDrawer() {
                 <div className="w-16 h-16 bg-emerald-100 text-emerald-700 rounded-full flex items-center justify-center mx-auto shadow-inner">
                   <CheckCircle2 className="w-10 h-10" />
                 </div>
-                <h4 className="text-xl font-bold font-serif-luxury text-[#782A38]">
+                <h4 className="text-xl font-bold font-serif-luxury text-[#782A37]">
                   Order Placed Successfully!
                 </h4>
                 <p className="text-xs text-gray-600 max-w-xs mx-auto">
                   Thank you for placing your trust in Surya Hallmark Jewellers since 1964. Your certified hallmark package is being prepared with tamper-proof security seals.
                 </p>
-                <div className="bg-white p-3 rounded-lg border border-[#FDECD8] text-xs font-mono text-left max-w-xs mx-auto space-y-1">
-                  <div>Order ID: <span className="font-bold text-[#782A38]">SH-2026-98124</span></div>
+                <div className="bg-white p-3 rounded-lg border border-[#FCEED8] text-xs font-mono text-left max-w-xs mx-auto space-y-1">
+                  <div>Order ID: <span className="font-bold text-[#782A37]">SH-2026-98124</span></div>
                   <div>Insured Value: <span className="font-bold">₹{finalPayable.toLocaleString('en-IN')}</span></div>
                   <div>Estimated Delivery: <span className="font-bold text-emerald-700">Within 48 Hours</span></div>
                 </div>
@@ -98,14 +98,14 @@ export default function CartDrawer() {
                     setOrderPlaced(false);
                     setIsCartOpen(false);
                   }}
-                  className="bg-[#782A38] text-[#FDECD8] px-6 py-2 rounded-lg text-xs font-semibold hover:bg-[#5E1B27]"
+                  className="bg-[#782A37] text-[#FCEED8] px-6 py-2 rounded-lg text-xs font-semibold hover:bg-[#5E1B27]"
                 >
                   Continue Shopping
                 </button>
               </div>
             ) : cart.length === 0 ? (
               <div className="text-center py-16 space-y-3">
-                <div className="w-16 h-16 bg-[#FDECD8] text-[#782A38] rounded-full flex items-center justify-center mx-auto">
+                <div className="w-16 h-16 bg-[#FCEED8] text-[#782A37] rounded-full flex items-center justify-center mx-auto">
                   <ShoppingBag className="w-8 h-8 opacity-60" />
                 </div>
                 <p className="text-sm font-semibold text-gray-700">Your bag is currently empty</p>
@@ -113,7 +113,7 @@ export default function CartDrawer() {
                 <Link
                   to="/collections"
                   onClick={() => setIsCartOpen(false)}
-                  className="inline-block mt-2 bg-[#782A38] hover:bg-[#5E1B27] text-[#FDECD8] text-xs font-bold px-5 py-2.5 rounded-lg shadow"
+                  className="inline-block mt-2 bg-[#782A37] hover:bg-[#5E1B27] text-[#FCEED8] text-xs font-bold px-5 py-2.5 rounded-lg shadow"
                 >
                   Explore Collections
                 </Link>
@@ -142,12 +142,12 @@ export default function CartDrawer() {
                       </div>
 
                       <div className="flex items-center justify-between mt-2">
-                        <div className="text-xs font-bold text-[#782A38] font-mono">
+                        <div className="text-xs font-bold text-[#782A37] font-mono">
                           ₹{item.price.toLocaleString('en-IN')}
                         </div>
 
                         {/* Quantity */}
-                        <div className="flex items-center border border-[#DFCAB4] rounded-md overflow-hidden bg-[#FDECD8]">
+                        <div className="flex items-center border border-[#DFCAB4] rounded-md overflow-hidden bg-[#FCEED8]">
                           <button
                             onClick={() => updateQuantity(index, -1)}
                             className="px-2 py-0.5 hover:bg-[#e8dbca] text-xs font-bold"
@@ -182,11 +182,11 @@ export default function CartDrawer() {
                     placeholder="Enter code (e.g. SURYA1964)"
                     value={coupon}
                     onChange={(e) => setCoupon(e.target.value)}
-                    className="flex-1 bg-white border border-[#c4ae91] rounded-lg px-3 py-1.5 text-xs focus:ring-1 focus:ring-[#782A38]"
+                    className="flex-1 bg-white border border-[#c4ae91] rounded-lg px-3 py-1.5 text-xs focus:ring-1 focus:ring-[#782A37]"
                   />
                   <button
                     type="submit"
-                    className="bg-[#782A38] text-[#FDECD8] text-xs font-semibold px-3 py-1.5 rounded-lg hover:bg-[#5E1B27] transition"
+                    className="bg-[#782A37] text-[#FCEED8] text-xs font-semibold px-3 py-1.5 rounded-lg hover:bg-[#5E1B27] transition"
                   >
                     Apply
                   </button>
@@ -203,7 +203,7 @@ export default function CartDrawer() {
 
           {/* Footer Billing Details */}
           {!orderPlaced && cart.length > 0 && (
-            <div className="p-4 bg-[#FDECD8] border-t border-[#DFCAB4] space-y-3">
+            <div className="p-4 bg-[#FCEED8] border-t border-[#DFCAB4] space-y-3">
               <div className="space-y-1.5 text-xs text-gray-700">
                 <div className="flex justify-between">
                   <span>Gross Jewellery Subtotal</span>
@@ -223,7 +223,7 @@ export default function CartDrawer() {
                   <span>Statutory GST (3% Gold/Jewellery)</span>
                   <span className="font-mono">₹{gstAmount.toLocaleString('en-IN')}</span>
                 </div>
-                <div className="border-t border-[#cfbaa1] pt-2 flex justify-between text-sm font-bold text-[#782A38]">
+                <div className="border-t border-[#cfbaa1] pt-2 flex justify-between text-sm font-bold text-[#782A37]">
                   <span>Total Payable Amount</span>
                   <span className="font-mono text-base">₹{finalPayable.toLocaleString('en-IN')}</span>
                 </div>
@@ -232,7 +232,7 @@ export default function CartDrawer() {
               <button
                 type="button"
                 onClick={handleCheckout}
-                className="w-full bg-[#782A38] hover:bg-[#5E1B27] text-[#FDECD8] py-3 rounded-xl font-bold text-xs tracking-wider uppercase flex items-center justify-center gap-2 shadow-lg shadow-[#782A38]/25 transition cursor-pointer"
+                className="w-full bg-[#782A37] hover:bg-[#5E1B27] text-[#FCEED8] py-3 rounded-xl font-bold text-xs tracking-wider uppercase flex items-center justify-center gap-2 shadow-lg shadow-[#782A37]/25 transition cursor-pointer"
               >
                 <span>Proceed to Secure Checkout</span>
                 <ArrowRight className="w-4 h-4" />
