@@ -9,7 +9,8 @@ import {
   Sparkles, 
   ArrowRight, 
   Send, 
-  Check 
+  Check,
+  ArrowUpRight
 } from 'lucide-react';
 
 export default function Footer() {
@@ -27,41 +28,47 @@ export default function Footer() {
     }
   };
 
+  // 5 Showroom locations from Image 2
   const showroomLocations = [
     {
-      name: 'Palace Street Showroom',
+      name: 'Palace Street',
       city: 'Parlakhemundi',
       address: 'Palace Street, Parlakhemundi.',
       phone: '9178 889 899',
       timing: '10 AM – 9 PM',
+      mapQuery: 'Palace+Street+Parlakhemundi',
     },
     {
-      name: 'College Road Showroom',
+      name: 'College Road',
       city: 'Parlakhemundi',
       address: 'College Road, Parlakhemundi.',
       phone: '97770 18555',
       timing: '10 AM – 9 PM',
+      mapQuery: 'College+Road+Parlakhemundi',
     },
     {
-      name: 'Market Square Showroom',
+      name: 'Market Square',
       city: 'Parlakhemundi',
-      address: 'Market Square, Beside Ambika Sweets, Parlakhemundi.',
+      address: 'Beside Ambika Sweets, Market Square, Parlakhemundi.',
       phone: '9692396696',
       timing: '10 AM – 9 PM',
+      mapQuery: 'Market+Square+Parlakhemundi',
     },
     {
-      name: 'Gunupur Showroom',
+      name: 'Gunupur',
       city: 'Gunupur',
       address: 'Opp. Kanyaka Parameswari Temple, Gunupur.',
       phone: '84805 68611',
       timing: '10 AM – 9 PM',
+      mapQuery: 'Kanyaka+Parameswari+Temple+Gunupur',
     },
     {
-      name: 'Rayagada Showroom',
+      name: 'Rayagada',
       city: 'Rayagada',
       address: 'Opp. Hotel Jyoti Mahal, Rayagada.',
       phone: '9348 744 819',
       timing: '10 AM – 9 PM',
+      mapQuery: 'Hotel+Jyoti+Mahal+Rayagada',
     },
   ];
 
@@ -102,11 +109,11 @@ export default function Footer() {
       </div>
 
       {/* ===================== MAIN FOOTER CONTENT ===================== */}
-      <div className="max-w-[1880px] mx-auto py-14 px-4 sm:px-8 lg:px-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8">
+      <div className="max-w-[1880px] mx-auto pt-14 pb-8 px-4 sm:px-8 lg:px-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 mb-12">
           
-          {/* Column 1: Brand & Heritage (4 Cols) */}
-          <div className="lg:col-span-4 space-y-5">
+          {/* Column 1: Brand & Heritage (5 Cols) */}
+          <div className="lg:col-span-5 space-y-5">
             <Link to="/" className="inline-block">
               <img
                 src="/logo.png"
@@ -115,7 +122,7 @@ export default function Footer() {
               />
             </Link>
 
-            <p className="text-xs sm:text-sm text-[#FCEED8]/80 leading-relaxed max-w-sm">
+            <p className="text-xs sm:text-sm text-[#FCEED8]/80 leading-relaxed max-w-md">
               Surya Hallmark Jewellers represents six decades of unswerving trust, authentic 100% BIS 916 hallmarked gold, computerized karatmeter purity testing, and handcrafted temple bridal heirlooms.
             </p>
 
@@ -138,7 +145,7 @@ export default function Footer() {
             </div>
 
             {/* Social Links */}
-            <div className="pt-2">
+            <div className="pt-1">
               <span className="text-[11px] font-bold uppercase tracking-wider text-[#F3C64F] block mb-2">
                 Connect With Us
               </span>
@@ -195,57 +202,12 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Column 2: Our Showroom Locations (Multiple Addresses) (4 Cols) */}
-          <div className="lg:col-span-4 space-y-4">
-            <div className="flex items-center gap-2 border-b border-white/10 pb-2">
-              <MapPin className="w-4 h-4 text-[#F3C64F]" />
-              <h3 className="font-serif font-bold text-base sm:text-lg text-white tracking-wide">
-                Our Showrooms &amp; Locations
-              </h3>
-            </div>
-
-            <div className="space-y-4 pt-1">
-              {showroomLocations.map((loc, idx) => (
-                <div 
-                  key={idx} 
-                  className="p-3 rounded-xl bg-[#5B131B]/40 hover:bg-[#5B131B]/70 border border-white/5 hover:border-[#F3C64F]/30 transition-all text-xs"
-                >
-                  <div className="flex items-center justify-between mb-1">
-                    <span className="font-bold text-white tracking-wide">
-                      {loc.name}
-                    </span>
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-[#F3C64F] px-1.5 py-0.5 rounded-sm bg-black/30">
-                      {loc.city}
-                    </span>
-                  </div>
-
-                  <p className="text-[#FCEED8]/80 text-[11px] mb-1.5 leading-snug">
-                    {loc.address}
-                  </p>
-
-                  <div className="flex items-center justify-between text-[11px] pt-1 border-t border-white/10">
-                    <a
-                      href={`tel:${loc.phone.replace(/\s+/g, '')}`}
-                      className="inline-flex items-center gap-1 text-[#F3C64F] font-bold hover:underline"
-                    >
-                      <Phone className="w-3 h-3" />
-                      <span>Cell: {loc.phone}</span>
-                    </a>
-                    <span className="text-white/60 text-[10px] flex items-center gap-1">
-                      <Clock className="w-3 h-3 text-[#F3C64F]" /> {loc.timing}
-                    </span>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Column 3: Quick Links & Services (2 Cols) */}
+          {/* Column 2: Collections (2 Cols) */}
           <div className="lg:col-span-2 space-y-4">
             <h3 className="font-serif font-bold text-base sm:text-lg text-white tracking-wide border-b border-white/10 pb-2">
               Collections
             </h3>
-            <ul className="space-y-2 text-xs text-[#FCEED8]/80">
+            <ul className="space-y-2.5 text-xs text-[#FCEED8]/80">
               <li>
                 <Link to="/category/gold" className="hover:text-[#F3C64F] transition flex items-center gap-1.5">
                   <ArrowRight className="w-3 h-3 text-[#F3C64F]" /> 22K Antique Gold
@@ -253,7 +215,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link to="/category/diamond" className="hover:text-[#F3C64F] transition flex items-center gap-1.5">
-                  <ArrowRight className="w-3 h-3 text-[#F3C64F]" /> IGI Solitaires &amp; Rings
+                  <ArrowRight className="w-3 h-3 text-[#F3C64F]" /> IGI Diamonds
                 </Link>
               </li>
               <li>
@@ -263,52 +225,68 @@ export default function Footer() {
               </li>
               <li>
                 <Link to="/category/platinum" className="hover:text-[#F3C64F] transition flex items-center gap-1.5">
-                  <ArrowRight className="w-3 h-3 text-[#F3C64F]" /> Pt 950 Platinum Bands
+                  <ArrowRight className="w-3 h-3 text-[#F3C64F]" /> Pt 950 Platinum
                 </Link>
               </li>
               <li>
                 <Link to="/category/coins" className="hover:text-[#F3C64F] transition flex items-center gap-1.5">
-                  <ArrowRight className="w-3 h-3 text-[#F3C64F]" /> 24K 999 Bullion Coins
+                  <ArrowRight className="w-3 h-3 text-[#F3C64F]" /> 24K Bullion Coins
                 </Link>
               </li>
               <li>
                 <Link to="/category/wedding" className="hover:text-[#F3C64F] transition flex items-center gap-1.5">
-                  <ArrowRight className="w-3 h-3 text-[#F3C64F]" /> Bridal Wedding Sets
+                  <ArrowRight className="w-3 h-3 text-[#F3C64F]" /> Bridal Temple Sets
                 </Link>
-              </li>
-              <li>
-                <Link to="/category/men" className="hover:text-[#F3C64F] transition flex items-center gap-1.5">
-                  <ArrowRight className="w-3 h-3 text-[#F3C64F]" /> Men's Royal Kada
-                </Link>
-              </li>
-            </ul>
-
-            <h4 className="font-serif font-bold text-sm text-white pt-2 border-t border-white/10">
-              Customer Services
-            </h4>
-            <ul className="space-y-1.5 text-xs text-[#FCEED8]/80">
-              <li>
-                <span className="hover:text-[#F3C64F] cursor-pointer">Swarna Nidhi Scheme</span>
-              </li>
-              <li>
-                <span className="hover:text-[#F3C64F] cursor-pointer">Live Gold Rates</span>
-              </li>
-              <li>
-                <span className="hover:text-[#F3C64F] cursor-pointer">Zero Gold Deduction</span>
-              </li>
-              <li>
-                <span className="hover:text-[#F3C64F] cursor-pointer">Lifetime Exchange</span>
               </li>
             </ul>
           </div>
 
-          {/* Column 4: Gold Rate Alerts & Newsletter (2 Cols) */}
+          {/* Column 3: Customer Services & Trust (2 Cols) */}
           <div className="lg:col-span-2 space-y-4">
             <h3 className="font-serif font-bold text-base sm:text-lg text-white tracking-wide border-b border-white/10 pb-2">
-              Gold Rate Alerts
+              Services &amp; Trust
+            </h3>
+            <ul className="space-y-2.5 text-xs text-[#FCEED8]/80">
+              <li>
+                <span className="hover:text-[#F3C64F] cursor-pointer flex items-center gap-1.5">
+                  <ArrowRight className="w-3 h-3 text-[#F3C64F]" /> Swarna Nidhi Scheme
+                </span>
+              </li>
+              <li>
+                <span className="hover:text-[#F3C64F] cursor-pointer flex items-center gap-1.5">
+                  <ArrowRight className="w-3 h-3 text-[#F3C64F]" /> Live Gold Rates
+                </span>
+              </li>
+              <li>
+                <span className="hover:text-[#F3C64F] cursor-pointer flex items-center gap-1.5">
+                  <ArrowRight className="w-3 h-3 text-[#F3C64F]" /> Zero Gold Deduction
+                </span>
+              </li>
+              <li>
+                <span className="hover:text-[#F3C64F] cursor-pointer flex items-center gap-1.5">
+                  <ArrowRight className="w-3 h-3 text-[#F3C64F]" /> Karatmeter Testing
+                </span>
+              </li>
+              <li>
+                <span className="hover:text-[#F3C64F] cursor-pointer flex items-center gap-1.5">
+                  <ArrowRight className="w-3 h-3 text-[#F3C64F]" /> Lifetime Exchange
+                </span>
+              </li>
+              <li>
+                <span className="hover:text-[#F3C64F] cursor-pointer flex items-center gap-1.5">
+                  <ArrowRight className="w-3 h-3 text-[#F3C64F]" /> Book Store Visit
+                </span>
+              </li>
+            </ul>
+          </div>
+
+          {/* Column 4: Gold Rate Alerts & Newsletter (3 Cols) */}
+          <div className="lg:col-span-3 space-y-4">
+            <h3 className="font-serif font-bold text-base sm:text-lg text-white tracking-wide border-b border-white/10 pb-2">
+              Daily Gold Rate Alerts
             </h3>
             <p className="text-xs text-[#FCEED8]/80 leading-relaxed">
-              Subscribe to receive daily morning 22K &amp; 24K gold rate updates on your phone.
+              Subscribe to receive daily morning 22K &amp; 24K gold rate SMS / WhatsApp updates on your phone.
             </p>
 
             <form onSubmit={handleSubscribe} className="space-y-2">
@@ -336,18 +314,88 @@ export default function Footer() {
             </form>
 
             {/* Hallmark Trust Badge */}
-            <div className="mt-5 p-3 rounded-xl bg-black/25 border border-white/10 text-center space-y-1">
-              <ShieldCheck className="w-6 h-6 text-[#F3C64F] mx-auto" />
+            <div className="p-3 rounded-xl bg-black/25 border border-white/10 text-center space-y-1">
+              <ShieldCheck className="w-5 h-5 text-[#F3C64F] mx-auto" />
               <div className="text-[11px] font-bold text-white uppercase tracking-wider">
-                BIS Hallmarked
+                100% BIS Hallmarked &amp; HUID Verified
               </div>
               <p className="text-[10px] text-[#FCEED8]/70">
-                100% 6-Digit HUID Laser Verified on Every Gold Ornament
+                Pure Gold Assurance Since 1964
               </p>
             </div>
           </div>
 
         </div>
+
+        {/* ===================== HORIZONTAL SHOWROOMS & LOCATIONS (AT BOTTOM) ===================== */}
+        <div className="pt-8 border-t border-white/15">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-5">
+            <div className="flex items-center gap-2">
+              <div className="w-7 h-7 rounded-full bg-[#F3C64F]/20 flex items-center justify-center text-[#F3C64F]">
+                <MapPin className="w-4 h-4" />
+              </div>
+              <div>
+                <h3 className="font-serif font-bold text-base sm:text-xl text-white tracking-wide">
+                  Our Showrooms &amp; Locations
+                </h3>
+                <p className="text-[11px] text-[#FCEED8]/70">
+                  Visit our 5 flagship showroom destinations across Parlakhemundi, Gunupur, and Rayagada
+                </p>
+              </div>
+            </div>
+
+            <div className="text-[11px] text-[#F3C64F] font-semibold flex items-center gap-1.5 self-start sm:self-center">
+              <Clock className="w-3.5 h-3.5" />
+              <span>All Stores Open 10:00 AM – 9:00 PM (Mon – Sun)</span>
+            </div>
+          </div>
+
+          {/* 5 Locations Displayed Horizontally Side-by-Side */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3.5 sm:gap-4">
+            {showroomLocations.map((loc, idx) => (
+              <div 
+                key={idx} 
+                className="p-4 rounded-xl bg-gradient-to-b from-[#5B131B]/60 to-[#35080E]/80 border border-white/10 hover:border-[#F3C64F]/40 transition-all group flex flex-col justify-between shadow-xs hover:shadow-md"
+              >
+                <div>
+                  <div className="flex items-center justify-between gap-1 mb-1.5">
+                    <h4 className="font-serif font-bold text-sm text-white tracking-wide group-hover:text-[#F3C64F] transition-colors">
+                      {loc.name}
+                    </h4>
+                    <span className="text-[9px] font-bold uppercase tracking-wider text-[#F3C64F] px-1.5 py-0.5 rounded-sm bg-black/40 flex-shrink-0">
+                      {loc.city}
+                    </span>
+                  </div>
+
+                  <p className="text-[#FCEED8]/75 text-[11px] leading-relaxed mb-3">
+                    {loc.address}
+                  </p>
+                </div>
+
+                <div className="pt-2.5 border-t border-white/10 flex items-center justify-between gap-2">
+                  <a
+                    href={`tel:${loc.phone.replace(/\s+/g, '')}`}
+                    className="inline-flex items-center gap-1.5 text-[#F3C64F] font-bold text-xs hover:underline"
+                  >
+                    <Phone className="w-3.5 h-3.5" />
+                    <span>{loc.phone}</span>
+                  </a>
+
+                  <a
+                    href={`https://www.google.com/maps/search/?api=1&query=${loc.mapQuery}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title={`Directions to ${loc.name}`}
+                    className="w-6 h-6 rounded-full bg-white/10 hover:bg-[#F3C64F] text-white hover:text-[#450C13] flex items-center justify-center transition-all flex-shrink-0"
+                  >
+                    <ArrowUpRight className="w-3.5 h-3.5" />
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
       </div>
 
       {/* ===================== BOTTOM COPYRIGHT BAR ===================== */}
