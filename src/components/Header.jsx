@@ -14,7 +14,9 @@ import {
   Sparkles, 
   ChevronDown,
   Award,
-  ArrowRight
+  ArrowRight,
+  Clock,
+  Phone
 } from 'lucide-react';
 import { useShop } from '../context/ShopContext';
 import { products, categories } from '../data/products';
@@ -105,6 +107,26 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-40 w-full shadow-md">
+      {/* Top Header: Micro announcement bar with hallmark & showroom timings */}
+      <div className="bg-[#3A070C] text-[#F9E2CC]/90 text-[11px] sm:text-xs py-1.5 px-4 sm:px-6 border-b border-[#610F16]/50">
+        <div className="max-w-7xl mx-auto flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <span className="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span className="font-medium tracking-wide">
+              100% BIS 916 Hallmarked &amp; HUID Verified • Pure Gold Assurance Since 1964
+            </span>
+          </div>
+          <div className="hidden md:flex items-center gap-6 text-[11px] text-[#F9E2CC]/85">
+            <span className="flex items-center gap-1.5">
+              <Clock className="w-3.5 h-3.5 text-[#F3C64F]" /> Showrooms Open 10 AM - 9 PM
+            </span>
+            <span className="flex items-center gap-1.5">
+              <Phone className="w-3.5 h-3.5 text-[#F3C64F]" /> Toll Free: 1800-425-1964
+            </span>
+          </div>
+        </div>
+      </div>
+
       {/* Main Top Header: Maroon (#4F0C12) background as in Image 3, with centered logo */}
       <div className="bg-[#4F0C12] text-[#F9E2CC] border-b border-[#610F16]/60 px-4 sm:px-6 py-2.5 transition-all">
         <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
