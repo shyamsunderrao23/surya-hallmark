@@ -108,7 +108,7 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-40 w-full shadow-md">
       {/* Top Header: Micro announcement bar with hallmark & showroom timings */}
-      <div className="bg-[#5E1B27] text-[#FCEED8]/90 text-[11px] sm:text-xs py-1.5 px-4 sm:px-6 border-b border-[#8C3444]/50">
+      <div className="bg-[#450C13] text-[#FCEED8]/90 text-[11px] sm:text-xs py-1.5 px-4 sm:px-6 border-b border-[#751A24]/50">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-2">
             <span className="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
@@ -127,8 +127,8 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Main Top Header: Maroon (#782A37) background as in Image 3, with centered logo */}
-      <div className="bg-[#782A37] text-[#FCEED8] border-b border-[#8C3444]/60 px-4 sm:px-6 py-2.5 transition-all">
+      {/* Main Top Header: Maroon (#5B131B) background as in Image 3, with centered logo */}
+      <div className="bg-[#5B131B] text-[#FCEED8] border-b border-[#751A24]/60 px-4 sm:px-6 py-2.5 transition-all">
         <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
           
           {/* Left Section: Search box & Today's Gold Rate button (Image 4 reference) */}
@@ -147,7 +147,7 @@ export default function Header() {
             <div ref={searchContainerRef} className="relative flex-1 hidden sm:block">
               <form 
                 onSubmit={handleSearchSubmit} 
-                className="relative flex items-center bg-[#5E1B27] border border-[#943C4D] rounded-full overflow-hidden focus-within:ring-1 focus-within:ring-[#F3C64F] focus-within:border-[#F3C64F] transition shadow-inner h-9"
+                className="relative flex items-center bg-[#450C13] border border-[#7E1E29] rounded-full overflow-hidden focus-within:ring-1 focus-within:ring-[#F3C64F] focus-within:border-[#F3C64F] transition shadow-inner h-9"
               >
                 <input
                   type="text"
@@ -173,7 +173,7 @@ export default function Header() {
                 )}
                 <button
                   type="submit"
-                  className="bg-[#4A121D] hover:bg-[#3B0B15] text-[#FCEED8] px-3.5 h-full transition flex items-center justify-center cursor-pointer border-l border-[#943C4D]"
+                  className="bg-[#36070E] hover:bg-[#2A0409] text-[#FCEED8] px-3.5 h-full transition flex items-center justify-center cursor-pointer border-l border-[#7E1E29]"
                   aria-label="Search"
                 >
                   <Search className="w-4 h-4 text-[#F3C64F]" />
@@ -223,7 +223,7 @@ export default function Header() {
                             onClick={() => {
                               setSearchQuery(kw);
                             }}
-                            className="text-xs text-gray-700 bg-white hover:text-[#782A37] hover:bg-[#f0e4d2] px-2.5 py-1 rounded-lg border border-[#e2d5c2] transition"
+                            className="text-xs text-gray-700 bg-white hover:text-[#5B131B] hover:bg-[#f0e4d2] px-2.5 py-1 rounded-lg border border-[#e2d5c2] transition"
                           >
                             {kw}
                           </button>
@@ -248,7 +248,7 @@ export default function Header() {
                           <div
                             key={item.id}
                             onClick={() => handleSelectProduct(item.id)}
-                            className="flex items-center gap-2.5 p-2 rounded-xl bg-white hover:bg-[#f5ecdf] border border-[#e8dccb] hover:border-[#782A37] cursor-pointer transition group"
+                            className="flex items-center gap-2.5 p-2 rounded-xl bg-white hover:bg-[#f5ecdf] border border-[#e8dccb] hover:border-[#5B131B] cursor-pointer transition group"
                           >
                             <img
                               src={item.image}
@@ -256,15 +256,15 @@ export default function Header() {
                               className="w-12 h-12 object-contain rounded-lg bg-[#FCEED8] p-1 border border-gray-100 group-hover:scale-105 transition"
                             />
                             <div className="flex-1 min-w-0">
-                              <h4 className="text-xs font-bold text-[#2a1717] truncate group-hover:text-[#782A37]">
+                              <h4 className="text-xs font-bold text-[#2a1717] truncate group-hover:text-[#5B131B]">
                                 {item.name}
                               </h4>
                               <div className="text-[10px] text-gray-500">{item.metal} • {item.grossWeight}g</div>
-                              <div className="text-xs font-bold text-[#782A37] font-mono">
+                              <div className="text-xs font-bold text-[#5B131B] font-mono">
                                 ₹{item.price.toLocaleString('en-IN')}
                               </div>
                             </div>
-                            <ArrowRight className="w-4 h-4 text-gray-400 group-hover:text-[#782A37] group-hover:translate-x-0.5 transition" />
+                            <ArrowRight className="w-4 h-4 text-gray-400 group-hover:text-[#5B131B] group-hover:translate-x-0.5 transition" />
                           </div>
                         ))}
                       </div>
@@ -282,7 +282,7 @@ export default function Header() {
                       setIsSearchDropdownOpen(false);
                       navigate(`/collections?search=${encodeURIComponent(searchQuery)}`);
                     }}
-                    className="text-[#782A37] font-bold flex items-center gap-1 hover:underline text-xs cursor-pointer"
+                    className="text-[#5B131B] font-bold flex items-center gap-1 hover:underline text-xs cursor-pointer"
                   >
                     <span>View All</span>
                     <ArrowRight className="w-3.5 h-3.5" />
@@ -299,12 +299,12 @@ export default function Header() {
                   setIsGoldRateDropdownOpen(!isGoldRateDropdownOpen);
                   setIsSearchDropdownOpen(false);
                 }}
-                className="flex items-center gap-2 bg-[#FCEED8] hover:bg-[#faebd7] text-[#782A37] px-3.5 h-9 rounded-full text-xs font-semibold shadow-sm hover:shadow transition border border-[#D6B485] cursor-pointer whitespace-nowrap"
+                className="flex items-center gap-2 bg-[#FCEED8] hover:bg-[#faebd7] text-[#5B131B] px-3.5 h-9 rounded-full text-xs font-semibold shadow-sm hover:shadow transition border border-[#D6B485] cursor-pointer whitespace-nowrap"
                 title="Click to view live gold & silver rates"
               >
-                <TrendingUp className="w-3.5 h-3.5 text-[#782A37]" />
+                <TrendingUp className="w-3.5 h-3.5 text-[#5B131B]" />
                 <span>Today's Gold Rate</span>
-                <span className="bg-[#782A37] text-[#F3C64F] text-[10px] px-1.5 py-0.5 rounded font-mono font-bold">
+                <span className="bg-[#5B131B] text-[#F3C64F] text-[10px] px-1.5 py-0.5 rounded font-mono font-bold">
                   ₹{goldRates.gold22k.perGram}/g
                 </span>
               </button>
@@ -318,7 +318,7 @@ export default function Header() {
                 }`}
               >
                 {/* Header */}
-                <div className="bg-[#782A37] text-[#FCEED8] px-4 py-2.5 flex items-center justify-between border-b border-[#8C3444]">
+                <div className="bg-[#5B131B] text-[#FCEED8] px-4 py-2.5 flex items-center justify-between border-b border-[#751A24]">
                   <div className="flex items-center gap-2">
                     <TrendingUp className="w-4 h-4 text-[#F3C64F]" />
                     <div>
@@ -336,7 +336,7 @@ export default function Header() {
                   {/* 22K & 24K Grid */}
                   <div className="grid grid-cols-2 gap-2">
                     <div className="bg-white p-2.5 rounded-xl border-2 border-[#D4AF37] shadow-xs text-center">
-                      <span className="text-[9px] font-bold text-[#782A37] bg-[#ede1d1] px-1.5 py-0.2 rounded uppercase">
+                      <span className="text-[9px] font-bold text-[#5B131B] bg-[#ede1d1] px-1.5 py-0.2 rounded uppercase">
                         22K (916 BIS)
                       </span>
                       <div className="text-base font-extrabold text-[#222] font-mono mt-0.5">
@@ -376,22 +376,22 @@ export default function Header() {
 
                   {/* City rates snapshot */}
                   <div className="bg-white p-2.5 rounded-xl border border-[#e4d4bd] space-y-1">
-                    <div className="text-[10px] font-bold text-[#782A37] uppercase tracking-wider flex items-center justify-between">
+                    <div className="text-[10px] font-bold text-[#5B131B] uppercase tracking-wider flex items-center justify-between">
                       <span>Live City Rates (22K 1g)</span>
                       <span className="text-gray-400 font-normal">Direct Showroom</span>
                     </div>
                     <div className="grid grid-cols-3 gap-1 text-[11px]">
                       <div className="flex justify-between bg-[#FCEED8] p-1 rounded">
                         <span className="text-gray-600">Chennai</span>
-                        <span className="font-bold font-mono text-[#782A37]">₹7380</span>
+                        <span className="font-bold font-mono text-[#5B131B]">₹7380</span>
                       </div>
                       <div className="flex justify-between bg-[#FCEED8] p-1 rounded">
                         <span className="text-gray-600">Coimbatore</span>
-                        <span className="font-bold font-mono text-[#782A37]">₹7380</span>
+                        <span className="font-bold font-mono text-[#5B131B]">₹7380</span>
                       </div>
                       <div className="flex justify-between bg-[#FCEED8] p-1 rounded">
                         <span className="text-gray-600">Bengaluru</span>
-                        <span className="font-bold font-mono text-[#782A37]">₹7375</span>
+                        <span className="font-bold font-mono text-[#5B131B]">₹7375</span>
                       </div>
                     </div>
                   </div>
@@ -403,7 +403,7 @@ export default function Header() {
                   <Link
                     to="/gold-rate"
                     onClick={() => setIsGoldRateDropdownOpen(false)}
-                    className="text-[#782A37] font-bold flex items-center gap-1 hover:underline text-xs cursor-pointer"
+                    className="text-[#5B131B] font-bold flex items-center gap-1 hover:underline text-xs cursor-pointer"
                   >
                     <span>Full Calculator &amp; Charts</span>
                     <ArrowRight className="w-3.5 h-3.5" />
@@ -436,7 +436,7 @@ export default function Header() {
                 <MapPin className="w-3.5 h-3.5 text-[#F3C64F] flex-shrink-0" />
                 <span className="whitespace-nowrap">Stores</span>
               </Link>
-              <span className="text-[#943C4D]">|</span>
+              <span className="text-[#7E1E29]">|</span>
 
               <Link 
                 to="/contact" 
@@ -461,13 +461,13 @@ export default function Header() {
             <button
               type="button"
               onClick={() => setIsWishlistOpen(true)}
-              className="relative p-2 text-[#FCEED8] hover:text-[#F3C64F] transition rounded-full hover:bg-[#5E1B27]"
+              className="relative p-2 text-[#FCEED8] hover:text-[#F3C64F] transition rounded-full hover:bg-[#450C13]"
               title="View Wishlist"
               aria-label="Wishlist"
             >
               <Heart className="w-5 h-5" />
               {wishlist.length > 0 && (
-                <span className="absolute -top-0.5 -right-0.5 bg-[#F3C64F] text-[#782A37] font-bold text-[10px] w-4 h-4 rounded-full flex items-center justify-center shadow">
+                <span className="absolute -top-0.5 -right-0.5 bg-[#F3C64F] text-[#5B131B] font-bold text-[10px] w-4 h-4 rounded-full flex items-center justify-center shadow">
                   {wishlist.length}
                 </span>
               )}
@@ -477,14 +477,14 @@ export default function Header() {
             <button
               type="button"
               onClick={() => setIsCartOpen(true)}
-              className="relative flex items-center gap-2 bg-[#5E1B27] hover:bg-[#38060B] text-[#FCEED8] px-3 py-1.5 rounded-full border border-[#943C4D] transition cursor-pointer shadow-inner"
+              className="relative flex items-center gap-2 bg-[#450C13] hover:bg-[#38060B] text-[#FCEED8] px-3 py-1.5 rounded-full border border-[#7E1E29] transition cursor-pointer shadow-inner"
               title="View Bag"
               aria-label="Cart"
             >
               <ShoppingBag className="w-5 h-5 text-[#F3C64F]" />
               <span className="hidden sm:inline text-xs font-semibold">Bag</span>
               {cartCount > 0 && (
-                <span className="bg-[#F3C64F] text-[#782A37] font-bold text-[11px] px-1.5 py-0.2 rounded-full min-w-[18px] text-center">
+                <span className="bg-[#F3C64F] text-[#5B131B] font-bold text-[11px] px-1.5 py-0.2 rounded-full min-w-[18px] text-center">
                   {cartCount}
                 </span>
               )}
@@ -496,8 +496,8 @@ export default function Header() {
 
       {/* Mobile search bar if toggled */}
       {mobileSearchOpen && (
-        <div className="sm:hidden bg-[#5E1B27] p-3 border-b border-[#8C3444] animate-fadeIn">
-          <form onSubmit={handleSearchSubmit} className="flex items-center bg-[#4A121D] border border-[#943C4D] rounded-full overflow-hidden h-9 px-3">
+        <div className="sm:hidden bg-[#450C13] p-3 border-b border-[#751A24] animate-fadeIn">
+          <form onSubmit={handleSearchSubmit} className="flex items-center bg-[#36070E] border border-[#7E1E29] rounded-full overflow-hidden h-9 px-3">
             <input
               type="text"
               autoFocus
@@ -523,8 +523,8 @@ export default function Header() {
               to="/"
               className={`h-full px-3 flex items-center justify-center whitespace-nowrap border-b-2 transition-colors duration-150 ${
                 location.pathname === '/' 
-                  ? 'text-[#782A37] font-bold border-[#782A37]' 
-                  : 'text-[#5c3737] border-transparent hover:text-[#782A37] hover:border-[#782A37]/30'
+                  ? 'text-[#5B131B] font-bold border-[#5B131B]' 
+                  : 'text-[#5c3737] border-transparent hover:text-[#5B131B] hover:border-[#5B131B]/30'
               }`}
               title="Home"
             >
@@ -540,8 +540,8 @@ export default function Header() {
                   to={item.path}
                   className={`h-full px-3 flex items-center text-xs xl:text-sm font-semibold tracking-wide whitespace-nowrap border-b-2 transition-colors duration-150 ${
                     isActive 
-                      ? 'text-[#782A37] font-bold border-[#782A37]' 
-                      : 'text-[#4a2626] border-transparent hover:text-[#782A37] hover:border-[#782A37]/30'
+                      ? 'text-[#5B131B] font-bold border-[#5B131B]' 
+                      : 'text-[#4a2626] border-transparent hover:text-[#5B131B] hover:border-[#5B131B]/30'
                   }`}
                 >
                   {item.label}
@@ -556,7 +556,7 @@ export default function Header() {
       {mobileMenuOpen && (
         <div className="lg:hidden bg-[#FCEED8] border-b border-[#d4be9f] text-[#3d1f1f] px-4 py-3 space-y-2 shadow-xl animate-fadeIn">
           {/* Quick Gold Rate on Mobile */}
-          <div className="bg-[#782A37] text-[#FCEED8] p-3 rounded-lg flex items-center justify-between">
+          <div className="bg-[#5B131B] text-[#FCEED8] p-3 rounded-lg flex items-center justify-between">
             <div>
               <div className="text-[11px] text-[#F3C64F] uppercase font-bold tracking-wider">Live Gold Rate Today</div>
               <div className="text-sm font-semibold">22K: ₹{goldRates.gold22k.perGram}/g | 24K: ₹{goldRates.gold24k.perGram}/g</div>
@@ -566,7 +566,7 @@ export default function Header() {
                 setMobileMenuOpen(false);
                 navigate('/gold-rate');
               }}
-              className="bg-[#F3C64F] text-[#782A37] text-xs font-bold px-2.5 py-1 rounded shadow cursor-pointer"
+              className="bg-[#F3C64F] text-[#5B131B] text-xs font-bold px-2.5 py-1 rounded shadow cursor-pointer"
             >
               View More
             </button>
@@ -576,7 +576,7 @@ export default function Header() {
             <Link
               to="/"
               onClick={() => setMobileMenuOpen(false)}
-              className="flex items-center gap-2 p-2.5 bg-[#FCEED8] rounded-lg text-xs font-bold text-[#782A37]"
+              className="flex items-center gap-2 p-2.5 bg-[#FCEED8] rounded-lg text-xs font-bold text-[#5B131B]"
             >
               <Home className="w-4 h-4" /> Home
             </Link>
@@ -600,7 +600,7 @@ export default function Header() {
                   onClick={() => setMobileMenuOpen(false)}
                   className={`block px-3 py-2 text-sm font-semibold rounded transition ${
                     isActive 
-                      ? 'text-[#782A37] bg-[#ebdccb] border-l-4 border-[#782A37] font-bold' 
+                      ? 'text-[#5B131B] bg-[#ebdccb] border-l-4 border-[#5B131B] font-bold' 
                       : 'text-[#38060B] hover:bg-[#ede1d1]'
                   }`}
                 >
@@ -616,21 +616,21 @@ export default function Header() {
               onClick={() => setMobileMenuOpen(false)}
               className="flex items-center gap-2 px-3 py-2 hover:bg-[#FCEED8] rounded font-medium"
             >
-              <MapPin className="w-4 h-4 text-[#782A37]" /> Our Showrooms
+              <MapPin className="w-4 h-4 text-[#5B131B]" /> Our Showrooms
             </Link>
             <Link
               to="/schemes"
               onClick={() => setMobileMenuOpen(false)}
               className="flex items-center gap-2 px-3 py-2 hover:bg-[#FCEED8] rounded font-medium"
             >
-              <Calendar className="w-4 h-4 text-[#782A37]" /> Swarna Nidhi Savings Scheme
+              <Calendar className="w-4 h-4 text-[#5B131B]" /> Swarna Nidhi Savings Scheme
             </Link>
             <Link
               to="/contact"
               onClick={() => setMobileMenuOpen(false)}
               className="flex items-center gap-2 px-3 py-2 hover:bg-[#FCEED8] rounded font-medium"
             >
-              <Mail className="w-4 h-4 text-[#782A37]" /> Contact &amp; Support
+              <Mail className="w-4 h-4 text-[#5B131B]" /> Contact &amp; Support
             </Link>
           </div>
         </div>

@@ -24,7 +24,7 @@ h1, h2, h3, h4, .font-serif-luxury {
 }
 
 .bg-maroon-pattern {
-  background-color: #782A37;
+  background-color: #5B131B;
   background-image: radial-gradient(rgba(212, 175, 55, 0.08) 1px, transparent 1px);
   background-size: 20px 20px;
 }
@@ -42,5 +42,5 @@ h1, h2, h3, h4, .font-serif-luxury {
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #782A37;
+  background: #5B131B;
 }
