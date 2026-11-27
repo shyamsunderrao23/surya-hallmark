@@ -3,6 +3,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { ShopProvider } from './context/ShopContext';
 import Header from './components/Header';
 import CategoryCircleSection from './components/CategoryCircleSection';
+import OurStoresSection from './components/OurStoresSection';
 import CartDrawer from './components/CartDrawer';
 import WishlistDrawer from './components/WishlistDrawer';
 import homeBanner from './assets/home-banner.png';
@@ -31,6 +32,9 @@ export default function App() {
 
             {/* Circular Category Shortcuts Section */}
             <CategoryCircleSection />
+
+            {/* Our Stores Interactive Expanding Cards Section */}
+            <OurStoresSection />
           </main>
 
           {/* Drawers for Wishlist & Cart */}
