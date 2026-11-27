@@ -73,54 +73,52 @@ export default function ProductShowcaseSection() {
     return (
       <div
         key={product.id}
-        className="rounded-2xl p-2 sm:p-3 flex flex-col justify-between relative transition-all duration-300 group hover:-translate-y-1"
+        className="rounded-2xl p-1 flex flex-col justify-between relative transition-all duration-300 group hover:-translate-y-1"
       >
-        {/* Floating Top Badges */}
-        <div className="flex items-center justify-between w-full mb-2 z-10">
-          <div className="flex items-center gap-1.5 flex-wrap">
+        {/* Product Image with Top-Corner Badge & Wishlist Overlays */}
+        <div className="w-full aspect-square rounded-2xl overflow-hidden mb-3.5 relative flex items-center justify-center shadow-xs group-hover:shadow-md transition-shadow">
+          <img
+            src={product.image}
+            alt={product.name}
+            className="w-full h-full object-cover group-hover:scale-106 transition-transform duration-500 rounded-2xl"
+            loading="lazy"
+          />
+
+          {/* Floating Top-Left Badge */}
+          <div className="absolute top-3 left-3 z-10 flex items-center gap-1.5 pointer-events-none">
             {product.badge ? (
-              <span className="text-[10px] font-bold tracking-wider uppercase px-2 py-0.5 rounded-full bg-[#5B131B]/10 text-[#5B131B] border border-[#5B131B]/20">
+              <span className="text-[10px] font-bold tracking-wider uppercase px-2.5 py-1 rounded-full bg-white/95 backdrop-blur-md text-[#5B131B] border border-[#5B131B]/20 shadow-xs">
                 {product.badge}
               </span>
             ) : discountPercent ? (
-              <span className="text-[10px] font-bold tracking-wider uppercase px-2 py-0.5 rounded-full bg-rose-100/90 text-rose-800">
+              <span className="text-[10px] font-bold tracking-wider uppercase px-2.5 py-1 rounded-full bg-rose-600 text-white shadow-xs font-semibold">
                 {discountPercent}% OFF
               </span>
             ) : product.isBestseller ? (
-              <span className="text-[10px] font-bold tracking-wider uppercase px-2 py-0.5 rounded-full bg-amber-100/90 text-amber-800">
+              <span className="text-[10px] font-bold tracking-wider uppercase px-2.5 py-1 rounded-full bg-amber-500 text-white shadow-xs">
                 BESTSELLER
               </span>
             ) : (
-              <span className="text-[10px] font-bold tracking-wider uppercase px-2 py-0.5 rounded-full bg-[#5B131B]/5 text-[#5B131B] border border-[#5B131B]/15">
-                HALLMARKED
+              <span className="text-[10px] font-bold tracking-wider uppercase px-2.5 py-1 rounded-full bg-white/95 backdrop-blur-md text-[#5B131B] border border-stone-200 shadow-xs">
+                BIS 916
               </span>
             )}
           </div>
 
-          {/* Wishlist Button */}
+          {/* Floating Top-Right Wishlist Button */}
           <button
             onClick={(e) => {
               e.stopPropagation();
               toggleWishlist(product.id);
             }}
             title={isWishlisted ? 'Remove from Wishlist' : 'Add to Wishlist'}
-            className="p-2 rounded-full bg-white/80 hover:bg-white text-stone-400 hover:text-[#5B131B] transition-colors cursor-pointer shadow-xs border border-[#DFCAB4]/60"
+            className="absolute top-3 right-3 z-10 p-2 rounded-full bg-white/90 backdrop-blur-md hover:bg-white text-stone-600 hover:text-[#5B131B] transition-all cursor-pointer shadow-sm hover:scale-110 active:scale-95"
           >
             <Heart
-              size={17}
-              className={isWishlisted ? 'fill-[#5B131B] text-[#5B131B]' : 'text-stone-400'}
+              size={16}
+              className={isWishlisted ? 'fill-[#5B131B] text-[#5B131B]' : 'text-stone-600'}
             />
           </button>
-        </div>
-
-        {/* Product Image without inner bg card */}
-        <div className="w-full aspect-square rounded-xl overflow-hidden mb-3.5 relative flex items-center justify-center">
-          <img
-            src={product.image}
-            alt={product.name}
-            className="w-full h-full object-cover group-hover:scale-106 transition-transform duration-500 rounded-xl"
-            loading="lazy"
-          />
         </div>
 
         {/* Content Details */}
