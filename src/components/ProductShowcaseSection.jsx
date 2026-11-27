@@ -5,29 +5,24 @@ import { useShop } from '../context/ShopContext';
 
 export default function ProductShowcaseSection() {
   const { addToCart, toggleWishlist, isInWishlist } = useShop();
-  const [selectedCategory, setSelectedCategory] = useState('all');
   const [addedId, setAddedId] = useState(null);
 
-  // Categories requested by the user: gold, silver, platinum, coins, diamonds
-  const categories = [
-    { id: 'all', label: 'All Products' },
-    { id: 'gold', label: 'Gold' },
-    { id: 'silver', label: 'Silver' },
-    { id: 'platinum', label: 'Platinum' },
-    { id: 'coins', label: 'Coins' },
-    { id: 'diamond', label: 'Diamonds' },
-  ];
-
-  // Filter products based on selected tab
-  const filteredProducts = useMemo(() => {
-    if (selectedCategory === 'all') {
-      // Prioritize the 5 main categories
-      return products.filter((p) =>
-        ['gold', 'silver', 'platinum', 'coins', 'diamond'].includes(p.category)
-      ).slice(0, 8);
-    }
-    return products.filter((p) => p.category === selectedCategory);
-  }, [selectedCategory]);
+  // Latest products curated across Gold, Silver, Platinum, Coins, and Diamonds (matching reference image)
+  const latestProducts = useMemo(() => {
+    const curatedIds = [
+      'sh-103', // Diamond Solitaire Ring
+      'sh-113', // Floral Emerald & Diamond Pendant
+      'sh-114', // Aura Diamond Kada Bangle
+      'sh-115', // Spiral Bloom 18K Yellow Gold Pendant
+      'sh-102', // Padma Lakshmi 22K Temple Gold Choker
+      'sh-117', // Meenakari 925 Sterling Silver Payal
+      'sh-106', // Eternal Love 950 Platinum Couple Bands
+      'sh-104', // Surya 24K 999 Pure Gold Bullion Coin
+    ];
+    return curatedIds
+      .map((id) => products.find((p) => p.id === id))
+      .filter(Boolean);
+  }, []);
 
   // Featured Signature items for the bottom row (matching reference image)
   const featuredProducts = useMemo(() => {
@@ -201,41 +196,17 @@ export default function ProductShowcaseSection() {
     <section className="w-full py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       {/* ===================== SECTION 1: LATEST PRODUCTS ===================== */}
       <div className="text-center mb-8">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#5B131B]/10 text-[#5B131B] text-xs font-bold uppercase tracking-wider mb-2">
-          <Sparkles size={14} className="text-[#5B131B]" />
-          <span>Curated Jewellery Range</span>
-        </div>
         <h2 className="text-3xl sm:text-4xl font-serif font-bold text-[#3B0E14] mb-3">
           Latest Products
         </h2>
         <p className="text-stone-600 max-w-2xl mx-auto text-sm sm:text-base">
           Explore our certified range of hallmarked Gold, Sterling Silver, Pure Platinum, Investment Bullion Coins, and Solitaire Diamonds.
         </p>
-
-        {/* Category Tabs (Gold, Silver, Platinum, Coins, Diamonds, All) */}
-        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mt-6">
-          {categories.map((cat) => {
-            const isActive = selectedCategory === cat.id;
-            return (
-              <button
-                key={cat.id}
-                onClick={() => setSelectedCategory(cat.id)}
-                className={`px-4 sm:px-6 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all cursor-pointer ${
-                  isActive
-                    ? 'bg-[#5B131B] text-[#FCEED8] shadow-md border border-[#5B131B]'
-                    : 'bg-white/80 hover:bg-white text-stone-700 border border-[#DFCAB4] hover:border-[#5B131B]'
-                }`}
-              >
-                {cat.label}
-              </button>
-            );
-          })}
-        </div>
       </div>
 
       {/* Grid of Products */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 sm:gap-6 mb-14">
-        {filteredProducts.map(renderProductCard)}
+        {latestProducts.map(renderProductCard)}
       </div>
 
       {/* ===================== SECTION 2: 4-COLUMN LIFESTYLE BANNERS ===================== */}
@@ -244,8 +215,7 @@ export default function ProductShowcaseSection() {
         {lifestyleBanners.map((banner, index) => (
           <div
             key={index}
-            onClick={() => setSelectedCategory(banner.category)}
-            className="group relative h-72 sm:h-80 rounded-2xl overflow-hidden cursor-pointer shadow-sm hover:shadow-xl transition-all duration-300 border border-[#DFCAB4]"
+            className="group relative h-72 sm:h-80 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-[#DFCAB4]"
           >
             {/* Background Image */}
             <img
