@@ -32,10 +32,10 @@ export default function SearchModal() {
 
   return (
     <div className="fixed inset-0 z-50 flex items-start justify-center pt-16 px-4 bg-black/60 backdrop-blur-xs animate-fadeIn">
-      <div className="relative w-full max-w-2xl bg-[#FAF9F6] rounded-2xl shadow-2xl border border-[#d8c5aa] overflow-hidden text-[#3d1f1f]">
+      <div className="relative w-full max-w-2xl bg-[#F9E2CC] rounded-2xl shadow-2xl border border-[#d8c5aa] overflow-hidden text-[#3d1f1f]">
         
         {/* Search Input Bar */}
-        <div className="bg-[#6B2C2C] p-4 flex items-center gap-3">
+        <div className="bg-[#4F0C12] p-4 flex items-center gap-3">
           <Search className="w-5 h-5 text-[#F3C64F] flex-shrink-0" />
           <input
             type="text"
@@ -43,7 +43,7 @@ export default function SearchModal() {
             placeholder="Search gold necklaces, diamond rings, silver pooja items, 24K coins..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="flex-1 bg-transparent text-[#FAF9F6] placeholder-[#dcbaba] text-sm focus:outline-none"
+            className="flex-1 bg-transparent text-[#F9E2CC] placeholder-[#dcbaba] text-sm focus:outline-none"
           />
           {searchQuery && (
             <button onClick={() => setSearchQuery('')} className="text-gray-300 hover:text-white">
@@ -52,7 +52,7 @@ export default function SearchModal() {
           )}
           <button
             onClick={() => setIsSearchOpen(false)}
-            className="bg-[#521f1f] text-[#FAF9F6] px-3 py-1 rounded-md text-xs font-semibold hover:bg-[#3d1616]"
+            className="bg-[#3A070C] text-[#F9E2CC] px-3 py-1 rounded-md text-xs font-semibold hover:bg-[#2A0407]"
           >
             Esc
           </button>
@@ -71,7 +71,7 @@ export default function SearchModal() {
                 <button
                   key={cat.id}
                   onClick={() => handleSelectCategory(cat.id)}
-                  className="bg-white hover:bg-[#FAF9F6] text-[#422222] border border-[#d8c5aa] px-3 py-1 rounded-full text-xs font-medium transition"
+                  className="bg-white hover:bg-[#F9E2CC] text-[#38060B] border border-[#d8c5aa] px-3 py-1 rounded-full text-xs font-medium transition"
                 >
                   {cat.name}
                 </button>
@@ -95,7 +95,7 @@ export default function SearchModal() {
                   <div
                     key={item.id}
                     onClick={() => handleSelectProduct(item.id)}
-                    className="flex gap-3 bg-white p-2.5 rounded-xl border border-[#FAF9F6] hover:border-[#6B2C2C] shadow-xs cursor-pointer transition group"
+                    className="flex gap-3 bg-white p-2.5 rounded-xl border border-[#F9E2CC] hover:border-[#4F0C12] shadow-xs cursor-pointer transition group"
                   >
                     <img
                       src={item.image}
@@ -103,11 +103,11 @@ export default function SearchModal() {
                       className="w-16 h-16 object-cover rounded-lg border border-gray-100 group-hover:scale-105 transition"
                     />
                     <div className="flex-1 min-w-0">
-                      <h4 className="text-xs font-bold text-[#331c1c] truncate group-hover:text-[#6B2C2C]">
+                      <h4 className="text-xs font-bold text-[#331c1c] truncate group-hover:text-[#4F0C12]">
                         {item.name}
                       </h4>
                       <div className="text-[10px] text-gray-500">{item.metal}</div>
-                      <div className="text-xs font-bold text-[#6B2C2C] font-mono mt-1">
+                      <div className="text-xs font-bold text-[#4F0C12] font-mono mt-1">
                         ₹{item.price.toLocaleString('en-IN')}
                       </div>
                     </div>
@@ -120,14 +120,14 @@ export default function SearchModal() {
         </div>
 
         {/* Footer */}
-        <div className="p-3 bg-[#FAF9F6] border-t border-[#d8c5aa] flex justify-between items-center text-xs">
+        <div className="p-3 bg-[#F9E2CC] border-t border-[#d8c5aa] flex justify-between items-center text-xs">
           <span className="text-gray-600">All prices computed with live daily bullion rates</span>
           <button
             onClick={() => {
               setIsSearchOpen(false);
               navigate(`/collections?search=${encodeURIComponent(searchQuery)}`);
             }}
-            className="text-[#6B2C2C] font-bold flex items-center gap-1 hover:underline"
+            className="text-[#4F0C12] font-bold flex items-center gap-1 hover:underline"
           >
             <span>View All Search Results</span>
             <ArrowRight className="w-3.5 h-3.5" />

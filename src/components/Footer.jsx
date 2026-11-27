@@ -27,14 +27,14 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-[#461919] text-[#FAF9F6] border-t-4 border-[#D4AF37] mt-16">
+    <footer className="bg-[#38060B] text-[#F9E2CC] border-t-4 border-[#D4AF37] mt-16">
       
       {/* 4 Pillars of Trust Bar */}
-      <div className="bg-[#562020] border-b border-[#6f2c2c] py-6 px-4 sm:px-6">
+      <div className="bg-[#3A070C] border-b border-[#4F0C12] py-6 px-4 sm:px-6">
         <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
           
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full bg-[#6B2C2C] border border-[#D4AF37]/40 flex items-center justify-center flex-shrink-0 text-[#F3C64F]">
+            <div className="w-10 h-10 rounded-full bg-[#4F0C12] border border-[#D4AF37]/40 flex items-center justify-center flex-shrink-0 text-[#F3C64F]">
               <ShieldCheck className="w-5 h-5" />
             </div>
             <div>
@@ -44,7 +44,7 @@ export default function Footer() {
           </div>
 
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full bg-[#6B2C2C] border border-[#D4AF37]/40 flex items-center justify-center flex-shrink-0 text-[#F3C64F]">
+            <div className="w-10 h-10 rounded-full bg-[#4F0C12] border border-[#D4AF37]/40 flex items-center justify-center flex-shrink-0 text-[#F3C64F]">
               <RefreshCcw className="w-5 h-5" />
             </div>
             <div>
@@ -54,7 +54,7 @@ export default function Footer() {
           </div>
 
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full bg-[#6B2C2C] border border-[#D4AF37]/40 flex items-center justify-center flex-shrink-0 text-[#F3C64F]">
+            <div className="w-10 h-10 rounded-full bg-[#4F0C12] border border-[#D4AF37]/40 flex items-center justify-center flex-shrink-0 text-[#F3C64F]">
               <Truck className="w-5 h-5" />
             </div>
             <div>
@@ -64,7 +64,7 @@ export default function Footer() {
           </div>
 
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full bg-[#6B2C2C] border border-[#D4AF37]/40 flex items-center justify-center flex-shrink-0 text-[#F3C64F]">
+            <div className="w-10 h-10 rounded-full bg-[#4F0C12] border border-[#D4AF37]/40 flex items-center justify-center flex-shrink-0 text-[#F3C64F]">
               <Award className="w-5 h-5" />
             </div>
             <div>
@@ -156,11 +156,11 @@ export default function Footer() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="w-full bg-[#562222] border border-[#8a3e3e] text-xs px-3 py-2 rounded-lg text-white placeholder-[#b89595] focus:outline-none focus:ring-1 focus:ring-[#D4AF37]"
+                className="w-full bg-[#3A070C] border border-[#6B121B] text-xs px-3 py-2 rounded-lg text-white placeholder-[#b89595] focus:outline-none focus:ring-1 focus:ring-[#D4AF37]"
               />
               <button
                 type="submit"
-                className="w-full bg-[#D4AF37] hover:bg-[#e0be4d] text-[#461919] text-xs font-bold py-2 rounded-lg transition uppercase tracking-wider"
+                className="w-full bg-[#D4AF37] hover:bg-[#e0be4d] text-[#38060B] text-xs font-bold py-2 rounded-lg transition uppercase tracking-wider"
               >
                 Join Privilege Club
               </button>
@@ -176,7 +176,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom copyright & certification stamps */}
-        <div className="border-t border-[#682727] mt-10 pt-6 flex flex-col md:flex-row items-center justify-between text-xs text-[#b89a9a] gap-4">
+        <div className="border-t border-[#38060B] mt-10 pt-6 flex flex-col md:flex-row items-center justify-between text-xs text-[#b89a9a] gap-4">
           <div>
             © {new Date().getFullYear()} Surya Hallmark Jewellers Pvt. Ltd. All rights reserved.
           </div>

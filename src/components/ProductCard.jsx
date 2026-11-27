@@ -8,12 +8,12 @@ export default function ProductCard({ product }) {
   const isWishlisted = isInWishlist(product.id);
 
   return (
-    <div className="group bg-white rounded-2xl border border-[#d8c5aa] hover:border-[#6B2C2C] shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col overflow-hidden relative">
+    <div className="group bg-white rounded-2xl border border-[#d8c5aa] hover:border-[#4F0C12] shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col overflow-hidden relative">
       
       {/* Top badges */}
       <div className="absolute top-3 left-3 z-10 flex flex-col gap-1">
         {product.isBestseller && (
-          <span className="bg-[#6B2C2C] text-[#F3C64F] text-[10px] font-bold px-2 py-0.5 rounded shadow uppercase tracking-wider">
+          <span className="bg-[#4F0C12] text-[#F3C64F] text-[10px] font-bold px-2 py-0.5 rounded shadow uppercase tracking-wider">
             Bestseller
           </span>
         )}
@@ -36,7 +36,7 @@ export default function ProductCard({ product }) {
       </button>
 
       {/* Product Image with Quick View Hover */}
-      <div className="relative aspect-square overflow-hidden bg-[#faf6f0] p-4 flex items-center justify-center">
+      <div className="relative aspect-square overflow-hidden bg-[#F9E2CC] p-4 flex items-center justify-center">
         <Link to={`/product/${product.id}`} className="w-full h-full flex items-center justify-center">
           <img
             src={product.image}
@@ -49,7 +49,7 @@ export default function ProductCard({ product }) {
         {/* Hover Quick View Pill */}
         <button
           onClick={() => setQuickViewProduct(product)}
-          className="absolute bottom-3 inset-x-4 bg-white/95 hover:bg-[#6B2C2C] text-[#422222] hover:text-white text-xs font-semibold py-2 px-3 rounded-xl shadow-md opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition duration-200 flex items-center justify-center gap-1.5 cursor-pointer"
+          className="absolute bottom-3 inset-x-4 bg-white/95 hover:bg-[#4F0C12] text-[#38060B] hover:text-white text-xs font-semibold py-2 px-3 rounded-xl shadow-md opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition duration-200 flex items-center justify-center gap-1.5 cursor-pointer"
         >
           <Eye className="w-3.5 h-3.5" />
           <span>Quick View</span>
@@ -64,7 +64,7 @@ export default function ProductCard({ product }) {
           </div>
           <Link
             to={`/product/${product.id}`}
-            className="block text-sm font-bold text-[#2a1717] hover:text-[#6B2C2C] line-clamp-2 leading-snug transition"
+            className="block text-sm font-bold text-[#2a1717] hover:text-[#4F0C12] line-clamp-2 leading-snug transition"
           >
             {product.name}
           </Link>
@@ -82,7 +82,7 @@ export default function ProductCard({ product }) {
         {/* Pricing & Add to Cart */}
         <div className="pt-2 border-t border-[#f0e3d2] flex items-center justify-between gap-2">
           <div>
-            <div className="text-base font-extrabold text-[#6B2C2C] font-mono leading-none">
+            <div className="text-base font-extrabold text-[#4F0C12] font-mono leading-none">
               ₹{product.price.toLocaleString('en-IN')}
             </div>
             {product.originalPrice && (
@@ -94,7 +94,7 @@ export default function ProductCard({ product }) {
 
           <button
             onClick={() => addToCart(product, 1)}
-            className="bg-[#6B2C2C] hover:bg-[#521f1f] text-[#FAF9F6] p-2.5 rounded-xl shadow-sm hover:shadow transition flex items-center justify-center cursor-pointer"
+            className="bg-[#4F0C12] hover:bg-[#3A070C] text-[#F9E2CC] p-2.5 rounded-xl shadow-sm hover:shadow transition flex items-center justify-center cursor-pointer"
             title="Add to Shopping Bag"
           >
             <ShoppingBag className="w-4 h-4 text-[#F3C64F]" />

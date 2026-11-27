@@ -21,7 +21,7 @@ export default function QuickViewModal() {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs animate-fadeIn">
-      <div className="relative w-full max-w-3xl bg-[#FAF9F6] rounded-2xl shadow-2xl border border-[#d8c5aa] overflow-hidden text-[#3d1f1f] flex flex-col md:flex-row max-h-[90vh]">
+      <div className="relative w-full max-w-3xl bg-[#F9E2CC] rounded-2xl shadow-2xl border border-[#d8c5aa] overflow-hidden text-[#3d1f1f] flex flex-col md:flex-row max-h-[90vh]">
         
         {/* Close Button */}
         <button
@@ -44,7 +44,7 @@ export default function QuickViewModal() {
         <div className="md:w-1/2 p-6 flex flex-col justify-between overflow-y-auto">
           <div className="space-y-3">
             <div className="flex items-center gap-2">
-              <span className="bg-[#6B2C2C] text-[#F3C64F] text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider">
+              <span className="bg-[#4F0C12] text-[#F3C64F] text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider">
                 {item.category}
               </span>
               <span className="text-[11px] font-semibold text-emerald-800 bg-emerald-100 px-2 py-0.5 rounded flex items-center gap-1">
@@ -69,7 +69,7 @@ export default function QuickViewModal() {
 
             {/* Price */}
             <div className="pt-1">
-              <div className="text-2xl font-extrabold text-[#6B2C2C] font-mono">
+              <div className="text-2xl font-extrabold text-[#4F0C12] font-mono">
                 ₹{item.price.toLocaleString('en-IN')}
               </div>
               <div className="text-[11px] text-gray-500">
@@ -78,7 +78,7 @@ export default function QuickViewModal() {
             </div>
 
             {/* Specs Mini Table */}
-            <div className="bg-[#FAF9F6] p-3 rounded-xl border border-[#d8c5aa] text-xs space-y-1">
+            <div className="bg-[#F9E2CC] p-3 rounded-xl border border-[#d8c5aa] text-xs space-y-1">
               <div className="flex justify-between">
                 <span className="text-gray-600">Gross Weight:</span>
                 <span className="font-semibold text-gray-900">{item.grossWeight} grams</span>
@@ -89,7 +89,7 @@ export default function QuickViewModal() {
               </div>
               <div className="flex justify-between">
                 <span className="text-gray-600">Purity Standard:</span>
-                <span className="font-semibold text-[#6B2C2C]">{item.metal}</span>
+                <span className="font-semibold text-[#4F0C12]">{item.metal}</span>
               </div>
             </div>
 
@@ -104,7 +104,7 @@ export default function QuickViewModal() {
             <div className="flex gap-2">
               <button
                 onClick={handleAddToCart}
-                className="flex-1 bg-[#6B2C2C] hover:bg-[#521f1f] text-[#FAF9F6] py-2.5 px-4 rounded-xl font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-md transition"
+                className="flex-1 bg-[#4F0C12] hover:bg-[#3A070C] text-[#F9E2CC] py-2.5 px-4 rounded-xl font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-md transition"
               >
                 {addedAnimation ? (
                   <>
@@ -133,7 +133,7 @@ export default function QuickViewModal() {
             <Link
               to={`/product/${item.id}`}
               onClick={() => setQuickViewProduct(null)}
-              className="block text-center text-xs font-bold text-[#6B2C2C] hover:underline pt-1"
+              className="block text-center text-xs font-bold text-[#4F0C12] hover:underline pt-1"
             >
               View Full Hallmark Specifications &amp; Price Breakup &rarr;
             </Link>

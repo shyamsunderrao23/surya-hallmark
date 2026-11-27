@@ -125,14 +125,14 @@ export default function HomePage() {
 
       {/* Live Gold Rate Ribbon Strip */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 relative z-20">
-        <div className="bg-[#FAF9F6] border-2 border-[#D4AF37] rounded-2xl shadow-xl p-4 sm:p-5 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="bg-[#F9E2CC] border-2 border-[#D4AF37] rounded-2xl shadow-xl p-4 sm:p-5 flex flex-col md:flex-row items-center justify-between gap-4">
           
           <div className="flex items-center gap-3">
-            <div className="w-12 h-12 rounded-xl bg-[#6B2C2C] text-[#F3C64F] flex items-center justify-center flex-shrink-0 shadow">
+            <div className="w-12 h-12 rounded-xl bg-[#4F0C12] text-[#F3C64F] flex items-center justify-center flex-shrink-0 shadow">
               <TrendingUp className="w-6 h-6" />
             </div>
             <div>
-              <div className="text-xs font-bold text-[#6B2C2C] uppercase tracking-wider flex items-center gap-1.5">
+              <div className="text-xs font-bold text-[#4F0C12] uppercase tracking-wider flex items-center gap-1.5">
                 <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
                 <span>Today's Bullion Rate (Chennai &amp; TN)</span>
               </div>
@@ -144,21 +144,21 @@ export default function HomePage() {
           <div className="grid grid-cols-3 gap-2 sm:gap-6 text-center divide-x divide-[#d8c5aa]">
             <div className="px-2 sm:px-4">
               <div className="text-[10px] sm:text-xs text-gray-600 font-semibold uppercase">22K Gold (916)</div>
-              <div className="text-sm sm:text-lg font-bold text-[#6B2C2C] font-mono">
+              <div className="text-sm sm:text-lg font-bold text-[#4F0C12] font-mono">
                 ₹{goldRates.gold22k.perGram}/g
               </div>
             </div>
 
             <div className="px-2 sm:px-4">
               <div className="text-[10px] sm:text-xs text-gray-600 font-semibold uppercase">24K Bullion (999)</div>
-              <div className="text-sm sm:text-lg font-bold text-[#6B2C2C] font-mono">
+              <div className="text-sm sm:text-lg font-bold text-[#4F0C12] font-mono">
                 ₹{goldRates.gold24k.perGram}/g
               </div>
             </div>
 
             <div className="px-2 sm:px-4">
               <div className="text-[10px] sm:text-xs text-gray-600 font-semibold uppercase">Silver (999)</div>
-              <div className="text-sm sm:text-lg font-bold text-[#6B2C2C] font-mono">
+              <div className="text-sm sm:text-lg font-bold text-[#4F0C12] font-mono">
                 ₹{goldRates.silver999.perGram}/g
               </div>
             </div>
@@ -167,7 +167,7 @@ export default function HomePage() {
           {/* Action button */}
           <button
             onClick={() => setIsGoldRateModalOpen(true)}
-            className="bg-[#6B2C2C] hover:bg-[#521f1f] text-[#FAF9F6] text-xs font-bold px-4 py-2.5 rounded-xl shadow transition flex items-center gap-1.5 cursor-pointer whitespace-nowrap"
+            className="bg-[#4F0C12] hover:bg-[#3A070C] text-[#F9E2CC] text-xs font-bold px-4 py-2.5 rounded-xl shadow transition flex items-center gap-1.5 cursor-pointer whitespace-nowrap"
           >
             <span>Rate Calculator &amp; History</span>
             <ChevronRight className="w-4 h-4 text-[#F3C64F]" />
@@ -193,16 +193,16 @@ export default function HomePage() {
             <Link
               key={cat.id}
               to={`/category/${cat.id}`}
-              className="group bg-white rounded-2xl border border-[#d8c5aa] hover:border-[#6B2C2C] p-3 text-center transition-all duration-300 hover:shadow-lg flex flex-col items-center justify-between"
+              className="group bg-white rounded-2xl border border-[#d8c5aa] hover:border-[#4F0C12] p-3 text-center transition-all duration-300 hover:shadow-lg flex flex-col items-center justify-between"
             >
-              <div className="w-full aspect-square rounded-xl overflow-hidden bg-[#faf6f0] mb-2.5">
+              <div className="w-full aspect-square rounded-xl overflow-hidden bg-[#F9E2CC] mb-2.5">
                 <img
                   src={cat.banner}
                   alt={cat.name}
                   className="w-full h-full object-cover group-hover:scale-108 transition duration-500"
                 />
               </div>
-              <h3 className="text-xs sm:text-sm font-bold text-[#381c1c] group-hover:text-[#6B2C2C] transition">
+              <h3 className="text-xs sm:text-sm font-bold text-[#381c1c] group-hover:text-[#4F0C12] transition">
                 {cat.name}
               </h3>
               <span className="text-[10px] text-gray-500 mt-0.5">
@@ -226,7 +226,7 @@ export default function HomePage() {
           </div>
           <Link
             to="/collections"
-            className="text-xs font-bold text-[#6B2C2C] hover:text-[#521f1f] flex items-center gap-1 group"
+            className="text-xs font-bold text-[#4F0C12] hover:text-[#3A070C] flex items-center gap-1 group"
           >
             <span>View All Collections ({products.length})</span>
             <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition" />
@@ -242,7 +242,7 @@ export default function HomePage() {
 
       {/* Swarna Nidhi Savings Scheme Spotlight Card */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="bg-gradient-to-r from-[#501F1F] via-[#6B2C2C] to-[#501F1F] text-white rounded-3xl p-6 sm:p-10 shadow-2xl border-2 border-[#D4AF37] relative overflow-hidden">
+        <div className="bg-gradient-to-r from-[#3A070C] via-[#4F0C12] to-[#3A070C] text-white rounded-3xl p-6 sm:p-10 shadow-2xl border-2 border-[#D4AF37] relative overflow-hidden">
           
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             
@@ -278,7 +278,7 @@ export default function HomePage() {
               <div className="pt-2">
                 <Link
                   to="/schemes"
-                  className="inline-flex items-center gap-2 bg-[#D4AF37] hover:bg-[#e0be4d] text-[#461919] font-bold text-xs sm:text-sm px-6 py-3 rounded-xl shadow-lg transition uppercase tracking-wider"
+                  className="inline-flex items-center gap-2 bg-[#D4AF37] hover:bg-[#e0be4d] text-[#38060B] font-bold text-xs sm:text-sm px-6 py-3 rounded-xl shadow-lg transition uppercase tracking-wider"
                 >
                   <span>Calculate Your Returns &amp; Enroll</span>
                   <ArrowRight className="w-4 h-4" />
@@ -310,7 +310,7 @@ export default function HomePage() {
                 </div>
               </div>
 
-              <div className="bg-[#461919]/60 p-3 rounded-xl border border-[#D4AF37]/30 text-[11px] text-[#e0cfcf]">
+              <div className="bg-[#38060B]/60 p-3 rounded-xl border border-[#D4AF37]/30 text-[11px] text-[#e0cfcf]">
                 ✨ Plus zero making charges on select 22K gold &amp; diamond jewellery!
               </div>
             </div>
@@ -333,7 +333,7 @@ export default function HomePage() {
           </div>
           <Link
             to="/category/gold"
-            className="text-xs font-bold text-[#6B2C2C] hover:text-[#521f1f] flex items-center gap-1 group"
+            className="text-xs font-bold text-[#4F0C12] hover:text-[#3A070C] flex items-center gap-1 group"
           >
             <span>Explore All 22K Gold Designs</span>
             <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition" />
@@ -348,11 +348,11 @@ export default function HomePage() {
       </section>
 
       {/* The Surya Hallmark 1964 Heritage & BIS Hallmark Story */}
-      <section className="bg-[#FAF9F6] border-y border-[#d8c5aa] py-16 px-4 sm:px-6">
+      <section className="bg-[#F9E2CC] border-y border-[#d8c5aa] py-16 px-4 sm:px-6">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           
           <div className="lg:col-span-6 space-y-4">
-            <div className="inline-flex items-center gap-2 bg-[#6B2C2C] text-[#F3C64F] px-3.5 py-1 rounded-full text-xs font-bold">
+            <div className="inline-flex items-center gap-2 bg-[#4F0C12] text-[#F3C64F] px-3.5 py-1 rounded-full text-xs font-bold">
               <Award className="w-4 h-4" />
               <span>The Legacy of Surya Hallmark</span>
             </div>
@@ -391,7 +391,7 @@ export default function HomePage() {
             <div className="pt-2">
               <Link
                 to="/craftsmanship"
-                className="inline-flex items-center gap-2 bg-[#6B2C2C] hover:bg-[#521f1f] text-[#FAF9F6] text-xs font-bold px-6 py-3 rounded-xl shadow transition"
+                className="inline-flex items-center gap-2 bg-[#4F0C12] hover:bg-[#3A070C] text-[#F9E2CC] text-xs font-bold px-6 py-3 rounded-xl shadow transition"
               >
                 <span>Read Full Craftsmanship Journey</span>
                 <ArrowRight className="w-4 h-4 text-[#F3C64F]" />

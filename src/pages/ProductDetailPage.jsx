@@ -64,9 +64,9 @@ export default function ProductDetailPage() {
       
       {/* Breadcrumb */}
       <nav className="flex items-center gap-2 text-xs text-gray-500">
-        <Link to="/" className="hover:text-[#6B2C2C]">Home</Link>
+        <Link to="/" className="hover:text-[#4F0C12]">Home</Link>
         <span>/</span>
-        <Link to={`/category/${product.category}`} className="hover:text-[#6B2C2C] capitalize">
+        <Link to={`/category/${product.category}`} className="hover:text-[#4F0C12] capitalize">
           {product.category}
         </Link>
         <span>/</span>
@@ -109,7 +109,7 @@ export default function ProductDetailPage() {
                   key={i}
                   onClick={() => setSelectedImage(i)}
                   className={`w-20 h-20 rounded-xl overflow-hidden bg-white border-2 p-1 transition ${
-                    selectedImage === i ? 'border-[#6B2C2C] shadow-md' : 'border-[#d8c5aa] opacity-75'
+                    selectedImage === i ? 'border-[#4F0C12] shadow-md' : 'border-[#d8c5aa] opacity-75'
                   }`}
                 >
                   <img src={img} alt="" className="w-full h-full object-cover rounded-lg" />
@@ -124,7 +124,7 @@ export default function ProductDetailPage() {
           
           <div className="space-y-2">
             <div className="flex items-center gap-2">
-              <span className="bg-[#6B2C2C] text-[#F3C64F] text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider">
+              <span className="bg-[#4F0C12] text-[#F3C64F] text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider">
                 {product.subcategory || product.category}
               </span>
               <span className="text-xs text-gray-500 font-mono">SKU: {product.id}</span>
@@ -147,9 +147,9 @@ export default function ProductDetailPage() {
           </div>
 
           {/* Price Tag */}
-          <div className="bg-[#FAF9F6] p-4 rounded-2xl border border-[#d8c5aa] space-y-2">
+          <div className="bg-[#F9E2CC] p-4 rounded-2xl border border-[#d8c5aa] space-y-2">
             <div className="flex items-baseline gap-3">
-              <span className="text-3xl font-extrabold text-[#6B2C2C] font-mono">
+              <span className="text-3xl font-extrabold text-[#4F0C12] font-mono">
                 ₹{product.price.toLocaleString('en-IN')}
               </span>
               {product.originalPrice && (
@@ -188,7 +188,7 @@ export default function ProductDetailPage() {
                 <span>3% GST (CGST + SGST):</span>
                 <span className="font-mono text-gray-900">₹{gstEstimate.toLocaleString('en-IN')}</span>
               </div>
-              <div className="border-t border-gray-200 pt-1.5 flex justify-between font-bold text-[#6B2C2C]">
+              <div className="border-t border-gray-200 pt-1.5 flex justify-between font-bold text-[#4F0C12]">
                 <span>Total Net Value:</span>
                 <span className="font-mono text-sm">₹{product.price.toLocaleString('en-IN')}</span>
               </div>
@@ -207,8 +207,8 @@ export default function ProductDetailPage() {
                   onClick={() => setSelectedSize(s)}
                   className={`py-2 px-3 text-xs font-semibold rounded-xl border transition ${
                     selectedSize === s
-                      ? 'bg-[#6B2C2C] text-white border-[#6B2C2C]'
-                      : 'bg-white text-gray-700 border-[#d8c5aa] hover:bg-[#FAF9F6]'
+                      ? 'bg-[#4F0C12] text-white border-[#4F0C12]'
+                      : 'bg-white text-gray-700 border-[#d8c5aa] hover:bg-[#F9E2CC]'
                   }`}
                 >
                   {s}
@@ -222,7 +222,7 @@ export default function ProductDetailPage() {
             <div className="flex gap-3">
               <button
                 onClick={handleAddToCart}
-                className="flex-1 bg-[#6B2C2C] hover:bg-[#521f1f] text-[#FAF9F6] py-3.5 px-6 rounded-xl font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg shadow-[#6B2C2C]/20 transition cursor-pointer"
+                className="flex-1 bg-[#4F0C12] hover:bg-[#3A070C] text-[#F9E2CC] py-3.5 px-6 rounded-xl font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg shadow-[#4F0C12]/20 transition cursor-pointer"
               >
                 <ShoppingBag className="w-4 h-4 text-[#F3C64F]" />
                 <span>{addedAlert ? 'Added to Bag!' : 'Add to Bag'}</span>
@@ -230,7 +230,7 @@ export default function ProductDetailPage() {
 
               <button
                 onClick={handleBuyNow}
-                className="flex-1 bg-[#D4AF37] hover:bg-[#e0be4d] text-[#461919] py-3.5 px-6 rounded-xl font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg transition cursor-pointer"
+                className="flex-1 bg-[#D4AF37] hover:bg-[#e0be4d] text-[#38060B] py-3.5 px-6 rounded-xl font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg transition cursor-pointer"
               >
                 <span>Buy Now</span>
               </button>
@@ -285,7 +285,7 @@ export default function ProductDetailPage() {
             </div>
             <div className="flex justify-between border-b border-gray-100 py-1.5">
               <span className="text-gray-500">Metal Purity:</span>
-              <span className="font-semibold text-[#6B2C2C]">{product.metal}</span>
+              <span className="font-semibold text-[#4F0C12]">{product.metal}</span>
             </div>
             <div className="flex justify-between border-b border-gray-100 py-1.5">
               <span className="text-gray-500">Gross Weight:</span>
@@ -325,7 +325,7 @@ export default function ProductDetailPage() {
             <h3 className="text-xl font-bold font-serif-luxury text-[#381c1c]">
               Complementary Heirloom Creations
             </h3>
-            <Link to={`/category/${product.category}`} className="text-xs font-bold text-[#6B2C2C] hover:underline">
+            <Link to={`/category/${product.category}`} className="text-xs font-bold text-[#4F0C12] hover:underline">
               View All {product.category} &rarr;
             </Link>
           </div>

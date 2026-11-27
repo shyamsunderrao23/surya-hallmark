@@ -53,7 +53,7 @@ export default function GoldRatePage() {
         <div className="bg-white p-5 rounded-2xl border-2 border-[#D4AF37] shadow-md relative overflow-hidden space-y-3">
           <div className="flex justify-between items-start">
             <div>
-              <span className="text-[10px] font-bold text-[#6B2C2C] bg-[#FAF9F6] px-2 py-0.5 rounded uppercase">
+              <span className="text-[10px] font-bold text-[#4F0C12] bg-[#F9E2CC] px-2 py-0.5 rounded uppercase">
                 Bridal Standard
               </span>
               <h3 className="text-base font-bold text-[#381c1c] mt-1 font-serif-luxury">22K Gold (916)</h3>
@@ -64,7 +64,7 @@ export default function GoldRatePage() {
           </div>
 
           <div>
-            <div className="text-3xl font-extrabold text-[#6B2C2C] font-mono">
+            <div className="text-3xl font-extrabold text-[#4F0C12] font-mono">
               ₹{goldRates.gold22k.perGram.toLocaleString('en-IN')}
             </div>
             <div className="text-xs text-gray-500">per gram (1g)</div>
@@ -165,7 +165,7 @@ export default function GoldRatePage() {
         {/* Calculator 1: By Weight */}
         <div className="bg-white p-6 rounded-2xl border border-[#d8c5aa] shadow-xs space-y-5">
           <div className="flex items-center gap-2">
-            <Calculator className="w-5 h-5 text-[#6B2C2C]" />
+            <Calculator className="w-5 h-5 text-[#4F0C12]" />
             <h3 className="text-base font-bold font-serif-luxury text-[#381c1c]">
               Gold Weight to Price Calculator
             </h3>
@@ -177,7 +177,7 @@ export default function GoldRatePage() {
               <select
                 value={selectedKarat}
                 onChange={(e) => setSelectedKarat(e.target.value)}
-                className="w-full bg-[#FAF9F6] border border-[#d8c5aa] rounded-xl px-3 py-2 text-xs font-bold"
+                className="w-full bg-[#F9E2CC] border border-[#d8c5aa] rounded-xl px-3 py-2 text-xs font-bold"
               >
                 <option value="22">22K Gold (916 BIS Hallmark)</option>
                 <option value="24">24K Pure Bullion (999)</option>
@@ -192,13 +192,13 @@ export default function GoldRatePage() {
                 step="0.5"
                 value={weight}
                 onChange={(e) => setWeight(Math.max(0.1, Number(e.target.value)))}
-                className="w-full bg-[#FAF9F6] border border-[#d8c5aa] rounded-xl px-3 py-2 text-xs font-bold"
+                className="w-full bg-[#F9E2CC] border border-[#d8c5aa] rounded-xl px-3 py-2 text-xs font-bold"
               />
             </div>
           </div>
 
           {/* Result Box */}
-          <div className="bg-[#FAF9F6] p-4 rounded-xl border border-[#d8c5aa] space-y-2 text-xs">
+          <div className="bg-[#F9E2CC] p-4 rounded-xl border border-[#d8c5aa] space-y-2 text-xs">
             <div className="flex justify-between">
               <span>Pure Gold Cost ({weight}g × ₹{ratePerGram}):</span>
               <span className="font-mono font-semibold">₹{calculatedGoldVal.toLocaleString('en-IN')}</span>
@@ -211,7 +211,7 @@ export default function GoldRatePage() {
               <span>GST (3%):</span>
               <span className="font-mono font-semibold">₹{estimatedGst.toLocaleString('en-IN')}</span>
             </div>
-            <div className="border-t border-[#d8c5aa] pt-2 flex justify-between font-bold text-sm text-[#6B2C2C]">
+            <div className="border-t border-[#d8c5aa] pt-2 flex justify-between font-bold text-sm text-[#4F0C12]">
               <span>Estimated Net Amount:</span>
               <span className="font-mono text-base">₹{calculatedTotal.toLocaleString('en-IN')}</span>
             </div>
@@ -221,7 +221,7 @@ export default function GoldRatePage() {
         {/* Calculator 2: By Budget */}
         <div className="bg-white p-6 rounded-2xl border border-[#d8c5aa] shadow-xs space-y-5">
           <div className="flex items-center gap-2">
-            <Calendar className="w-5 h-5 text-[#6B2C2C]" />
+            <Calendar className="w-5 h-5 text-[#4F0C12]" />
             <h3 className="text-base font-bold font-serif-luxury text-[#381c1c]">
               Budget to Gold Grams Estimator
             </h3>
@@ -237,13 +237,13 @@ export default function GoldRatePage() {
               step="5000"
               value={budget}
               onChange={(e) => setBudget(Math.max(1000, Number(e.target.value)))}
-              className="w-full bg-[#FAF9F6] border border-[#d8c5aa] rounded-xl px-3 py-2 text-xs font-bold"
+              className="w-full bg-[#F9E2CC] border border-[#d8c5aa] rounded-xl px-3 py-2 text-xs font-bold"
             />
           </div>
 
-          <div className="bg-[#FAF9F6] p-5 rounded-xl border border-[#d8c5aa] text-center space-y-2">
+          <div className="bg-[#F9E2CC] p-5 rounded-xl border border-[#d8c5aa] text-center space-y-2">
             <div className="text-xs text-gray-600">With a budget of ₹{budget.toLocaleString('en-IN')}, you can acquire approximately:</div>
-            <div className="text-3xl font-extrabold text-[#6B2C2C] font-mono">
+            <div className="text-3xl font-extrabold text-[#4F0C12] font-mono">
               {gramsForBudget} Grams
             </div>
             <div className="text-[11px] text-gray-500">
@@ -260,7 +260,7 @@ export default function GoldRatePage() {
         {/* City Comparison Table */}
         <div className="bg-white p-6 rounded-2xl border border-[#d8c5aa] shadow-xs space-y-4">
           <h3 className="text-base font-bold font-serif-luxury text-[#381c1c] flex items-center gap-2">
-            <MapPin className="w-4 h-4 text-[#6B2C2C]" /> City-Wise 22K &amp; 24K Gold Rates Today
+            <MapPin className="w-4 h-4 text-[#4F0C12]" /> City-Wise 22K &amp; 24K Gold Rates Today
           </h3>
 
           <div className="overflow-x-auto">
@@ -275,9 +275,9 @@ export default function GoldRatePage() {
               </thead>
               <tbody className="divide-y divide-gray-100">
                 {cityGoldRates.map((c) => (
-                  <tr key={c.city} className="hover:bg-[#faf6f0]">
+                  <tr key={c.city} className="hover:bg-[#F9E2CC]">
                     <td className="py-2.5 font-bold text-gray-800">{c.city}</td>
-                    <td className="py-2.5 font-mono text-[#6B2C2C] font-bold">₹{c.rate22k}</td>
+                    <td className="py-2.5 font-mono text-[#4F0C12] font-bold">₹{c.rate22k}</td>
                     <td className="py-2.5 font-mono text-gray-800">₹{c.rate24k}</td>
                     <td className="py-2.5 font-mono text-gray-600">₹{c.silver}</td>
                   </tr>
@@ -290,7 +290,7 @@ export default function GoldRatePage() {
         {/* 7-Day Trend Table */}
         <div className="bg-white p-6 rounded-2xl border border-[#d8c5aa] shadow-xs space-y-4">
           <h3 className="text-base font-bold font-serif-luxury text-[#381c1c] flex items-center gap-2">
-            <TrendingUp className="w-4 h-4 text-[#6B2C2C]" /> 7-Day Chennai Bullion Rate Trend
+            <TrendingUp className="w-4 h-4 text-[#4F0C12]" /> 7-Day Chennai Bullion Rate Trend
           </h3>
 
           <div className="overflow-x-auto">
@@ -305,9 +305,9 @@ export default function GoldRatePage() {
               </thead>
               <tbody className="divide-y divide-gray-100">
                 {weeklyTrend.map((w, idx) => (
-                  <tr key={w.day} className="hover:bg-[#faf6f0]">
+                  <tr key={w.day} className="hover:bg-[#F9E2CC]">
                     <td className="py-2.5 font-bold text-gray-800">{w.day}</td>
-                    <td className="py-2.5 font-mono text-[#6B2C2C] font-bold">₹{w.rate22k}</td>
+                    <td className="py-2.5 font-mono text-[#4F0C12] font-bold">₹{w.rate22k}</td>
                     <td className="py-2.5 font-mono text-gray-800">₹{w.rate24k}</td>
                     <td className="py-2.5 text-emerald-700 font-semibold text-[11px]">
                       {idx === 0 ? 'Base' : `+₹${w.rate22k - weeklyTrend[idx - 1].rate22k}`}

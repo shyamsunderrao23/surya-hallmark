@@ -40,11 +40,11 @@ export default function StoresPage() {
         {storesList.map((st) => (
           <div
             key={st.id}
-            className="bg-white p-6 sm:p-7 rounded-2xl border border-[#d8c5aa] shadow-xs space-y-4 hover:border-[#6B2C2C] transition"
+            className="bg-white p-6 sm:p-7 rounded-2xl border border-[#d8c5aa] shadow-xs space-y-4 hover:border-[#4F0C12] transition"
           >
             <div className="flex justify-between items-start">
               <div>
-                <span className="text-[10px] font-bold text-[#6B2C2C] bg-[#FAF9F6] px-2 py-0.5 rounded uppercase">
+                <span className="text-[10px] font-bold text-[#4F0C12] bg-[#F9E2CC] px-2 py-0.5 rounded uppercase">
                   Flagship Store
                 </span>
                 <h3 className="text-base font-bold font-serif-luxury text-[#2b1717] mt-1">
@@ -55,17 +55,17 @@ export default function StoresPage() {
 
             <div className="space-y-2 text-xs text-gray-600">
               <div className="flex items-start gap-2.5">
-                <MapPin className="w-4 h-4 text-[#6B2C2C] flex-shrink-0 mt-0.5" />
+                <MapPin className="w-4 h-4 text-[#4F0C12] flex-shrink-0 mt-0.5" />
                 <span>{st.address}</span>
               </div>
 
               <div className="flex items-center gap-2.5">
-                <Phone className="w-4 h-4 text-[#6B2C2C] flex-shrink-0" />
+                <Phone className="w-4 h-4 text-[#4F0C12] flex-shrink-0" />
                 <span className="font-semibold text-gray-800">{st.phone}</span>
               </div>
 
               <div className="flex items-center gap-2.5">
-                <Clock className="w-4 h-4 text-[#6B2C2C] flex-shrink-0" />
+                <Clock className="w-4 h-4 text-[#4F0C12] flex-shrink-0" />
                 <span>{st.timings}</span>
               </div>
 
@@ -82,7 +82,7 @@ export default function StoresPage() {
                   setForm({ ...form, store: st.id });
                   window.scrollTo({ top: 900, behavior: 'smooth' });
                 }}
-                className="text-xs font-bold text-[#6B2C2C] hover:underline flex items-center gap-1"
+                className="text-xs font-bold text-[#4F0C12] hover:underline flex items-center gap-1"
               >
                 Book VIP Lounge Appointment &rarr;
               </button>
@@ -91,7 +91,7 @@ export default function StoresPage() {
                 href={st.mapUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="bg-[#FAF9F6] text-[#4a2626] hover:bg-[#e0d0be] px-3 py-1.5 rounded-lg text-xs font-semibold"
+                className="bg-[#F9E2CC] text-[#4a2626] hover:bg-[#e0d0be] px-3 py-1.5 rounded-lg text-xs font-semibold"
               >
                 Get Directions
               </a>
@@ -101,7 +101,7 @@ export default function StoresPage() {
       </div>
 
       {/* VIP Booking Form */}
-      <div className="bg-[#FAF9F6] rounded-3xl p-6 sm:p-10 border border-[#d8c5aa]">
+      <div className="bg-[#F9E2CC] rounded-3xl p-6 sm:p-10 border border-[#d8c5aa]">
         <div className="max-w-2xl mx-auto space-y-6">
           <div className="text-center space-y-2">
             <h2 className="text-2xl font-bold font-serif-luxury text-[#381c1c]">
@@ -117,13 +117,13 @@ export default function StoresPage() {
               <div className="w-12 h-12 bg-emerald-100 text-emerald-700 rounded-full flex items-center justify-center mx-auto">
                 <Check className="w-6 h-6" />
               </div>
-              <h3 className="text-base font-bold text-[#6B2C2C]">Appointment Confirmed!</h3>
+              <h3 className="text-base font-bold text-[#4F0C12]">Appointment Confirmed!</h3>
               <p className="text-xs text-gray-600">
                 We look forward to welcoming you, {form.name || 'Patron'}. Our relationship manager will call you at {form.phone} to confirm your bespoke arrangements.
               </p>
               <button
                 onClick={() => setAppointmentBooked(false)}
-                className="text-xs text-[#6B2C2C] font-bold underline"
+                className="text-xs text-[#4F0C12] font-bold underline"
               >
                 Book another appointment
               </button>
@@ -181,7 +181,7 @@ export default function StoresPage() {
               <div className="sm:col-span-2 pt-2">
                 <button
                   type="submit"
-                  className="w-full bg-[#6B2C2C] hover:bg-[#521f1f] text-[#FAF9F6] py-3 rounded-xl font-bold uppercase tracking-wider transition shadow-md"
+                  className="w-full bg-[#4F0C12] hover:bg-[#3A070C] text-[#F9E2CC] py-3 rounded-xl font-bold uppercase tracking-wider transition shadow-md"
                 >
                   Confirm VIP Showroom Appointment
                 </button>

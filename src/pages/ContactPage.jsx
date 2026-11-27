@@ -55,7 +55,7 @@ export default function ContactPage() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         
         <div className="bg-white p-6 rounded-2xl border border-[#d8c5aa] shadow-xs text-center space-y-3">
-          <div className="w-12 h-12 bg-[#FAF9F6] text-[#6B2C2C] rounded-2xl flex items-center justify-center mx-auto">
+          <div className="w-12 h-12 bg-[#F9E2CC] text-[#4F0C12] rounded-2xl flex items-center justify-center mx-auto">
             <Phone className="w-6 h-6" />
           </div>
           <h3 className="font-bold text-sm text-[#381c1c]">Phone &amp; Toll-Free</h3>
@@ -67,7 +67,7 @@ export default function ContactPage() {
         </div>
 
         <div className="bg-white p-6 rounded-2xl border border-[#d8c5aa] shadow-xs text-center space-y-3">
-          <div className="w-12 h-12 bg-[#FAF9F6] text-[#1b7340] rounded-2xl flex items-center justify-center mx-auto">
+          <div className="w-12 h-12 bg-[#F9E2CC] text-[#1b7340] rounded-2xl flex items-center justify-center mx-auto">
             <MessageSquare className="w-6 h-6" />
           </div>
           <h3 className="font-bold text-sm text-[#381c1c]">WhatsApp Concierge</h3>
@@ -85,7 +85,7 @@ export default function ContactPage() {
         </div>
 
         <div className="bg-white p-6 rounded-2xl border border-[#d8c5aa] shadow-xs text-center space-y-3">
-          <div className="w-12 h-12 bg-[#FAF9F6] text-[#6B2C2C] rounded-2xl flex items-center justify-center mx-auto">
+          <div className="w-12 h-12 bg-[#F9E2CC] text-[#4F0C12] rounded-2xl flex items-center justify-center mx-auto">
             <Mail className="w-6 h-6" />
           </div>
           <h3 className="font-bold text-sm text-[#381c1c]">Email Inquiries</h3>
@@ -108,17 +108,17 @@ export default function ContactPage() {
           </h2>
 
           {submitted ? (
-            <div className="bg-[#FAF9F6] p-6 rounded-2xl border border-emerald-300 text-center space-y-3">
+            <div className="bg-[#F9E2CC] p-6 rounded-2xl border border-emerald-300 text-center space-y-3">
               <div className="w-12 h-12 bg-emerald-100 text-emerald-700 rounded-full flex items-center justify-center mx-auto">
                 <Check className="w-6 h-6" />
               </div>
-              <h3 className="text-base font-bold text-[#6B2C2C]">Message Sent Successfully!</h3>
+              <h3 className="text-base font-bold text-[#4F0C12]">Message Sent Successfully!</h3>
               <p className="text-xs text-gray-600">
                 Thank you for contacting Surya Hallmark Jewellers. Our customer relationship team will reach out to you shortly.
               </p>
               <button
                 onClick={() => setSubmitted(false)}
-                className="text-xs text-[#6B2C2C] font-bold underline"
+                className="text-xs text-[#4F0C12] font-bold underline"
               >
                 Send another message
               </button>
@@ -132,7 +132,7 @@ export default function ContactPage() {
                     type="text"
                     required
                     placeholder="e.g. Ramesh Krishnan"
-                    className="w-full bg-[#FAF9F6] border border-[#d8c5aa] rounded-xl px-3 py-2 text-xs"
+                    className="w-full bg-[#F9E2CC] border border-[#d8c5aa] rounded-xl px-3 py-2 text-xs"
                   />
                 </div>
                 <div>
@@ -141,7 +141,7 @@ export default function ContactPage() {
                     type="tel"
                     required
                     placeholder="+91 98401 23456"
-                    className="w-full bg-[#FAF9F6] border border-[#d8c5aa] rounded-xl px-3 py-2 text-xs"
+                    className="w-full bg-[#F9E2CC] border border-[#d8c5aa] rounded-xl px-3 py-2 text-xs"
                   />
                 </div>
               </div>
@@ -152,13 +152,13 @@ export default function ContactPage() {
                   type="email"
                   required
                   placeholder="ramesh@example.com"
-                  className="w-full bg-[#FAF9F6] border border-[#d8c5aa] rounded-xl px-3 py-2 text-xs"
+                  className="w-full bg-[#F9E2CC] border border-[#d8c5aa] rounded-xl px-3 py-2 text-xs"
                 />
               </div>
 
               <div>
                 <label className="font-bold text-gray-700 block mb-1">Subject / Inquiry Type</label>
-                <select className="w-full bg-[#FAF9F6] border border-[#d8c5aa] rounded-xl px-3 py-2 text-xs font-semibold">
+                <select className="w-full bg-[#F9E2CC] border border-[#d8c5aa] rounded-xl px-3 py-2 text-xs font-semibold">
                   <option>Bridal Custom Design Consultation</option>
                   <option>Old Gold Exchange &amp; Karatmeter Appraisal</option>
                   <option>Swarna Nidhi Savings Scheme Inquiry</option>
@@ -173,13 +173,13 @@ export default function ContactPage() {
                   rows="4"
                   required
                   placeholder="Tell us about the jewellery design, budget, or milestone you are planning..."
-                  className="w-full bg-[#FAF9F6] border border-[#d8c5aa] rounded-xl p-3 text-xs"
+                  className="w-full bg-[#F9E2CC] border border-[#d8c5aa] rounded-xl p-3 text-xs"
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full bg-[#6B2C2C] hover:bg-[#521f1f] text-[#FAF9F6] py-3 rounded-xl font-bold uppercase tracking-wider transition shadow-md"
+                className="w-full bg-[#4F0C12] hover:bg-[#3A070C] text-[#F9E2CC] py-3 rounded-xl font-bold uppercase tracking-wider transition shadow-md"
               >
                 Submit Inquiry
               </button>
@@ -191,7 +191,7 @@ export default function ContactPage() {
         {/* FAQs */}
         <div className="lg:col-span-6 space-y-4">
           <h2 className="text-lg font-bold font-serif-luxury text-[#381c1c] flex items-center gap-2">
-            <HelpCircle className="w-5 h-5 text-[#6B2C2C]" /> Frequently Asked Questions
+            <HelpCircle className="w-5 h-5 text-[#4F0C12]" /> Frequently Asked Questions
           </h2>
 
           <div className="space-y-3">
@@ -207,7 +207,7 @@ export default function ContactPage() {
                 >
                   <span>{faq.q}</span>
                   <ChevronDown
-                    className={`w-4 h-4 text-[#6B2C2C] transition-transform ${
+                    className={`w-4 h-4 text-[#4F0C12] transition-transform ${
                       openFaq === idx ? 'rotate-180' : ''
                     }`}
                   />

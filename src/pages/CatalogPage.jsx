@@ -80,7 +80,7 @@ export default function CatalogPage() {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-10 space-y-8">
       
       {/* Category Hero / Title Banner */}
-      <div className="bg-[#FAF9F6] border border-[#d8c5aa] rounded-2xl p-6 sm:p-8 relative overflow-hidden">
+      <div className="bg-[#F9E2CC] border border-[#d8c5aa] rounded-2xl p-6 sm:p-8 relative overflow-hidden">
         <div className="max-w-2xl space-y-2">
           <div className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#8b4747]">
             <Sparkles className="w-3.5 h-3.5 text-[#D4AF37]" />
@@ -104,12 +104,12 @@ export default function CatalogPage() {
             
             <div className="flex items-center justify-between pb-3 border-b border-[#f0e3d2]">
               <h3 className="font-bold text-xs uppercase tracking-wider text-[#381c1c] flex items-center gap-2">
-                <SlidersHorizontal className="w-4 h-4 text-[#6B2C2C]" /> Filters
+                <SlidersHorizontal className="w-4 h-4 text-[#4F0C12]" /> Filters
               </h3>
               {(selectedCategory !== 'all' || selectedMetal !== 'all' || maxPrice < 500000 || searchQuery) && (
                 <button
                   onClick={clearAllFilters}
-                  className="text-[11px] text-[#6B2C2C] font-semibold hover:underline"
+                  className="text-[11px] text-[#4F0C12] font-semibold hover:underline"
                 >
                   Reset
                 </button>
@@ -126,8 +126,8 @@ export default function CatalogPage() {
                   onClick={() => setSelectedCategory('all')}
                   className={`w-full text-left px-3 py-1.5 rounded-lg text-xs font-medium transition ${
                     selectedCategory === 'all'
-                      ? 'bg-[#6B2C2C] text-white font-bold'
-                      : 'text-gray-700 hover:bg-[#FAF9F6]'
+                      ? 'bg-[#4F0C12] text-white font-bold'
+                      : 'text-gray-700 hover:bg-[#F9E2CC]'
                   }`}
                 >
                   All Categories ({products.length})
@@ -138,8 +138,8 @@ export default function CatalogPage() {
                     onClick={() => setSelectedCategory(cat.id)}
                     className={`w-full text-left px-3 py-1.5 rounded-lg text-xs font-medium transition flex justify-between items-center ${
                       selectedCategory === cat.id
-                        ? 'bg-[#6B2C2C] text-white font-bold'
-                        : 'text-gray-700 hover:bg-[#FAF9F6]'
+                        ? 'bg-[#4F0C12] text-white font-bold'
+                        : 'text-gray-700 hover:bg-[#F9E2CC]'
                     }`}
                   >
                     <span>{cat.name}</span>
@@ -168,12 +168,12 @@ export default function CatalogPage() {
                     onClick={() => setSelectedMetal(m.val)}
                     className={`w-full text-left px-3 py-1.5 rounded-lg text-xs font-medium transition flex items-center justify-between ${
                       selectedMetal === m.val
-                        ? 'bg-[#FAF9F6] text-[#6B2C2C] font-bold border border-[#d8c5aa]'
-                        : 'text-gray-600 hover:bg-[#faf6f0]'
+                        ? 'bg-[#F9E2CC] text-[#4F0C12] font-bold border border-[#d8c5aa]'
+                        : 'text-gray-600 hover:bg-[#F9E2CC]'
                     }`}
                   >
                     <span>{m.label}</span>
-                    {selectedMetal === m.val && <Check className="w-3.5 h-3.5 text-[#6B2C2C]" />}
+                    {selectedMetal === m.val && <Check className="w-3.5 h-3.5 text-[#4F0C12]" />}
                   </button>
                 ))}
               </div>
@@ -183,7 +183,7 @@ export default function CatalogPage() {
             <div className="space-y-2 pt-2 border-t border-[#f0e3d2]">
               <div className="flex justify-between text-xs">
                 <span className="font-bold text-gray-800 uppercase tracking-wide">Budget Range</span>
-                <span className="font-bold text-[#6B2C2C] font-mono">
+                <span className="font-bold text-[#4F0C12] font-mono">
                   Up to ₹{maxPrice.toLocaleString('en-IN')}
                 </span>
               </div>
@@ -194,7 +194,7 @@ export default function CatalogPage() {
                 step="10000"
                 value={maxPrice}
                 onChange={(e) => setMaxPrice(Number(e.target.value))}
-                className="w-full accent-[#6B2C2C] cursor-pointer"
+                className="w-full accent-[#4F0C12] cursor-pointer"
               />
               <div className="flex justify-between text-[10px] text-gray-400 font-mono">
                 <span>₹10,000</span>
@@ -203,8 +203,8 @@ export default function CatalogPage() {
             </div>
 
             {/* Hallmark Assurance Callout */}
-            <div className="bg-[#FAF9F6] p-3 rounded-xl border border-[#d8c5aa] text-[11px] text-[#4a2424] space-y-1">
-              <div className="font-bold flex items-center gap-1 text-[#6B2C2C]">
+            <div className="bg-[#F9E2CC] p-3 rounded-xl border border-[#d8c5aa] text-[11px] text-[#4a2424] space-y-1">
+              <div className="font-bold flex items-center gap-1 text-[#4F0C12]">
                 <ShieldCheck className="w-3.5 h-3.5" /> 100% BIS Hallmarked
               </div>
               <p>Every purchase carries official HUID certificate &amp; zero exchange deduction guarantee.</p>
@@ -219,7 +219,7 @@ export default function CatalogPage() {
           {/* Top Control Bar: Total count & Sort Dropdown */}
           <div className="bg-white p-3.5 rounded-2xl border border-[#d8c5aa] shadow-xs flex flex-wrap items-center justify-between gap-3">
             <div className="text-xs text-gray-700">
-              Showing <strong className="text-[#6B2C2C]">{filteredProducts.length}</strong> creations
+              Showing <strong className="text-[#4F0C12]">{filteredProducts.length}</strong> creations
               {searchQuery && <span> for "<strong>{searchQuery}</strong>"</span>}
             </div>
 
@@ -227,7 +227,7 @@ export default function CatalogPage() {
               {/* Mobile Filter Trigger Button */}
               <button
                 onClick={() => setMobileFilterOpen(true)}
-                className="lg:hidden flex items-center gap-1.5 bg-[#FAF9F6] text-[#6B2C2C] px-3 py-1.5 rounded-lg text-xs font-semibold"
+                className="lg:hidden flex items-center gap-1.5 bg-[#F9E2CC] text-[#4F0C12] px-3 py-1.5 rounded-lg text-xs font-semibold"
               >
                 <Filter className="w-3.5 h-3.5" /> Filters
               </button>
@@ -238,7 +238,7 @@ export default function CatalogPage() {
                 <select
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value)}
-                  className="bg-[#FAF9F6] border border-[#d8c5aa] text-[#3d1f1f] text-xs font-semibold rounded-lg px-2.5 py-1.5 focus:ring-1 focus:ring-[#6B2C2C]"
+                  className="bg-[#F9E2CC] border border-[#d8c5aa] text-[#3d1f1f] text-xs font-semibold rounded-lg px-2.5 py-1.5 focus:ring-1 focus:ring-[#4F0C12]"
                 >
                   <option value="featured">Featured Heirlooms</option>
                   <option value="price-low">Price: Low to High</option>
@@ -255,19 +255,19 @@ export default function CatalogPage() {
             <div className="flex flex-wrap items-center gap-2">
               <span className="text-[11px] font-semibold text-gray-500">Active filters:</span>
               {selectedCategory !== 'all' && (
-                <span className="inline-flex items-center gap-1 bg-white border border-[#d8c5aa] px-2.5 py-1 rounded-full text-xs font-medium text-[#6B2C2C]">
+                <span className="inline-flex items-center gap-1 bg-white border border-[#d8c5aa] px-2.5 py-1 rounded-full text-xs font-medium text-[#4F0C12]">
                   Dept: {categories.find(c => c.id === selectedCategory)?.name}
                   <button onClick={() => setSelectedCategory('all')}><X className="w-3 h-3" /></button>
                 </span>
               )}
               {selectedMetal !== 'all' && (
-                <span className="inline-flex items-center gap-1 bg-white border border-[#d8c5aa] px-2.5 py-1 rounded-full text-xs font-medium text-[#6B2C2C]">
+                <span className="inline-flex items-center gap-1 bg-white border border-[#d8c5aa] px-2.5 py-1 rounded-full text-xs font-medium text-[#4F0C12]">
                   Metal: {selectedMetal.toUpperCase()}
                   <button onClick={() => setSelectedMetal('all')}><X className="w-3 h-3" /></button>
                 </span>
               )}
               {maxPrice < 500000 && (
-                <span className="inline-flex items-center gap-1 bg-white border border-[#d8c5aa] px-2.5 py-1 rounded-full text-xs font-medium text-[#6B2C2C]">
+                <span className="inline-flex items-center gap-1 bg-white border border-[#d8c5aa] px-2.5 py-1 rounded-full text-xs font-medium text-[#4F0C12]">
                   &le; ₹{maxPrice.toLocaleString('en-IN')}
                   <button onClick={() => setMaxPrice(500000)}><X className="w-3 h-3" /></button>
                 </span>
@@ -278,7 +278,7 @@ export default function CatalogPage() {
           {/* Products Grid */}
           {filteredProducts.length === 0 ? (
             <div className="bg-white rounded-2xl border border-[#d8c5aa] p-12 text-center space-y-4">
-              <div className="w-16 h-16 bg-[#FAF9F6] text-[#6B2C2C] rounded-full flex items-center justify-center mx-auto">
+              <div className="w-16 h-16 bg-[#F9E2CC] text-[#4F0C12] rounded-full flex items-center justify-center mx-auto">
                 <Search className="w-8 h-8 opacity-60" />
               </div>
               <h3 className="text-base font-bold text-gray-800">No matching jewellery items</h3>
@@ -287,7 +287,7 @@ export default function CatalogPage() {
               </p>
               <button
                 onClick={clearAllFilters}
-                className="bg-[#6B2C2C] text-[#FAF9F6] text-xs font-bold px-5 py-2.5 rounded-xl shadow"
+                className="bg-[#4F0C12] text-[#F9E2CC] text-xs font-bold px-5 py-2.5 rounded-xl shadow"
               >
                 Clear All Filters
               </button>
@@ -307,7 +307,7 @@ export default function CatalogPage() {
       {/* Mobile Filter Modal */}
       {mobileFilterOpen && (
         <div className="fixed inset-0 z-50 flex lg:hidden bg-black/60 backdrop-blur-xs">
-          <div className="w-4/5 max-w-xs bg-[#FAF9F6] h-full p-5 flex flex-col justify-between overflow-y-auto">
+          <div className="w-4/5 max-w-xs bg-[#F9E2CC] h-full p-5 flex flex-col justify-between overflow-y-auto">
             <div className="space-y-4">
               <div className="flex justify-between items-center border-b border-[#d8c5aa] pb-3">
                 <h3 className="font-bold text-sm text-[#381c1c]">Filters</h3>
@@ -337,7 +337,7 @@ export default function CatalogPage() {
 
             <button
               onClick={() => setMobileFilterOpen(false)}
-              className="w-full bg-[#6B2C2C] text-white py-2.5 rounded-xl text-xs font-bold"
+              className="w-full bg-[#4F0C12] text-white py-2.5 rounded-xl text-xs font-bold"
             >
               Apply Filters
             </button>
