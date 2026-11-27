@@ -6,6 +6,7 @@ import CategoryCircleSection from './components/CategoryCircleSection';
 import OurStoresSection from './components/OurStoresSection';
 import ShowcaseGallerySection from './components/ShowcaseGallerySection';
 import ProductShowcaseSection from './components/ProductShowcaseSection';
+import Footer from './components/Footer';
 import CartDrawer from './components/CartDrawer';
 import WishlistDrawer from './components/WishlistDrawer';
 import homeBanner from './assets/home-banner.png';
@@ -44,6 +45,9 @@ export default function App() {
             {/* Products Showcase (Gold, Silver, Platinum, Coins, Diamonds) */}
             <ProductShowcaseSection />
           </main>
+
+          {/* Footer Section with Logo, Multiple Locations, and Collections */}
+          <Footer />
 
           {/* Drawers for Wishlist & Cart */}
           <CartDrawer />
