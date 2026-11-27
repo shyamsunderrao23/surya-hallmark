@@ -73,7 +73,7 @@ export default function ProductShowcaseSection() {
     return (
       <div
         key={product.id}
-        className="bg-white rounded-2xl border border-[#DFCAB4] p-4 flex flex-col justify-between relative shadow-xs hover:shadow-xl hover:border-[#5B131B] transition-all duration-300 group"
+        className="rounded-2xl p-2 sm:p-3 flex flex-col justify-between relative transition-all duration-300 group hover:-translate-y-1"
       >
         {/* Floating Top Badges */}
         <div className="flex items-center justify-between w-full mb-2 z-10">
@@ -83,15 +83,15 @@ export default function ProductShowcaseSection() {
                 {product.badge}
               </span>
             ) : discountPercent ? (
-              <span className="text-[10px] font-bold tracking-wider uppercase px-2 py-0.5 rounded-full bg-rose-100 text-rose-800">
+              <span className="text-[10px] font-bold tracking-wider uppercase px-2 py-0.5 rounded-full bg-rose-100/90 text-rose-800">
                 {discountPercent}% OFF
               </span>
             ) : product.isBestseller ? (
-              <span className="text-[10px] font-bold tracking-wider uppercase px-2 py-0.5 rounded-full bg-amber-100 text-amber-800">
+              <span className="text-[10px] font-bold tracking-wider uppercase px-2 py-0.5 rounded-full bg-amber-100/90 text-amber-800">
                 BESTSELLER
               </span>
             ) : (
-              <span className="text-[10px] font-bold tracking-wider uppercase px-2 py-0.5 rounded-full bg-stone-100 text-stone-700">
+              <span className="text-[10px] font-bold tracking-wider uppercase px-2 py-0.5 rounded-full bg-[#5B131B]/5 text-[#5B131B] border border-[#5B131B]/15">
                 HALLMARKED
               </span>
             )}
@@ -104,7 +104,7 @@ export default function ProductShowcaseSection() {
               toggleWishlist(product.id);
             }}
             title={isWishlisted ? 'Remove from Wishlist' : 'Add to Wishlist'}
-            className="p-2 rounded-full bg-stone-50 hover:bg-rose-50 text-stone-400 hover:text-[#5B131B] transition-colors cursor-pointer shadow-xs"
+            className="p-2 rounded-full bg-white/80 hover:bg-white text-stone-400 hover:text-[#5B131B] transition-colors cursor-pointer shadow-xs border border-[#DFCAB4]/60"
           >
             <Heart
               size={17}
@@ -253,7 +253,7 @@ export default function ProductShowcaseSection() {
       </div>
 
       {/* Trust & Purity Bar */}
-      <div className="mt-10 p-5 rounded-2xl bg-white/80 border border-[#DFCAB4] flex flex-wrap items-center justify-around gap-4 text-center">
+      <div className="mt-10 p-5 rounded-2xl bg-[#5B131B]/5 border border-[#DFCAB4] flex flex-wrap items-center justify-around gap-4 text-center">
         <div className="flex items-center gap-2">
           <ShieldCheck size={20} className="text-[#5B131B]" />
           <span className="text-xs sm:text-sm font-bold text-[#3B0E14]">
