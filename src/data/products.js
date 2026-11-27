@@ -126,9 +126,9 @@ export const products = [
     hallmark: '100% BIS 916 with 6-Digit HUID',
     rating: 4.9,
     reviewsCount: 22,
-    image: 'https://images.unsplash.com/photo-1611591475152-473523dd665e?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=800&q=80',
     images: [
-      'https://images.unsplash.com/photo-1611591475152-473523dd665e?auto=format&fit=crop&w=800&q=80'
+      'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=800&q=80'
     ],
     isBestseller: true,
     isFeatured: false,
