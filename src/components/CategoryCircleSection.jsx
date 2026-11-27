@@ -8,7 +8,7 @@ import earringsImg from '../assets/categories/earrings.jpg';
 import braceletsImg from '../assets/categories/bracelets.jpg';
 import weddingImg from '../assets/categories/wedding.jpg';
 import mensImg from '../assets/categories/mens.jpg';
-import giftsImg from '../assets/categories/gifts.jpg';
+import pendantsImg from '../assets/categories/pendants.jpg';
 
 const categories = [
   {
@@ -48,18 +48,18 @@ const categories = [
     link: '/category/men',
   },
   {
-    id: 'gifts',
-    name: 'Gifts',
-    image: giftsImg,
-    link: '/category/gifts',
+    id: 'pendants',
+    name: 'Pendants',
+    image: pendantsImg,
+    link: '/category/pendants',
   },
 ];
 
 export default function CategoryCircleSection() {
   return (
-    <section className="w-full py-8 sm:py-12 bg-[#FCEED8] overflow-hidden">
-      <div className="w-full px-3 sm:px-6 md:px-10 lg:px-14 xl:px-20">
-        {/* Full Edge-to-Edge 7-Column Grid: Exactly 7 items spanning from left edge to right edge with NO scrollbar */}
+    <section className="w-full py-10 sm:py-16 bg-[#FCEED8] overflow-hidden">
+      <div className="w-full px-2 sm:px-5 md:px-8 lg:px-10 xl:px-14">
+        {/* Full Edge-to-Edge 7-Column Grid: Large, Crystal-Clear Circles with Zero Scrollbar */}
         <div className="grid grid-cols-7 gap-2 sm:gap-4 md:gap-6 lg:gap-8 items-start justify-items-center w-full">
           {categories.map((cat) => (
             <Link
@@ -67,8 +67,8 @@ export default function CategoryCircleSection() {
               to={cat.link}
               className="group flex flex-col items-center w-full cursor-pointer transition-transform duration-300"
             >
-              {/* Extra-Large Circular Frame spanning smoothly from left to right */}
-              <div className="relative w-full max-w-[85px] sm:max-w-[120px] md:max-w-[145px] lg:max-w-[170px] xl:max-w-[190px] aspect-square rounded-full p-1 sm:p-1.5 md:p-2 bg-white border-2 sm:border-[2.5px] border-[#DFCAB4] shadow-md group-hover:border-[#5B131B] group-hover:shadow-2xl group-hover:shadow-[#5B131B]/25 group-hover:-translate-y-2 transition-all duration-300 ease-out">
+              {/* Grand Circular Frame: Enlarged up to 215px on desktop */}
+              <div className="relative w-full max-w-[100px] sm:max-w-[135px] md:max-w-[165px] lg:max-w-[195px] xl:max-w-[215px] aspect-square rounded-full p-1.5 sm:p-2 md:p-2.5 bg-white border-2 sm:border-[3px] border-[#DFCAB4] shadow-md group-hover:border-[#5B131B] group-hover:shadow-2xl group-hover:shadow-[#5B131B]/25 group-hover:-translate-y-2.5 transition-all duration-300 ease-out">
                 <div className="w-full h-full rounded-full overflow-hidden bg-[#FAF6F0] relative">
                   <img
                     src={cat.image}
@@ -82,7 +82,7 @@ export default function CategoryCircleSection() {
               </div>
 
               {/* Category Label */}
-              <span className="mt-2.5 sm:mt-3.5 text-[11px] sm:text-xs md:text-sm lg:text-base font-bold text-[#3D141A] group-hover:text-[#5B131B] transition-colors duration-200 text-center whitespace-nowrap tracking-wide">
+              <span className="mt-3 sm:mt-4 text-xs sm:text-sm md:text-base lg:text-lg font-bold text-[#3D141A] group-hover:text-[#5B131B] transition-colors duration-200 text-center whitespace-nowrap tracking-wide">
                 {cat.name}
               </span>
             </Link>
