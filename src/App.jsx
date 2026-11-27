@@ -10,13 +10,13 @@ export default function App() {
     <ShopProvider>
       <BrowserRouter>
         <div 
-          style={{ backgroundColor: '#F9E2CC' }} 
-          className="min-h-screen flex flex-col bg-[#F9E2CC] text-[#2D2323]"
+          style={{ backgroundColor: '#FDECD8' }} 
+          className="min-h-screen flex flex-col bg-[#FDECD8] text-[#2D2323]"
         >
           {/* Top Announcement Bar + Main Header + Centered Menu Bar */}
           <Header />
 
-          {/* Clean Body Area (#F9E2CC) with all extra page content removed */}
+          {/* Clean Body Area (#FDECD8) with all extra page content removed */}
           <main className="flex-1 w-full" />
 
           {/* Drawers for Wishlist & Cart */}

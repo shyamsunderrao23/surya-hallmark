@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 html, body, #root {
-  background-color: #F9E2CC !important;
+  background-color: #FDECD8 !important;
   color: #2D2323;
   font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
   margin: 0;
@@ -24,7 +24,7 @@ h1, h2, h3, h4, .font-serif-luxury {
 }
 
 .bg-maroon-pattern {
-  background-color: #4F0C12;
+  background-color: #782A38;
   background-image: radial-gradient(rgba(212, 175, 55, 0.08) 1px, transparent 1px);
   background-size: 20px 20px;
 }
@@ -35,12 +35,12 @@ h1, h2, h3, h4, .font-serif-luxury {
   height: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #F9E2CC;
+  background: #FDECD8;
 }
 ::-webkit-scrollbar-thumb {
   background: #B28888;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #4F0C12;
+  background: #782A38;
 }
