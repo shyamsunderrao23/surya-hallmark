@@ -4,6 +4,7 @@ import { ShopProvider } from './context/ShopContext';
 import Header from './components/Header';
 import CartDrawer from './components/CartDrawer';
 import WishlistDrawer from './components/WishlistDrawer';
+import homeBanner from './assets/home-banner.png';
 
 export default function App() {
   return (
@@ -16,8 +17,16 @@ export default function App() {
           {/* Top Announcement Bar + Main Header + Centered Menu Bar */}
           <Header />
 
-          {/* Clean Body Area (#FCEED8) with all extra page content removed */}
-          <main className="flex-1 w-full" />
+          {/* Home Page Content: Home Banner from assets */}
+          <main className="flex-1 w-full">
+            <section className="w-full overflow-hidden shadow-xs">
+              <img
+                src={homeBanner}
+                alt="Surya Hallmark Jewellers Banner"
+                className="w-full h-auto object-cover object-center block"
+              />
+            </section>
+          </main>
 
           {/* Drawers for Wishlist & Cart */}
           <CartDrawer />
