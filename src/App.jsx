@@ -4,6 +4,7 @@ import { ShopProvider } from './context/ShopContext';
 import Header from './components/Header';
 import CategoryCircleSection from './components/CategoryCircleSection';
 import OurStoresSection from './components/OurStoresSection';
+import ShowcaseGallerySection from './components/ShowcaseGallerySection';
 import CartDrawer from './components/CartDrawer';
 import WishlistDrawer from './components/WishlistDrawer';
 import homeBanner from './assets/home-banner.png';
@@ -35,6 +36,9 @@ export default function App() {
 
             {/* Our Stores Interactive Expanding Cards Section */}
             <OurStoresSection />
+
+            {/* 3 Vertical Showcase Images Side-by-Side Without Any Gap, Edge-to-Edge */}
+            <ShowcaseGallerySection />
           </main>
 
           {/* Drawers for Wishlist & Cart */}
