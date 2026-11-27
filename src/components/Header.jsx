@@ -39,8 +39,23 @@ export default function Header() {
   const [mobileSearchOpen, setMobileSearchOpen] = useState(false);
   const [isSearchDropdownOpen, setIsSearchDropdownOpen] = useState(false);
   const [isGoldRateDropdownOpen, setIsGoldRateDropdownOpen] = useState(false);
+  const [hideTopHeader, setHideTopHeader] = useState(false);
   const searchContainerRef = useRef(null);
   const goldRateContainerRef = useRef(null);
+
+  // Smoothly hide top micro announcement bar on scroll down
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 20) {
+        setHideTopHeader(true);
+      } else {
+        setHideTopHeader(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   // Close dropdowns on click outside
   useEffect(() => {
@@ -107,8 +122,14 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-40 w-full shadow-md">
-      {/* Top Header: Micro announcement bar with hallmark & showroom timings */}
-      <div className="bg-[#450C13] text-[#FCEED8]/90 text-[11px] sm:text-xs py-1.5 px-4 sm:px-6 border-b border-[#751A24]/50">
+      {/* Top Header: Micro announcement bar with hallmark & showroom timings - Smoothly hides on scroll down */}
+      <div 
+        className={`bg-[#450C13] text-[#FCEED8]/90 text-[11px] sm:text-xs px-4 sm:px-6 border-[#751A24]/50 transition-all duration-300 ease-in-out overflow-hidden ${
+          hideTopHeader 
+            ? 'max-h-0 opacity-0 py-0 border-b-0 -translate-y-2 pointer-events-none' 
+            : 'max-h-12 opacity-100 py-1.5 border-b translate-y-0'
+        }`}
+      >
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-2">
             <span className="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
