@@ -113,12 +113,12 @@ export default function ProductShowcaseSection() {
           </button>
         </div>
 
-        {/* Product Image */}
-        <div className="w-full aspect-square rounded-xl bg-gradient-to-b from-[#FAF6F0] to-[#F5ECE0]/60 p-4 flex items-center justify-center overflow-hidden mb-3 relative">
+        {/* Product Image without inner bg card */}
+        <div className="w-full aspect-square rounded-xl overflow-hidden mb-3.5 relative flex items-center justify-center">
           <img
             src={product.image}
             alt={product.name}
-            className="w-full h-full object-contain group-hover:scale-108 transition-transform duration-500"
+            className="w-full h-full object-cover group-hover:scale-106 transition-transform duration-500 rounded-xl"
             loading="lazy"
           />
         </div>
@@ -193,7 +193,7 @@ export default function ProductShowcaseSection() {
   };
 
   return (
-    <section className="w-full py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <section className="w-full py-12 px-3 sm:px-6 lg:px-10 max-w-[1720px] mx-auto">
       {/* ===================== SECTION 1: LATEST PRODUCTS ===================== */}
       <div className="text-center mb-8">
         <h2 className="text-3xl sm:text-4xl font-serif font-bold text-[#3B0E14] mb-3">
@@ -205,13 +205,13 @@ export default function ProductShowcaseSection() {
       </div>
 
       {/* Grid of Products */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 sm:gap-6 mb-14">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 sm:gap-6 lg:gap-7 mb-14 w-full">
         {latestProducts.map(renderProductCard)}
       </div>
 
       {/* ===================== SECTION 2: 4-COLUMN LIFESTYLE BANNERS ===================== */}
       {/* Matching the 4 visual category cards in the reference image */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 mb-14">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 lg:gap-7 mb-14 w-full">
         {lifestyleBanners.map((banner, index) => (
           <div
             key={index}
@@ -248,7 +248,7 @@ export default function ProductShowcaseSection() {
       </div>
 
       {/* Featured Products Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 sm:gap-6 mb-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 sm:gap-6 lg:gap-7 mb-8 w-full">
         {featuredProducts.map(renderProductCard)}
       </div>
 
