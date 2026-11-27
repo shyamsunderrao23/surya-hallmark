@@ -49,15 +49,15 @@ export default function ProductShowcaseSection() {
     },
   ];
 
-  // Render product card: ONLY the Image and the Name
+  // Render product card: ONLY the Image and the Name (Bigger image size)
   const renderProductCard = (product) => {
     return (
       <div
         key={product.id}
         className="flex flex-col relative transition-all duration-300 group cursor-pointer"
       >
-        {/* Product Image */}
-        <div className="w-full aspect-square rounded-2xl overflow-hidden mb-3 relative flex items-center justify-center shadow-xs group-hover:shadow-xl transition-all duration-500">
+        {/* Product Image - Increased Size */}
+        <div className="w-full aspect-[4/4.8] rounded-2xl overflow-hidden mb-3.5 relative flex items-center justify-center shadow-sm group-hover:shadow-2xl transition-all duration-500">
           <img
             src={product.image}
             alt={product.name}
@@ -67,8 +67,8 @@ export default function ProductShowcaseSection() {
         </div>
 
         {/* Product Name Only */}
-        <div className="text-center pt-1 px-1">
-          <h3 className="font-serif font-bold text-sm sm:text-base md:text-lg text-[#2A1618] group-hover:text-[#5B131B] transition-colors leading-snug line-clamp-2">
+        <div className="text-center pt-1 px-2">
+          <h3 className="font-serif font-bold text-base sm:text-lg md:text-xl text-[#2A1618] group-hover:text-[#5B131B] transition-colors leading-snug line-clamp-2">
             {product.name}
           </h3>
         </div>
@@ -77,10 +77,10 @@ export default function ProductShowcaseSection() {
   };
 
   return (
-    <section className="w-full py-12 px-3 sm:px-6 lg:px-10 max-w-[1720px] mx-auto">
+    <section className="w-full py-14 px-4 sm:px-8 lg:px-12 max-w-[1880px] mx-auto">
       {/* ===================== SECTION 1: LATEST PRODUCTS ===================== */}
-      <div className="text-center mb-8">
-        <h2 className="text-3xl sm:text-4xl font-serif font-bold text-[#3B0E14] mb-3">
+      <div className="text-center mb-10">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-[#3B0E14] mb-3">
           Latest Products
         </h2>
         <p className="text-stone-600 max-w-2xl mx-auto text-sm sm:text-base">
@@ -88,17 +88,17 @@ export default function ProductShowcaseSection() {
         </p>
       </div>
 
-      {/* Grid of Products (Only Image and Name) */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-7 lg:gap-8 mb-16 w-full">
+      {/* Grid of Products (Larger Image Size and Spacious Grid) */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-7 sm:gap-8 lg:gap-10 mb-18 w-full">
         {latestProducts.map(renderProductCard)}
       </div>
 
       {/* ===================== SECTION 2: 4-COLUMN LIFESTYLE BANNERS ===================== */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 lg:gap-7 mb-16 w-full">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-7 lg:gap-8 mb-18 w-full">
         {lifestyleBanners.map((banner, index) => (
           <div
             key={index}
-            className="group relative h-72 sm:h-80 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-[#DFCAB4]"
+            className="group relative h-80 sm:h-96 md:h-[400px] rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300 border border-[#DFCAB4]"
           >
             {/* Background Image */}
             <img
@@ -110,8 +110,8 @@ export default function ProductShowcaseSection() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
 
             {/* Bottom Floating Card */}
-            <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-xs p-3.5 rounded-xl shadow-md border border-stone-100 group-hover:bg-white transition-all">
-              <h4 className="font-serif font-bold text-base text-[#2A1618] group-hover:text-[#5B131B] transition-colors">
+            <div className="absolute bottom-5 left-5 right-5 bg-white/95 backdrop-blur-xs p-4 rounded-xl shadow-md border border-stone-100 group-hover:bg-white transition-all">
+              <h4 className="font-serif font-bold text-lg text-[#2A1618] group-hover:text-[#5B131B] transition-colors">
                 {banner.title}
               </h4>
               <p className="text-xs text-stone-500 font-medium">{banner.count}</p>
@@ -121,8 +121,8 @@ export default function ProductShowcaseSection() {
       </div>
 
       {/* ===================== SECTION 3: FEATURED PRODUCTS ===================== */}
-      <div className="text-center mb-8">
-        <h2 className="text-2xl sm:text-3xl font-serif font-bold text-[#3B0E14] mb-2">
+      <div className="text-center mb-10">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-[#3B0E14] mb-2">
           Featured Products
         </h2>
         <p className="text-stone-600 max-w-xl mx-auto text-xs sm:text-sm">
@@ -130,8 +130,8 @@ export default function ProductShowcaseSection() {
         </p>
       </div>
 
-      {/* Featured Products Grid (Only Image and Name) */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-7 lg:gap-8 mb-10 w-full">
+      {/* Featured Products Grid (Larger Image Size) */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-7 sm:gap-8 lg:gap-10 mb-12 w-full">
         {featuredProducts.map(renderProductCard)}
       </div>
 
